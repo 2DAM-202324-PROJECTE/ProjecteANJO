@@ -11,10 +11,9 @@
 <body class="">
 <!-- SCRIPTS -->
 <script src="main.js" type="module"></script>
-
 <!-- HEADER -->
-<header class="bg-white shadow-lg" x-data="{menuOpen: false}">
-    <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
+<header class="bg-white shadow-lg fixed w-full top-0 z-50">
+    <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-3 lg:px-8">
         <div class="flex lg:flex-1">
             <a class="-m-1.5 p-1.5" href="index.html">
                 <span class="sr-only">Your Company</span>
@@ -130,44 +129,47 @@
     </div>
 </header>
 
-<!--  HERO -->
+<!-- Añade un margen superior al cuerpo para evitar que el contenido se solape con el encabezado -->
+<div class="mt-20">
+
+<!-- HERO -->
 <div class="relative isolate overflow-hidden bg-white">
+    <div class="absolute inset-0 bg-gradient-to-b from-green-500 to-transparent pointer-events-none"></div>
+
     <svg class="absolute inset-0 -z-10 h-full w-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]" aria-hidden="true">
-        <defs>
-            <pattern id="0787a7c5-978c-4f66-83c7-11c213f99cb7" width="200" height="200" x="50%" y="-1" patternUnits="userSpaceOnUse">
-                <path d="M.5 200V.5H200" fill="none" />
-            </pattern>
-        </defs>
-        <rect width="100%" height="100%" stroke-width="0" fill="url(#0787a7c5-978c-4f66-83c7-11c213f99cb7)" />
+
     </svg>
-    <div class="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:px-8 lg:py-40">
+
+    <div class="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:px-8 lg:py-40 relative z-10">
         <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-8">
-            <img class="h-11" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company">
-            <div class="mt-24 sm:mt-32 lg:mt-16">
-                <a href="#" class="inline-flex space-x-6">
-                    <span class="rounded-full bg-indigo-600/10 px-3 py-1 text-sm font-semibold leading-6 text-indigo-600 ring-1 ring-inset ring-indigo-600/10">What's new</span>
-                    <span class="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-gray-600">
-            <span>Just shipped v1.0</span>
-            <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
-            </svg>
-          </span>
-                </a>
+            <div class="mt-24 sm:mt-32 lg:mt-18">
+<!--                <a href="#" class="inline-flex space-x-6">-->
+<!--                    <span class="rounded-full bg-indigo-600/10 px-3 py-1 text-sm font-semibold leading-6 text-indigo-600 ring-1 ring-inset ring-indigo-600/10">What's new</span>-->
+<!--                    <span class="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-gray-600">-->
+<!--            <span>Just shipped v1.0</span>-->
+<!--            <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">-->
+<!--              <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />-->
+<!--            </svg>-->
+<!--          </span>-->
+<!--                </a>-->
             </div>
-            <h1 class="mt-10 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Deploy to the cloud with confidence</h1>
-            <p class="mt-6 text-lg leading-8 text-gray-600">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
+            <h1 class="mt-10 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Nosaltres creem la web dels teus somnis </h1>
+            <p class="mt-6 text-lg leading-8 text-gray-600">Podem crear la pàgina web que sempre has dessitjat per a la teva empresa amb molta rapidesa i per poc preu.<br>Confía amb nosaltres!</p>
             <div class="mt-10 flex items-center gap-x-6">
-                <a href="#" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get started</a>
-                <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Learn more <span aria-hidden="true">→</span></a>
+                <a href="#" class="rounded-md bg-lime-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Comença</a>
+<!--                <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Learn more <span aria-hidden="true">→</span></a>-->
             </div>
         </div>
+        <!-- Imagen del héroe -->
         <div class="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
             <div class="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
-                <div class="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
-                    <img src="https://tailwindui.com/img/component-images/project-app-screenshot.png" alt="App screenshot" width="2432" height="1442" class="w-[76rem] rounded-md shadow-2xl ring-1 ring-gray-900/10">
+                <div class="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4 relative z-10">
+                    <img src="Img/paginaexemple.png" alt="App screenshot" width="2432" height="1442" class="w-[76rem] rounded-md shadow-2xl ring-1 ring-gray-900/10">
                 </div>
             </div>
         </div>
+        <!-- Máscara de difuminado en la parte inferior -->
+
     </div>
 </div>
 
@@ -177,34 +179,41 @@
         <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start">
             <div class="lg:pr-4 lg:pt-4">
                 <div class="lg:max-w-lg">
-                    <h2 class="text-base font-semibold leading-7 text-indigo-600">Deploy faster(ES ELIMINABLE)</h2>
-                    <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Frase per a enganchar al consumidor</p>
-                    <p class="mt-6 text-lg leading-8 text-gray-600">Una petita explicació més llerga(ES ELIMINABLE)</p>
+                    <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Centenars d'empreses de tot el mon ja formen part de la nostra gran família </p>
                     <div class="mt-8">
 <!--                        <a href="#" class="inline-flex rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">BOTO -> PRODUCTE</a>-->
                     </div>
-                    <figure class="mt-16 border-l border-gray-200 pl-8 text-gray-600">
-                        <blockquote class="text-base leading-7">
-                            <p>Missatge d'algú que ha comprat un producte nostre i l'hi ha agradat</p>
-                        </blockquote>
-                        <figcaption class="mt-6 flex gap-x-4 text-sm leading-6">
-                            <img src="https://images.unsplash.com/photo-1509783236416-c9ad59bae472?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80" alt="" class="h-6 w-6 flex-none rounded-full">
-                            <div><span class="font-semibold text-gray-900">Maria Hill</span> – Marketing Manager</div>
-                        </figcaption>
-                    </figure>
+                    <dl class="mt-16 grid max-w-xl grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 xl:mt-16">
+                    <div class="flex flex-col gap-y-3 border-l border-gray-900/10 pl-6">
+                        <dt class="text-sm leading-6 text-gray-600">Creators on the platform</dt>
+                        <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900">8,000+</dd>
+                    </div>
+                    <div class="flex flex-col gap-y-3 border-l border-gray-900/10 pl-6">
+                        <dt class="text-sm leading-6 text-gray-600">Flat platform fee</dt>
+                        <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900">3%</dd>
+                    </div>
+                    <div class="flex flex-col gap-y-3 border-l border-gray-900/10 pl-6">
+                        <dt class="text-sm leading-6 text-gray-600">Uptime guarantee</dt>
+                        <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900">99.9%</dd>
+                    </div>
+                    <div class="flex flex-col gap-y-3 border-l border-gray-900/10 pl-6">
+                        <dt class="text-sm leading-6 text-gray-600">Paid out to creators</dt>
+                        <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900">$70M</dd>
+                    </div>
+                    </dl>
                 </div>
             </div>
-            <img src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png" alt="Product screenshot" class="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:ml-0" width="2432" height="1442">
+            <img src="Img/mon.png" alt="Product screenshot" class="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:ml-0" width="2432" height="1442">
         </div>
     </div>
 </div>
 <!-- CTA -->
-<div class="bg-white">
+<div class="bg-green-400">
     <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:justify-between lg:px-8">
         <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Ready to dive in?<br>Start your free trial today.</h2>
-        <div class="mt-10 flex items-center gap-x-6 lg:mt-0 lg:flex-shrink-0">
-            <a href="#" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get started</a>
-            <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Learn more <span aria-hidden="true">→</span></a>
+        <div class="mt-10 flex  gap-x-6 lg:mt-0 lg:flex-shrink-0">
+            <a href="#" class="rounded-md bg-green-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-800">Get started</a>
+<!--            <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Learn more <span aria-hidden="true">→</span></a>-->
         </div>
     </div>
 </div>
@@ -268,5 +277,38 @@
     </div>
 </footer>
 
+    <!-- COOKIES -->
+    <div id="cookies-banner" class="pointer-events-none fixed inset-x-0 bottom-0 px-6 pb-6">
+        <div class="pointer-events-auto ml-auto max-w-xl rounded-xl bg-white p-6 shadow-lg ring-1 ring-gray-900/10">
+            <p class="text-sm leading-6 text-gray-900">Aquest lloc web utilitza galetes per complementar una dieta equilibrada i proporcionar una recompensa molt merescuda als sentits després de consumir àpats suaus però nutritius. Acceptar les nostres galetes és opcional però recomanable, ja que són delicioses. Veure la nostra <a href="#" class="font-semibold text-indigo-600">política de galletes</a>.</p>
+            <div class="mt-4 flex items-center gap-x-5">
+                <button id="accept-all-btn" type="button" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900">Accept all</button>
+                <button id="reject-all-btn" type="button" class="text-sm font-semibold leading-6 text-gray-900">Reject all</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const cookiesBanner = document.getElementById("cookies-banner");
+            const acceptAllBtn = document.getElementById("accept-all-btn");
+            const rejectAllBtn = document.getElementById("reject-all-btn");
+
+            // Event listener for "Accept all" button
+            acceptAllBtn.addEventListener("click", function () {
+                // You may want to add code here to set cookies or perform other actions related to accepting cookies
+                cookiesBanner.style.display = "none"; // Hide the banner
+            });
+
+            // Event listener for "Reject all" button
+            rejectAllBtn.addEventListener("click", function () {
+                // You may want to add code here to handle rejecting cookies
+                cookiesBanner.style.display = "none"; // Hide the banner
+            });
+        });
+    </script>
+
+
+</div>
 </body>
 </html>
