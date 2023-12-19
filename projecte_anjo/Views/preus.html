@@ -145,33 +145,34 @@
     </div>
     <p class="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-600">Sabem que cada negoci té les seves necessitats úniques. Per això, oferim plans de preus flexibles, des del <strong>Pla Bàsic</strong> per a negocis emergents, fins al <strong>Pla Elit</strong> per a empreses consolidades. Troba el teu pla ideal i impulsa la teva botiga en línia amb nosaltres.</p>
     <div class="mt-16 flex justify-center">
-      <fieldset class="grid grid-cols-2 gap-x-1 rounded-full p-1 text-center text-xs font-semibold leading-5 ring-1 ring-inset ring-gray-200">
+      <fieldset class="grid grid-cols-2 gap-x-1 rounded-full p-1 text-center text-xs font-semibold leading-5 ring-2 ring-inset ring-black">
         <legend class="sr-only">Payment frequency</legend>
         <!-- Checked: "bg-green-600 text-white", Not Checked: "text-gray-500" -->
-        <label class="cursor-pointer rounded-full px-2.5 py-1">
-          <input type="radio" name="frequency" value="mensual" class="sr-only">
+        <label class="cursor-pointer rounded-full px-2.5 py-1 bg-green-600 text-white">
+          <input type="radio" name="frequency" value="mensual" class="sr-only" checked>
           <span>Mensual</span>
         </label>
         <!-- Checked: "bg-green-600 text-white", Not Checked: "text-gray-500" -->
-        <label class="cursor-pointer rounded-full px-2.5 py-1">
+        <label class="cursor-pointer rounded-full px-2.5 py-1 text-black">
           <input type="radio" name="frequency" value="anual" class="sr-only">
           <span>Anual</span>
         </label>
       </fieldset>
     </div>
+
     <div class="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-      <div class="rounded-3xl p-8 xl:p-10 ring-1 ring-gray-200">
+      <div class="rounded-3xl p-8 xl:p-10 ring-2 ring-black">
         <div class="flex items-center justify-between gap-x-4">
           <h3 id="tier-basic" class="text-lg font-semibold leading-8 text-gray-900">Pla Bàsic</h3>
         </div>
         <p class="mt-4 text-sm leading-6 text-gray-600">Inici ràpid amb disseny estàndard, pagaments bàsics, suport per email.</p>
         <p class="mt-6 flex items-baseline gap-x-1">
           <!-- Price, update based on frequency toggle state -->
-          <span class="text-4xl font-bold tracking-tight text-gray-900">15€</span>
+          <span class="text-4xl font-bold tracking-tight text-gray-900 price" data-monthly="15€" data-annual="30€">15€</span>
           <!-- Payment frequency, update based on frequency toggle state -->
           <span class="text-sm font-semibold leading-6 text-gray-600">/mes</span>
         </p>
-        <a href="#" aria-describedby="tier-basic" class="mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 text-green-600 ring-1 ring-inset ring-green-200 hover:ring-green-300">Comprar pla</a>
+        <a href="#" aria-describedby="tier-basic" class="mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 text-green-600 ring-2 ring-inset ring-green-200 hover:ring-green-300">Comprar pla</a>
         <ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-gray-600 xl:mt-10">
           <li class="flex gap-x-3">
             <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -207,7 +208,7 @@
         <p class="mt-4 text-sm leading-6 text-gray-600">Més opcions, pagaments avançats, suport telefònic, SEO bàsic.</p>
         <p class="mt-6 flex items-baseline gap-x-1">
           <!-- Price, update based on frequency toggle state -->
-          <span class="text-4xl font-bold tracking-tight text-gray-900">30€</span>
+          <span class="text-4xl font-bold tracking-tight text-gray-900 price" data-monthly="30€" data-annual="60€">30€</span>
           <!-- Payment frequency, update based on frequency toggle state -->
           <span class="text-sm font-semibold leading-6 text-gray-600">/mes</span>
         </p>
@@ -239,18 +240,18 @@
           </li>
         </ul>
       </div>
-      <div class="rounded-3xl p-8 xl:p-10 ring-1 ring-gray-200">
+      <div class="rounded-3xl p-8 xl:p-10 ring-2 ring-black">
         <div class="flex items-center justify-between gap-x-4">
           <h3 id="tier-elit" class="text-lg font-semibold leading-8 text-gray-900">Pla Elit</h3>
         </div>
         <p class="mt-4 text-sm leading-6 text-gray-600">Personalització màxima, integracions totals, estratègies màrqueting avançades.</p>
         <p class="mt-6 flex items-baseline gap-x-1">
           <!-- Price, update based on frequency toggle state -->
-          <span class="text-4xl font-bold tracking-tight text-gray-900">60€</span>
+          <span class="text-4xl font-bold tracking-tight text-gray-900 price" data-monthly="60€" data-annual="120€">60€</span>
           <!-- Payment frequency, update based on frequency toggle state -->
           <span class="text-sm font-semibold leading-6 text-gray-600">/mes</span>
         </p>
-        <a href="#" aria-describedby="tier-elit" class="mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 text-green-600 ring-1 ring-inset ring-green-200 hover:ring-green-300">Comprar pla</a>
+        <a href="#" aria-describedby="tier-elit" class="mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 text-green-600 ring-2 ring-inset ring-green-200 hover:ring-green-300">Comprar pla</a>
         <ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-gray-600 xl:mt-10">
           <li class="flex gap-x-3">
             <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -282,7 +283,1381 @@
   </div>
 </div>
 
+
+<div class="flex justify-center">
+  <button id="toggleButton" class="grid grid-cols-1 gap-x-1 rounded-full p-1 text-center text-xs font-semibold leading-5 ring-2 ring-inset ring-black cursor-pointer">
+    
+    <!-- Estat "Comparar plans" -->
+    <span id="comparePlans" class="flex justify-center rounded-full px-2.5 py-1 bg-green-600 text-white">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+      </svg>
+      Comparar plans
+    </span>
+
+    <!-- Estat "Tancar comparacio" -->
+    <span id="closeComparison" class="flex justify-center rounded-full px-2.5 py-1 bg-black text-white hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
+      </svg>
+      Tancar comparacio
+    </span>
+
+  </button>
+</div>
+
+
+<!-- FEATURE COMPARISON -->
+<div id="contentToToggle" class="max-h-0 overflow-hidden opacity-0 transition-all duration-500">
+
+  <div class="relative bg-white lg:pt-14 mt-16">
+
+    <div class="mx-auto max-w-4xl text-center">
+      <p class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Comparar tots els plans</p>
+    </div>
+
+    <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
+      <!-- Feature comparison (up to lg) -->
+      <section aria-labelledby="mobile-comparison-heading" class="lg:hidden">
+        <h2 id="mobile-comparison-heading" class="sr-only">Feature comparison</h2>
+
+        <div class="mx-auto max-w-2xl space-y-16">
+          <div class="border-t border-gray-900/10">
+            <div class="-mt-px w-72 border-t-2 pt-10 md:w-80 border-transparent">
+              <h3 class="text-sm font-semibold leading-6 text-gray-900">Pla Bàsic</h3>
+              <p class="mt-1 text-sm leading-6 text-gray-600">Inici ràpid amb disseny estàndard, pagaments bàsics, suport per email.</p>
+            </div>
+
+            <div class="mt-10 space-y-10">
+              <div>
+                <h4 class="text-sm font-semibold leading-6 text-gray-900">Fundamentals de la Botiga en Línia</h4>
+                <div class="relative mt-6">
+                  <!-- Fake card background -->
+                  <div aria-hidden="true" class="absolute inset-y-0 right-0 hidden w-1/2 rounded-lg bg-white shadow-sm sm:block"></div>
+
+                  <div class="relative rounded-lg bg-white shadow-sm sm:rounded-none sm:bg-transparent sm:shadow-none sm:ring-0 ring-1 ring-gray-900/10">
+                    <dl class="divide-y divide-gray-200 text-sm leading-6">
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Disseny Responsive</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </dd>
+                      </div>
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Integració de Xarxes Socials</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"></path>
+                          </svg>
+                          <span class="sr-only">No</span>
+                        </dd>
+                      </div>
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Gestió Multidioma</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"></path>
+                          </svg>
+                          <span class="sr-only">No</span>
+                        </dd>
+                      </div>
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Sistema d'Anàlisi i Informes</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"></path>
+                          </svg>
+                          <span class="sr-only">No</span>
+                        </dd>
+                      </div>
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Suport a la Configuració de SEO</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                          </svg>
+                          <span class="sr-only">No</span>
+                        </dd>
+                      </div>
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Certificat SSL</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </dd>
+                      </div>
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Optimització per a Mòbils</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </dd>
+                      </div>
+                    </dl>
+                  </div>
+
+                  <!-- Fake card border -->
+                  <div aria-hidden="true" class="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 rounded-lg sm:block ring-1 ring-gray-900/10"></div>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold leading-6 text-gray-900">Eines Avançades per a Negocis en Expansió</h4>
+                <div class="relative mt-6">
+                  <!-- Fake card background -->
+                  <div aria-hidden="true" class="absolute inset-y-0 right-0 hidden w-1/2 rounded-lg bg-white shadow-sm sm:block"></div>
+
+                  <div class="relative rounded-lg bg-white shadow-sm sm:rounded-none sm:bg-transparent sm:shadow-none sm:ring-0 ring-1 ring-gray-900/10">
+                    <dl class="divide-y divide-gray-200 text-sm leading-6">
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Suport Prioritari 24/7</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                          </svg>
+                          <span class="sr-only">No</span>
+                        </dd>
+                      </div>
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Backup Automàtic</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                          </svg>
+                          <span class="sr-only">No</span>
+                        </dd>
+                      </div>
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Integració Avançada de Pagament</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                          </svg>
+                          <span class="sr-only">No</span>
+                        </dd>
+                      </div>
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Funcions de Màrqueting Avançat</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                          </svg>
+                          <span class="sr-only">No</span>
+                        </dd>
+                      </div>
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Personalització Avançada del Disseny</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                          </svg>
+                          <span class="sr-only">No</span>
+                        </dd>
+                      </div>
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Gestió Avançada de l'Inventari</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                          </svg>
+                          <span class="sr-only">No</span>
+                        </dd>
+                      </div>
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Suport per a Campanyes de Google Ads</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                          </svg>
+                          <span class="sr-only">No</span>
+                        </dd>
+                      </div>
+                    </dl>
+                  </div>
+
+                  <!-- Fake card border -->
+                  <div aria-hidden="true" class="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 rounded-lg sm:block ring-1 ring-gray-900/10"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-gray-900/10">
+            <div class="-mt-px w-72 border-t-2 pt-10 md:w-80 border-green-600">
+              <h3 class="text-sm font-semibold leading-6 text-green-600">Pla Avançat</h3>
+              <p class="mt-1 text-sm leading-6 text-gray-600">Més opcions, pagaments avançats, suport telefònic, SEO bàsic.</p>
+            </div>
+
+            <div class="mt-10 space-y-10">
+              <div>
+                <h4 class="text-sm font-semibold leading-6 text-gray-900">Fundamentals de la Botiga en Línia</h4>
+                <div class="relative mt-6">
+                  <!-- Fake card background -->
+                  <div aria-hidden="true" class="absolute inset-y-0 right-0 hidden w-1/2 rounded-lg bg-white shadow-sm sm:block"></div>
+
+                  <div class="relative rounded-lg bg-white shadow-sm sm:rounded-none sm:bg-transparent sm:shadow-none sm:ring-0 ring-2 ring-green-600">
+                    <dl class="divide-y divide-gray-200 text-sm leading-6">
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Disseny Responsive</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </dd>
+                      </div>
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Integració de Xarxes Socials</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </dd>
+                      </div>
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Gestió Multidioma</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"></path>
+                          </svg>
+                          <span class="sr-only">No</span>
+                        </dd>
+                      </div>
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Sistema d'Anàlisi i Informes</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </dd>
+                      </div>
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Suport a la Configuració de SEO</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </dd>
+                      </div>
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Certificat SSL</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </dd>
+                      </div>
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Optimització per a Mòbils</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </dd>
+                      </div>
+                    </dl>
+                  </div>
+
+                  <!-- Fake card border -->
+                  <div aria-hidden="true" class="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 rounded-lg sm:block ring-2 ring-green-600"></div>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold leading-6 text-gray-900">Eines Avançades per a Negocis en Expansió</h4>
+                <div class="relative mt-6">
+                  <!-- Fake card background -->
+                  <div aria-hidden="true" class="absolute inset-y-0 right-0 hidden w-1/2 rounded-lg bg-white shadow-sm sm:block"></div>
+
+                  <div class="relative rounded-lg bg-white shadow-sm sm:rounded-none sm:bg-transparent sm:shadow-none sm:ring-0 ring-2 ring-green-600">
+                    <dl class="divide-y divide-gray-200 text-sm leading-6">
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Suport Prioritari 24/7</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                          </svg>
+                          <span class="sr-only">No</span>
+                        </dd>
+                      </div>
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Backup Automàtic</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </dd>
+                      </div>
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Integració Avançada de Pagament</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </dd>
+                      </div>
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Funcions de Màrqueting Avançat</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                          </svg>
+                          <span class="sr-only">No</span>
+                        </dd>
+                      </div>
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Personalització Avançada del Disseny</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </dd>
+                      </div>
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Gestió Avançada de l'Inventari</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </dd>
+                      </div>
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Suport per a Campanyes de Google Ads</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                          </svg>
+                          <span class="sr-only">No</span>
+                        </dd>
+                      </div>
+                    </dl>
+                  </div>
+
+                  <!-- Fake card border -->
+                  <div aria-hidden="true" class="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 rounded-lg sm:block ring-2 ring-green-600"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-gray-900/10">
+            <div class="-mt-px w-72 border-t-2 pt-10 md:w-80 border-transparent">
+              <h3 class="text-sm font-semibold leading-6 text-gray-900">Pla Elit</h3>
+              <p class="mt-1 text-sm leading-6 text-gray-600">Personalització màxima, integracions totals, estratègies màrqueting avançades.</p>
+            </div>
+
+            <div class="mt-10 space-y-10">
+              <div>
+                <h4 class="text-sm font-semibold leading-6 text-gray-900">Fundamentals de la Botiga en Línia</h4>
+                <div class="relative mt-6">
+                  <!-- Fake card background -->
+                  <div aria-hidden="true" class="absolute inset-y-0 right-0 hidden w-1/2 rounded-lg bg-white shadow-sm sm:block"></div>
+
+                  <div class="relative rounded-lg bg-white shadow-sm sm:rounded-none sm:bg-transparent sm:shadow-none sm:ring-0 ring-1 ring-gray-900/10">
+                    <dl class="divide-y divide-gray-200 text-sm leading-6">
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Disseny Responsive</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </dd>
+                      </div>
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Integració de Xarxes Socials</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </dd>
+                      </div>
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Gestió Multidioma</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <span class="relative h-full w-full py-3">
+                            <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="sr-only">Yes</span>
+                        </dd>
+                      </div>
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Sistema d'Anàlisi i Informes</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </dd>
+                      </div>
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Suport a la Configuració de SEO</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </dd>
+                      </div>
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Certificat SSL</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </dd>
+                      </div>
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Optimització per a Mòbils</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </dd>
+                      </div>
+                    </dl>
+                  </div>
+
+                  <!-- Fake card border -->
+                  <div aria-hidden="true" class="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 rounded-lg sm:block ring-1 ring-gray-900/10"></div>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold leading-6 text-gray-900">Eines Avançades per a Negocis en Expansió</h4>
+                <div class="relative mt-6">
+                  <!-- Fake card background -->
+                  <div aria-hidden="true" class="absolute inset-y-0 right-0 hidden w-1/2 rounded-lg bg-white shadow-sm sm:block"></div>
+
+                  <div class="relative rounded-lg bg-white shadow-sm sm:rounded-none sm:bg-transparent sm:shadow-none sm:ring-0 ring-1 ring-gray-900/10">
+                    <dl class="divide-y divide-gray-200 text-sm leading-6">
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Suport Prioritari 24/7</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </dd>
+                      </div>
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Backup Automàtic</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </dd>
+                      </div>
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Integració Avançada de Pagament</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </dd>
+                      </div>
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Funcions de Màrqueting Avançat</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </dd>
+                      </div>
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Personalització Avançada del Disseny</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </dd>
+                      </div>
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Gestió Avançada de l'Inventari</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </dd>
+                      </div>
+                      <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
+                        <dt class="pr-4 text-gray-600">Suport per a Campanyes de Google Ads</dt>
+                        <dd class="flex items-center justify-end sm:justify-center sm:px-4">
+                          <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </dd>
+                      </div>
+                    </dl>
+                  </div>
+
+                  <!-- Fake card border -->
+                  <div aria-hidden="true" class="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 rounded-lg sm:block ring-1 ring-gray-900/10"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Feature comparison (lg+) -->
+      <section aria-labelledby="comparison-heading" class="hidden lg:block">
+        <h2 id="comparison-heading" class="sr-only">Feature comparison</h2>
+
+        <div class="grid grid-cols-4 gap-x-8 border-t border-gray-900/10 before:block">
+          <div aria-hidden="true" class="-mt-px">
+            <div class="border-t-2 pt-10 border-transparent">
+              <p class="text-sm font-semibold leading-6 text-gray-900">Pla Bàsic</p>
+              <p class="mt-1 text-sm leading-6 text-gray-600">Inici ràpid amb disseny estàndard, pagaments bàsics, suport per email.</p>
+            </div>
+          </div>
+          <div aria-hidden="true" class="-mt-px">
+            <div class="border-t-2 pt-10 border-green-600">
+              <p class="text-sm font-semibold leading-6 text-green-600">Pla Avançat</p>
+              <p class="mt-1 text-sm leading-6 text-gray-600">Més opcions, pagaments avançats, suport telefònic, SEO bàsic.</p>
+            </div>
+          </div>
+          <div aria-hidden="true" class="-mt-px">
+            <div class="border-t-2 pt-10 border-transparent">
+              <p class="text-sm font-semibold leading-6 text-gray-900">Pla Elit</p>
+              <p class="mt-1 text-sm leading-6 text-gray-600">Personalització màxima, integracions totals, estratègies màrqueting avançades.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="-mt-6 space-y-16">
+          <div>
+            <h3 class="text-sm font-semibold leading-6 text-gray-900">Fundamentals de la Botiga en Línia</h3>
+            <div class="relative -mx-8 mt-10">
+              <!-- Fake card backgrounds -->
+              <div class="absolute inset-x-8 inset-y-0 grid grid-cols-4 gap-x-8 before:block" aria-hidden="true">
+                <div class="h-full w-full rounded-lg bg-white shadow-sm"></div>
+                <div class="h-full w-full rounded-lg bg-white shadow-sm"></div>
+                <div class="h-full w-full rounded-lg bg-white shadow-sm"></div>
+              </div>
+
+              <table class="relative w-full border-separate border-spacing-x-8">
+                <thead>
+                  <tr class="text-left">
+                    <th scope="col">
+                      <span class="sr-only">Feature</span>
+                    </th>
+                    <th scope="col">
+                      <span class="sr-only">Starter tier</span>
+                    </th>
+                    <th scope="col">
+                      <span class="sr-only">Scale tier</span>
+                    </th>
+                    <th scope="col">
+                      <span class="sr-only">Growth tier</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row" class="w-1/4 py-3 pr-4 text-left text-sm font-normal leading-6 text-gray-900">
+                      Disseny Responsive
+                      <div class="absolute inset-x-8 mt-3 h-px bg-gray-200"></div>
+                    </th>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <span class="relative h-full w-full py-3">
+                        <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">Yes</span>
+                      </span>
+                    </td>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <span class="relative h-full w-full py-3">
+                        <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">Yes</span>
+                      </span>
+                    </td>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <span class="relative h-full w-full py-3">
+                        <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">Yes</span>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="w-1/4 py-3 pr-4 text-left text-sm font-normal leading-6 text-gray-900">
+                      Integració de Xarxes Socials
+                      <div class="absolute inset-x-8 mt-3 h-px bg-gray-200"></div>
+                    </th>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <svg class="mx-auto h-5 w-5 text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"></path>
+                      </svg>
+                      <span class="sr-only">No</span>
+                      </span>
+                    </td>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <span class="relative h-full w-full py-3">
+                        <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">Yes</span>
+                      </span>
+                    </td>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <span class="relative h-full w-full py-3">
+                        <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">Yes</span>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="w-1/4 py-3 pr-4 text-left text-sm font-normal leading-6 text-gray-900">
+                      Gestió Multidioma
+                      <div class="absolute inset-x-8 mt-3 h-px bg-gray-200"></div>
+                    </th>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <svg class="mx-auto h-5 w-5 text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"></path>
+                      </svg>
+                      <span class="sr-only">No</span>
+                    </td>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <svg class="mx-auto h-5 w-5 text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"></path>
+                      </svg>
+                      <span class="sr-only">No</span>
+                    </td>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <span class="relative h-full w-full py-3">
+                        <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">Yes</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="w-1/4 py-3 pr-4 text-left text-sm font-normal leading-6 text-gray-900">
+                      Sistema d'Anàlisi i Informes
+                      <div class="absolute inset-x-8 mt-3 h-px bg-gray-200"></div>
+                    </th>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <svg class="mx-auto h-5 w-5 text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"></path>
+                      </svg>
+                      <span class="sr-only">No</span>
+                    </td>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                      </svg>
+                      <span class="sr-only">Yes</span>
+                    </td>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                      </svg>
+                      <span class="sr-only">Yes</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="w-1/4 py-3 pr-4 text-left text-sm font-normal leading-6 text-gray-900">
+                      Suport a la Configuració de SEO
+                      <div class="absolute inset-x-8 mt-3 h-px bg-gray-200"></div>
+                    </th>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <svg class="mx-auto h-5 w-5 text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                      </svg>
+                      <span class="sr-only">No</span>
+                      </span>
+                    </td>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <span class="relative h-full w-full py-3">
+                        <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">Yes</span>
+                      </span>
+                    </td>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <span class="relative h-full w-full py-3">
+                        <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">Yes</span>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="w-1/4 py-3 pr-4 text-left text-sm font-normal leading-6 text-gray-900">
+                      Certificat SSL
+                      <div class="absolute inset-x-8 mt-3 h-px bg-gray-200"></div>
+                    </th>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <span class="relative h-full w-full py-3">
+                        <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">Yes</span>
+                      </span>
+                    </td>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <span class="relative h-full w-full py-3">
+                        <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">Yes</span>
+                      </span>
+                    </td>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <span class="relative h-full w-full py-3">
+                        <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">Yes</span>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="w-1/4 py-3 pr-4 text-left text-sm font-normal leading-6 text-gray-900">Optimització per a Mòbils</th>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <span class="relative h-full w-full py-3">
+                        <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">Yes</span>
+                      </span>
+                    </td>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <span class="relative h-full w-full py-3">
+                        <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">Yes</span>
+                      </span>
+                    </td>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <span class="relative h-full w-full py-3">
+                        <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">Yes</span>
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <!-- Fake card borders -->
+              <div class="pointer-events-none absolute inset-x-8 inset-y-0 grid grid-cols-4 gap-x-8 before:block" aria-hidden="true">
+                <div class="rounded-lg ring-2 ring-black"></div>
+                <div class="rounded-lg ring-2 ring-green-600"></div>
+                <div class="rounded-lg ring-2 ring-black"></div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold leading-6 text-gray-900">Eines Avançades per a Negocis en Expansió</h3>
+            <div class="relative -mx-8 mt-10">
+              <!-- Fake card backgrounds -->
+              <div class="absolute inset-x-8 inset-y-0 grid grid-cols-4 gap-x-8 before:block" aria-hidden="true">
+                <div class="h-full w-full rounded-lg bg-white shadow-sm"></div>
+                <div class="h-full w-full rounded-lg bg-white shadow-sm"></div>
+                <div class="h-full w-full rounded-lg bg-white shadow-sm"></div>
+              </div>
+
+              <table class="relative w-full border-separate border-spacing-x-8">
+                <thead>
+                  <tr class="text-left">
+                    <th scope="col">
+                      <span class="sr-only">Feature</span>
+                    </th>
+                    <th scope="col">
+                      <span class="sr-only">Starter tier</span>
+                    </th>
+                    <th scope="col">
+                      <span class="sr-only">Scale tier</span>
+                    </th>
+                    <th scope="col">
+                      <span class="sr-only">Growth tier</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row" class="w-1/4 py-3 pr-4 text-left text-sm font-normal leading-6 text-gray-900">
+                      Suport Prioritari 24/7
+                      <div class="absolute inset-x-8 mt-3 h-px bg-gray-200"></div>
+                    </th>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <span class="relative h-full w-full py-3">
+                        <svg class="mx-auto h-5 w-5 text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                        </svg>
+                        <span class="sr-only">No</span>
+                      </span>
+                    </td>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <span class="relative h-full w-full py-3">
+                        <svg class="mx-auto h-5 w-5 text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                        </svg>
+                        <span class="sr-only">No</span>
+                      </span>
+                    </td>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <span class="relative h-full w-full py-3">
+                        <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">Yes</span>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="w-1/4 py-3 pr-4 text-left text-sm font-normal leading-6 text-gray-900">
+                      Backup Automàtic
+                      <div class="absolute inset-x-8 mt-3 h-px bg-gray-200"></div>
+                    </th>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <span class="relative h-full w-full py-3">
+                        <svg class="mx-auto h-5 w-5 text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                        </svg>
+                        <span class="sr-only">No</span>
+                      </span>
+                    </td>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <span class="relative h-full w-full py-3">
+                        <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">Yes</span>
+                      </span>
+                    </td>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <span class="relative h-full w-full py-3">
+                        <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">Yes</span>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="w-1/4 py-3 pr-4 text-left text-sm font-normal leading-6 text-gray-900">
+                      Integració Avançada de Pagament
+                      <div class="absolute inset-x-8 mt-3 h-px bg-gray-200"></div>
+                    </th>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <span class="relative h-full w-full py-3">
+                        <svg class="mx-auto h-5 w-5 text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                        </svg>
+                        <span class="sr-only">No</span>
+                      </span>
+                    </td>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <span class="relative h-full w-full py-3">
+                        <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">Yes</span>
+                      </span>
+                    </td>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <span class="relative h-full w-full py-3">
+                        <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">Yes</span>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="w-1/4 py-3 pr-4 text-left text-sm font-normal leading-6 text-gray-900">
+                      Funcions de Màrqueting Avançat
+                      <div class="absolute inset-x-8 mt-3 h-px bg-gray-200"></div>
+                    </th>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <span class="relative h-full w-full py-3">
+                        <svg class="mx-auto h-5 w-5 text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                        </svg>
+                        <span class="sr-only">No</span>
+                      </span>
+                    </td>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <span class="relative h-full w-full py-3">
+                        <svg class="mx-auto h-5 w-5 text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                        </svg>
+                        <span class="sr-only">No</span>
+                      </span>
+                    </td>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <span class="relative h-full w-full py-3">
+                        <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">Yes</span>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="w-1/4 py-3 pr-4 text-left text-sm font-normal leading-6 text-gray-900">
+                      Personalització Avançada del Disseny
+                      <div class="absolute inset-x-8 mt-3 h-px bg-gray-200"></div>
+                    </th>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <span class="relative h-full w-full py-3">
+                        <svg class="mx-auto h-5 w-5 text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                        </svg>
+                        <span class="sr-only">No</span>
+                      </span>
+                    </td>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <span class="relative h-full w-full py-3">
+                        <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">Yes</span>
+                      </span>
+                    </td>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <span class="relative h-full w-full py-3">
+                        <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">Yes</span>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="w-1/4 py-3 pr-4 text-left text-sm font-normal leading-6 text-gray-900">
+                      Gestió Avançada de l'Inventari
+                      <div class="absolute inset-x-8 mt-3 h-px bg-gray-200"></div>
+                    </th>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <span class="relative h-full w-full py-3">
+                        <svg class="mx-auto h-5 w-5 text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                        </svg>
+                        <span class="sr-only">No</span>
+                      </span>
+                    </td>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <span class="relative h-full w-full py-3">
+                        <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">Yes</span>
+                      </span>
+                    </td>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <span class="relative h-full w-full py-3">
+                        <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">Yes</span>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="w-1/4 py-3 pr-4 text-left text-sm font-normal leading-6 text-gray-900">Suport per a Campanyes de Google Ads</th>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <span class="relative h-full w-full py-3">
+                        <svg class="mx-auto h-5 w-5 text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                        </svg>
+                        <span class="sr-only">No</span>
+                      </span>
+                    </td>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <span class="relative h-full w-full py-3">
+                        <svg class="mx-auto h-5 w-5 text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                        </svg>
+                        <span class="sr-only">No</span>
+                      </span>
+                    </td>
+                    <td class="relative w-1/4 px-4 py-0 text-center">
+                      <span class="relative h-full w-full py-3">
+                        <svg class="mx-auto h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">Yes</span>
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <!-- Fake card borders -->
+              <div class="pointer-events-none absolute inset-x-8 inset-y-0 grid grid-cols-4 gap-x-8 before:block" aria-hidden="true">
+                <div class="rounded-lg ring-2 ring-black"></div>
+                <div class="rounded-lg ring-2 ring-green-600"></div>
+                <div class="rounded-lg ring-2 ring-black"></div>
+              </div>
+            </div>
+          </div>                 
+        </div>       
+      </section>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<!-- FAQS SECTION -->
+
+<div class="bg-white">
+  <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
+    <div class="mx-auto max-w-4xl divide-y divide-gray-900/10">
+      <h2 class="text-2xl font-bold leading-10 tracking-tight text-black">Preguntes freqüents</h2>
+      <dl class="mt-10 space-y-6 divide-y divide-gray-900/10">
+        <div class="pt-6">
+          <dt>
+            <!-- Expand/collapse question button -->
+            <button type="button" class="flex w-full items-start justify-between text-left text-black" aria-controls="faq-0" aria-expanded="false">
+              <span class="text-base font-semibold leading-7">Puc canviar de pla en qualsevol moment?</span>
+              <span class="ml-6 flex h-7 items-center">
+                <!--
+                  Icon when question is collapsed.
+
+                  Item expanded: "hidden", Item collapsed: ""
+                -->
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
+                </svg>
+                <!--
+                  Icon when question is expanded.
+
+                  Item expanded: "", Item collapsed: "hidden"
+                -->
+                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
+                </svg>
+              </span>
+            </button>
+          </dt>
+          <dd class="mt-2 pr-12" id="faq-0">
+            <p class="text-base leading-7 text-gray-600">Sí, pots canviar de pla en qualsevol moment. Si necessites més funcionalitats o menys, adaptem el teu servei per ajustar-se al creixement del teu negoci.</p>
+          </dd>
+        </div>
+
+        <!-- More questions... -->
+
+        <div class="pt-6">
+          <dt>
+            <!-- Expand/collapse question button -->
+            <button type="button" class="flex w-full items-start justify-between text-left text-black" aria-controls="faq-1" aria-expanded="false">
+              <span class="text-base font-semibold leading-7">Com funciona el suport tècnic?</span>
+              <span class="ml-6 flex h-7 items-center">
+                <!--
+                  Icon when question is collapsed.
+
+                  Item expanded: "hidden", Item collapsed: ""
+                -->
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
+                </svg>
+                <!--
+                  Icon when question is expanded.
+
+                  Item expanded: "", Item collapsed: "hidden"
+                -->
+                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
+                </svg>
+              </span>
+            </button>
+          </dt>
+          <dd class="mt-2 pr-12" id="faq-1">
+            <p class="text-base leading-7 text-gray-600">Oferim suport tècnic via correu electrònic per al Pla Bàsic, suport telefònic per al Pla Avançat, i suport prioritari 24/7 per al Pla Elite. El nostre equip està sempre a punt per ajudar-te.</p>
+          </dd>
+        </div>
+
+
+        <div class="pt-6">
+          <dt>
+            <!-- Expand/collapse question button -->
+            <button type="button" class="flex w-full items-start justify-between text-left text-black" aria-controls="faq-2" aria-expanded="false">
+              <span class="text-base font-semibold leading-7">Quines opcions de pagament s'ofereixen?</span>
+              <span class="ml-6 flex h-7 items-center">
+                <!--
+                  Icon when question is collapsed.
+
+                  Item expanded: "hidden", Item collapsed: ""
+                -->
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
+                </svg>
+                <!--
+                  Icon when question is expanded.
+
+                  Item expanded: "", Item collapsed: "hidden"
+                -->
+                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
+                </svg>
+              </span>
+            </button>
+          </dt>
+          <dd class="mt-2 pr-12" id="faq-2">
+            <p class="text-base leading-7 text-gray-600">Els plans inclouen des de integracions bàsiques fins a avançades de mètodes de pagament, segons el pla escollit. Això inclou les principals targetes de crèdit, PayPal i altres sistemes.</p>
+          </dd>
+        </div>
+
+
+        <div class="pt-6">
+          <dt>
+            <!-- Expand/collapse question button -->
+            <button type="button" class="flex w-full items-start justify-between text-left text-black" aria-controls="faq-3" aria-expanded="false">
+              <span class="text-base font-semibold leading-7">Com es gestiona la seguretat de la botiga en línia?</span>
+              <span class="ml-6 flex h-7 items-center">
+                <!--
+                  Icon when question is collapsed.
+
+                  Item expanded: "hidden", Item collapsed: ""
+                -->
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
+                </svg>
+                <!--
+                  Icon when question is expanded.
+
+                  Item expanded: "", Item collapsed: "hidden"
+                -->
+                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
+                </svg>
+              </span>
+            </button>
+          </dt>
+          <dd class="mt-2 pr-12" id="faq-3">
+            <p class="text-base leading-7 text-gray-600">Totes les botigues en línia inclouen certificats SSL per garantir la seguretat. A més, oferim funcions avançades de seguretat i backup automàtic en els plans superiors.</p>
+          </dd>
+        </div>
+
+
+        <div class="pt-6">
+          <dt>
+            <!-- Expand/collapse question button -->
+            <button type="button" class="flex w-full items-start justify-between text-left text-black" aria-controls="faq-4" aria-expanded="false">
+              <span class="text-base font-semibold leading-7">Hi ha límits en el nombre de productes o vendes?</span>
+              <span class="ml-6 flex h-7 items-center">
+                <!--
+                  Icon when question is collapsed.
+
+                  Item expanded: "hidden", Item collapsed: ""
+                -->
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
+                </svg>
+                <!--
+                  Icon when question is expanded.
+
+                  Item expanded: "", Item collapsed: "hidden"
+                -->
+                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
+                </svg>
+              </span>
+            </button>
+          </dt>
+          <dd class="mt-2 pr-12" id="faq-4">
+            <p class="text-base leading-7 text-gray-600">Els nostres plans no tenen límits en el nombre de productes o vendes. Volem que el teu negoci cresqui sense restriccions.</p>
+          </dd>
+        </div>
+
+
+        <div class="pt-6">
+          <dt>
+            <!-- Expand/collapse question button -->
+            <button type="button" class="flex w-full items-start justify-between text-left text-black" aria-controls="faq-5" aria-expanded="false">
+              <span class="text-base font-semibold leading-7">Com puc començar a crear la meva botiga en línia?</span>
+              <span class="ml-6 flex h-7 items-center">
+                <!--
+                  Icon when question is collapsed.
+
+                  Item expanded: "hidden", Item collapsed: ""
+                -->
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
+                </svg>
+                <!--
+                  Icon when question is expanded.
+
+                  Item expanded: "", Item collapsed: "hidden"
+                -->
+                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
+                </svg>
+              </span>
+            </button>
+          </dt>
+          <dd class="mt-2 pr-12" id="faq-5">
+            <p class="text-base leading-7 text-gray-600">Per començar, selecciona el pla que més s'ajusta a les teves necessitats i contacta'ns. T'ajudarem a posar en marxa la teva botiga en línia de manera ràpida i eficient.</p>
+          </dd>
+        </div>
+
+
+        <div class="pt-6">
+          <dt>
+            <!-- Expand/collapse question button -->
+            <button type="button" class="flex w-full items-start justify-between text-left text-black" aria-controls="faq-6" aria-expanded="false">
+              <span class="text-base font-semibold leading-7">Puc afegir funcions addicionals als plans estàndard?</span>
+              <span class="ml-6 flex h-7 items-center">
+                <!--
+                  Icon when question is collapsed.
+
+                  Item expanded: "hidden", Item collapsed: ""
+                -->
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
+                </svg>
+                <!--
+                  Icon when question is expanded.
+
+                  Item expanded: "", Item collapsed: "hidden"
+                -->
+                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
+                </svg>
+              </span>
+            </button>
+          </dt>
+          <dd class="mt-2 pr-12" id="faq-6">
+            <p class="text-base leading-7 text-gray-600">Sí, oferim l'opció d'afegir funcions addicionals als nostres plans estàndard per una tarifa extra. Això et permet personalitzar encara més la teva botiga en línia.</p>
+          </dd>
+        </div>
+
+
+        <div class="pt-6">
+          <dt>
+            <!-- Expand/collapse question button -->
+            <button type="button" class="flex w-full items-start justify-between text-left text-black" aria-controls="faq-7" aria-expanded="false">
+              <span class="text-base font-semibold leading-7">Quin temps de configuració necessito per la meva botiga en línia?</span>
+              <span class="ml-6 flex h-7 items-center">
+                <!--
+                  Icon when question is collapsed.
+
+                  Item expanded: "hidden", Item collapsed: ""
+                -->
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
+                </svg>
+                <!--
+                  Icon when question is expanded.
+
+                  Item expanded: "", Item collapsed: "hidden"
+                -->
+                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
+                </svg>
+              </span>
+            </button>
+          </dt>
+          <dd class="mt-2 pr-12" id="faq-7">
+            <p class="text-base leading-7 text-gray-600">El temps de configuració varia segons el pla i les personalitzacions requerides. El Pla Bàsic pot estar en marxa en pocs dies, mentre que els plans més personalitzats poden requerir unes setmanes.</p>
+          </dd>
+        </div>
+
+
+        <div class="pt-6">
+          <dt>
+            <!-- Expand/collapse question button -->
+            <button type="button" class="flex w-full items-start justify-between text-left text-black" aria-controls="faq-8" aria-expanded="false">
+              <span class="text-base font-semibold leading-7">Els plans inclouen hosting i nom de domini?</span>
+              <span class="ml-6 flex h-7 items-center">
+                <!--
+                  Icon when question is collapsed.
+
+                  Item expanded: "hidden", Item collapsed: ""
+                -->
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
+                </svg>
+                <!--
+                  Icon when question is expanded.
+
+                  Item expanded: "", Item collapsed: "hidden"
+                -->
+                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
+                </svg>
+              </span>
+            </button>
+          </dt>
+          <dd class="mt-2 pr-12" id="faq-8">
+            <p class="text-base leading-7 text-gray-600">Sí, tots els nostres plans inclouen hosting fiable i la possibilitat d'utilitzar o registrar un nou nom de domini per a la teva botiga en línia.</p>
+          </dd>
+        </div>
+
+        <div class="pt-6">
+          <dt>
+            <!-- Expand/collapse question button -->
+            <button type="button" class="flex w-full items-start justify-between text-left text-black" aria-controls="faq-9" aria-expanded="false">
+              <span class="text-base font-semibold leading-7">Hi ha algun compromís de permanència?</span>
+              <span class="ml-6 flex h-7 items-center">
+                <!--
+                  Icon when question is collapsed.
+
+                  Item expanded: "hidden", Item collapsed: ""
+                -->
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
+                </svg>
+                <!--
+                  Icon when question is expanded.
+
+                  Item expanded: "", Item collapsed: "hidden"
+                -->
+                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
+                </svg>
+              </span>
+            </button>
+          </dt>
+          <dd class="mt-2 pr-12" id="faq-9">
+            <p class="text-base leading-7 text-gray-600">No exigim compromisos de permanència a llarg termini. Pots cancel·lar el teu pla en qualsevol moment sense penalitzacions.</p>
+          </dd>
+        </div>
+
+      </dl>
+    </div>
+  </div>
+</div>
+
 <!--  FOOTER -->
+
 <footer class="bg-white">
     <div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
 
@@ -331,34 +1706,6 @@
         </p>
     </div>
 </footer>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const radioButtons = document.querySelectorAll('fieldset input[type="radio"]');
-
-    // Función para actualizar estilos
-    function updateStyles() {
-        radioButtons.forEach(rb => {
-            if(rb.checked) {
-                rb.parentElement.classList.add('bg-green-600', 'text-white');
-                rb.parentElement.classList.remove('text-black');
-            } else {
-                rb.parentElement.classList.remove('bg-green-600', 'text-white');
-                rb.parentElement.classList.add('text-black');
-            }
-        });
-    }
-
-    // Añade un event listener a cada botón radio
-    radioButtons.forEach(radio => {
-        radio.addEventListener('change', updateStyles);
-    });
-
-    // Actualiza estilos al cargar la página
-    updateStyles();
-});
-
-
-</script>
 
 </body>
 </html>
