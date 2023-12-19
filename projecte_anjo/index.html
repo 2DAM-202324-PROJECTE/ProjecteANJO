@@ -55,14 +55,14 @@
                  x-id="['dropdown-button']"
                  x-on:keydown.escape.prevent.stop="close($refs.button)">
                 <!-- Button -->
-                <button class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-lime-700"
+                <button class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-green-700"
                         type="button"
                         x-on:click="toggle(); rotateIcon = !rotateIcon"
                         x-ref="button">
                     Serveis
                     <div :class="{ 'rotate-90': rotateIcon }" class="inline-block transition-transform transform">
                         <!-- Heroicon: chevron-down -->
-                        <svg aria-hidden="true" class="h-5 w-5 flex-none text-lime-700" fill="currentColor"
+                        <svg aria-hidden="true" class="h-5 w-5 flex-none text-green-700" fill="currentColor"
                              viewBox="0 0 20 20">
                             <path clip-rule="evenodd"
                                   d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
@@ -89,17 +89,17 @@
                 </div>
             </div>
 
-            <a class="text-sm font-semibold leading-6 text-lime-700" href="Views/preus.html">Preus</a>
-            <a class="text-sm font-semibold leading-6 text-lime-700" href="">Equip</a>
-            <a class="text-sm font-semibold leading-6 text-lime-700" href="">Sobre</a>
-            <a class="text-sm font-semibold leading-6 text-lime-700" href="">Contacte</a>
+            <a class="text-sm font-semibold leading-6 text-green-700" href="Views/preus.html">Preus</a>
+            <a class="text-sm font-semibold leading-6 text-green-700" href="">Equip</a>
+            <a class="text-sm font-semibold leading-6 text-green-700" href="">Sobre</a>
+            <a class="text-sm font-semibold leading-6 text-green-700" href="">Contacte</a>
 
         </div>
         <div class="flex flex-1 items-center justify-end gap-x-6">
-            <a class="hidden lg:block lg:text-sm lg:font-semibold lg:leading-6 lg:text-lime-700"
+            <a class="hidden lg:block lg:text-sm lg:font-semibold lg:leading-6 lg:text-green-700"
                href="#">Iniciar Sessió</a>
 
-            <a class="hidden lg:block rounded-md bg-lime-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-lime-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-700"
+            <a class="hidden lg:block rounded-md bg-green-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-700"
                href="#">
                 Registre
             </a>
@@ -151,26 +151,19 @@
                             <!-- 'Product' sub-menu, show/hide based on menu state. -->
                             <div class="mt-2 space-y-2" id="disclosure-1">
                                 <a class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                   href="Shop/nike.html">Nike</a>
-                                <a class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                   href="Shop/nike.html">Adidas</a>
-                                <a class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                   href="Shop/nike.html">Puma</a>
-                                <a class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                   href="Shop/nike.html">Converse</a>
-                                <a class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                   href="Shop/nike.html">Reebok</a>
+                                   href="">Nike</a>
+
                             </div>
                         </div>
                         <a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                           href="Plan/plan.html">Planes</a>
+                           href="">Planes</a>
                         <a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                           href="Contacto/contacto.html">Contacto</a>
+                           href="">Contacto</a>
 
                     </div>
                     <div class="py-6">
                         <a class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                           href="Login/login.html">Log
+                           href="">Log
                             in</a>
                     </div>
                 </div>
@@ -179,7 +172,7 @@
     </div>
 </header>
 <!-- Añade un margen superior al cuerpo para evitar que el contenido se solape con el encabezado -->
-<div class="mt-20 ">
+<div class="mt-20">
     <!-- HERO -->
     <div class="relative isolate overflow-hidden bg-white">
         <div class="absolute inset-0 bg-gradient-to-b from-green-500 to-transparent pointer-events-none"></div>
@@ -196,7 +189,7 @@
                     <p class="mt-6 text-lg leading-8 text-gray-600">Podem crear la pàgina web que sempre has dessitjat
                         per a la teva empresa amb molta rapidesa i per poc preu.<br>Confía amb nosaltres!</p>
                     <div class="mt-10 flex items-center gap-x-6">
-                        <a class="rounded-md bg-lime-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                        <a class="rounded-md bg-lime-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                            href="#">Comença</a>
                     </div>
                 </div>
@@ -279,8 +272,8 @@
 <!-- FAQ -->
     <div class="relative">
         <!-- Fondo verde difuminado arriba -->
-        <div class="bg-gradient-to-t from-green-300 to-transparent h-1/2 absolute top-0 left-0 right-0 z-0"></div>
-        <div class="bg-gradient-to-b from-green-300 to-transparent h-1/2 absolute bottom-0 left-0 right-0 z-0"></div>
+        <div class="bg-gradient-to-t from-green-100 to-transparent h-1/2 absolute top-0 left-0 right-0 z-0"></div>
+        <div class="bg-gradient-to-b from-green-100 to-transparent h-1/2 absolute bottom-0 left-0 right-0 z-0"></div>
 
         <!-- FAQ -->
         <div class="bg-white" x-data="{ openTab: 0 }">
@@ -321,7 +314,7 @@
                                     <p class="text-base leading-7 text-gray-600">
                                         <!-- L'enllaç de la primera resposta -->
                                         <template x-if="index === 0">
-                                            <span x-html="item.resposta + ' <a class=\'text-blue-500 underline\' href=\'Views/preus.html\' target=\'_blank\'>aquí</a>'"></span>
+                                            <span x-html="item.resposta + ' <a class=\'text-green-600 underline hover:text-green-900\' href=\'Views/preus.html\' target=\'_blank\'>aquí</a>'"></span>
                                         </template>
                                         <!-- Les pregüntes restants, agafa l'array -->
                                         <template x-if="index !== 0">
@@ -397,10 +390,10 @@
             <p class="text-sm leading-6 text-gray-900">Aquest lloc web utilitza galetes per complementar una dieta
                 equilibrada i proporcionar una recompensa molt merescuda als sentits després de consumir àpats suaus
                 però nutritius. Acceptar les nostres galetes és opcional però recomanable, ja que són delicioses. Veure
-                la nostra <a class="font-semibold text-indigo-600" href="#">política de galletes</a>.</p>
+                la nostra <a class="font-semibold text-green-600 underline hover:text-green-900" href="Views/cookies.html">política de galletes</a>.</p>
             <div class="mt-4 flex items-center gap-x-5">
                 <button @click="showCookiesBanner = false"
-                        class="rounded-md bg-gray-900 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+                        class="rounded-md bg-green-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
                         type="button">
                     Accepta-ho
                 </button>
