@@ -261,21 +261,63 @@
             </div>
         </div>
     </div>
+<br>
+    <div class="flex items-center mt-20">
+<!--        &lt;!&ndash; Texto a la derecha del carrousel &ndash;&gt;-->
+<!--        <div class="ml-4">-->
+<!--            <p>Texto a la derecha del carrusel.</p>-->
+<!--        </div>-->
+        <!-- Carrousel de fotos -->
+        <div x-data="carousel()" x-init="init" class="relative overflow-hidden max-w-4xl mx-auto">
+            <div x-ref="container" class="flex transition-transform duration-500 ease-in-out">
+                <!-- Agrega tus imágenes aquí -->
+                <img src="Img/empatica.png" class="w-full h-auto">
+                <img src="Img/paginaexemple.png" class="w-full h-auto">
+                <img src="Img/iesebre.png" class="w-full h-auto">
+            </div>
+        </div>
 
 
+    </div>
+
+    <script>
+        function carousel() {
+            return {
+                init() {
+                    this.container = this.$refs.container;
+                    this.slides = this.container.children;
+                    this.totalSlides = this.slides.length;
+                    this.currentSlide = 0;
+                    this.slideWidth = this.slides[0].offsetWidth;
+
+                    this.startInterval();
+                },
+                startInterval() {
+                    setInterval(() => {
+                        this.slideRight();
+                    }, 5000);
+                },
+                slideRight() {
+                    // Calcula la próxima diapositiva
+                    const nextSlide = (this.currentSlide + 1) % this.totalSlides;
+
+                    // Mueve a la siguiente diapositiva
+                    this.container.style.transform = `translateX(-${nextSlide * this.slideWidth}px)`;
+
+                    // Actualiza el índice actual
+                    this.currentSlide = nextSlide;
+                },
+            };
+        }
+    </script>
 
 
-
-
-    <!--        <div class="bg-gradient-to-t from-green-300 to-transparent  h-1/2 absolute top-0 left-0 right-0"></div>-->
-
-<!-- FAQ -->
-    <div class="relative">
+    <!-- FAQ -->
+    <div class="relative mt-20">
         <!-- Fondo verde difuminado arriba -->
         <div class="bg-gradient-to-t from-green-100 to-transparent h-1/2 absolute top-0 left-0 right-0 z-0"></div>
         <div class="bg-gradient-to-b from-green-100 to-transparent h-1/2 absolute bottom-0 left-0 right-0 z-0"></div>
 
-        <!-- FAQ -->
         <div class="bg-white" x-data="{ openTab: 0 }">
             <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40 relative">
                 <div class="mx-auto max-w-4xl relative">
