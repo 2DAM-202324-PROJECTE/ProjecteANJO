@@ -2,6 +2,7 @@ import Alpine from 'alpinejs'
 
 window.Alpine = Alpine
 
+<<<<<<< HEAD
 Alpine.start()
 
 //// FUNCIONS PÀGINA PREUS ////
@@ -104,3 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   
+=======
+Alpine.start()
+>>>>>>> main

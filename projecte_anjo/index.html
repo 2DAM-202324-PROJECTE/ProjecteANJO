@@ -1,103 +1,410 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html class="h-full" lang="en" xmlns:x-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <link href="Img/logoSimple.png" rel="icon" type="image/svg+xml"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <link href="style.css" rel="stylesheet">
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
+    <title>Web Crafters</title>
+</head>
 
+<body class="h-full">
 
-<!--  HERO SECTION-->
+<!-- SCRIPTS -->
+<script src="main.js" type="module"></script>
 
-    <div class="bg-white">
-      <header class="absolute inset-x-0 top-0 z-50">
-        <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
-          <div class="flex lg:flex-1">
-            <a href="#" class="-m-1.5 p-1.5">
-              <span class="sr-only">Your Company</span>
-              <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
+<!-- HEADER -->
+<header class="bg-white shadow-lg fixed w-full top-0 z-50 " x-data="{menuOpen: false}">
+    <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-3 lg:px-8">
+        <div class="flex lg:flex-1">
+            <a class="-m-1.5 p-1.5" href="index.html">
+                <span class="sr-only">Web Crafters</span>
+                <img alt="" class="h-24 w-auto" height="82" src="Img/logo.png" width="284">
             </a>
-          </div>
-          <div class="flex lg:hidden">
-            <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
-              <span class="sr-only">Open main menu</span>
-              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-              </svg>
-            </button>
-          </div>
-          <div class="hidden lg:flex lg:gap-x-12">
-            <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Product</a>
-            <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Features</a>
-            <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Marketplace</a>
-            <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Company</a>
-          </div>
-          <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
-          </div>
-        </nav>
-        <!-- Mobile menu, show/hide based on menu open state. -->
-        <div class="lg:hidden" role="dialog" aria-modal="true">
-          <!-- Background backdrop, show/hide based on slide-over state. -->
-          <div class="fixed inset-0 z-50"></div>
-          <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-            <div class="flex items-center justify-between">
-              <a href="#" class="-m-1.5 p-1.5">
-                <span class="sr-only">Your Company</span>
-                <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
-              </a>
-              <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
-                <span class="sr-only">Close menu</span>
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </div>
+        <div class="flex lg:hidden">
+            <button @click="menuOpen = true"
+                    class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+                    type="button">
+                <span class="sr-only">Open main menu</span>
+                <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5"
+                     viewBox="0 0 24 24">
+                    <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round"
+                          stroke-linejoin="round"/>
                 </svg>
-              </button>
+            </button>
+        </div>
+        <div class="hidden lg:flex lg:gap-x-12">
+            <!-- Desplegable -->
+            <div class="relative"
+                 x-data="{
+                            open: false,
+                            rotateIcon: true,
+                            toggle() {
+                                this.open = !this.open;
+                                if (!this.open) {
+                                    this.rotateIcon = true;
+                                }
+                            },
+                            close(focusAfter) {
+                                this.open = false;
+                                this.rotateIcon = true;
+                                focusAfter && focusAfter.focus();
+                            }
+                        }"
+                 x-id="['dropdown-button']"
+                 x-on:keydown.escape.prevent.stop="close($refs.button)">
+                <!-- Button -->
+                <button class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-green-700"
+                        type="button"
+                        x-on:click="toggle(); rotateIcon = !rotateIcon"
+                        x-ref="button">
+                    Serveis
+                    <div :class="{ 'rotate-90': rotateIcon }" class="inline-block transition-transform transform">
+                        <!-- Heroicon: chevron-down -->
+                        <svg aria-hidden="true" class="h-5 w-5 flex-none text-green-700" fill="currentColor"
+                             viewBox="0 0 20 20">
+                            <path clip-rule="evenodd"
+                                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                </button>
+
+                <!-- Panel/Submenu -->
+                <div :id="$id('dropdown-button')"
+                     class="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5"
+                     style="display: none;"
+                     x-on:click.outside="close($refs.button)"
+                     x-ref="panel"
+                     x-show="open"
+                     x-transition.origin.top.left>
+                    <div>
+                        <a class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500"
+                           href="">
+                            Exemple
+                        </a>
+                    </div>
+                    <!-- ... Otros elementos del menú desplegable ... -->
+                </div>
+            </div>
+
+            <a class="text-sm font-semibold leading-6 text-green-700" href="Views/preus.html">Preus</a>
+            <a class="text-sm font-semibold leading-6 text-green-700" href="">Equip</a>
+            <a class="text-sm font-semibold leading-6 text-green-700" href="">Sobre</a>
+            <a class="text-sm font-semibold leading-6 text-green-700" href="">Contacte</a>
+
+        </div>
+        <div class="flex flex-1 items-center justify-end gap-x-6">
+            <a class="hidden lg:block lg:text-sm lg:font-semibold lg:leading-6 lg:text-green-700"
+               href="#">Iniciar Sessió</a>
+
+            <a class="hidden lg:block rounded-md bg-green-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-700"
+               href="#">
+                Registre
+            </a>
+
+        </div>
+    </nav>
+    <!-- Mobile menu, show/hide based on menu open state. -->
+    <div aria-modal="true" class="lg:hidden" role="dialog" x-show="menuOpen">
+        <!-- Background backdrop, show/hide based on slide-over state. -->
+        <div class="fixed inset-0 z-10"></div>
+        <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+            <div class="flex items-center justify-between">
+                <a class="-m-1.5 p-1.5" href="index.html">
+                    <span class="sr-only">UrbanKicks</span>
+                    <img alt="" class="h-8 w-auto"
+                         src="Img/logo.png">
+                </a>
+                <button @click="menuOpen = false" class="-m-2.5 rounded-md p-2.5 text-gray-700" type="button">
+                    <span class="sr-only">Close menu</span>
+                    <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5"
+                         viewBox="0 0 24 24">
+                        <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
             </div>
             <div class="mt-6 flow-root">
-              <div class="-my-6 divide-y divide-gray-500/10">
-                <div class="space-y-2 py-6">
-                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Product</a>
-                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Features</a>
-                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Marketplace</a>
-                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Company</a>
-                </div>
-                <div class="py-6">
-                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
+                <div class="-my-6 divide-y divide-gray-500/10">
+                    <div class="space-y-2 py-6">
+                        <div class="-mx-3">
+                            <button aria-controls="disclosure-1"
+                                    aria-expanded="false"
+                                    class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                    type="button">
+                                Tienda
+                                <!--
+                                  Expand/collapse icon, toggle classes based on menu open state.
 
-      <div class="relative isolate px-6 pt-14 lg:px-8">
-        <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
-          <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
-        </div>
-        <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-          <div class="hidden sm:mb-8 sm:flex sm:justify-center">
-            <div class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-              Announcing our next round of funding. <a href="#" class="font-semibold text-indigo-600"><span class="absolute inset-0" aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a>
+                                  Open: "rotate-180", Closed: ""
+                                -->
+                                <span class="h-5 w-5 flex-none" id="icon">
+                        <svg aria-hidden="true" class="h-5 w-5 transform rotate-0 transition-transform duration-300"
+                             fill="currentColor" viewBox="0 0 20 20">
+                            <path clip-rule="evenodd"
+                                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </span>
+                            </button>
+                            <!-- 'Product' sub-menu, show/hide based on menu state. -->
+                            <div class="mt-2 space-y-2" id="disclosure-1">
+                                <a class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                   href="">Nike</a>
+
+                            </div>
+                        </div>
+                        <a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                           href="">Planes</a>
+                        <a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                           href="">Contacto</a>
+
+                    </div>
+                    <div class="py-6">
+                        <a class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                           href="">Log
+                            in</a>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="text-center">
-            <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Data to enrich your online business</h1>
-            <p class="mt-6 text-lg leading-8 text-gray-600">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
-            <div class="mt-10 flex items-center justify-center gap-x-6">
-              <a href="#" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get started</a>
-              <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Learn more <span aria-hidden="true">→</span></a>
+        </div>
+    </div>
+</header>
+<!-- Añade un margen superior al cuerpo para evitar que el contenido se solape con el encabezado -->
+<div class="mt-20">
+    <!-- HERO -->
+    <div class="relative isolate overflow-hidden bg-white">
+        <div class="absolute inset-0 bg-gradient-to-b from-green-500 to-transparent pointer-events-none"></div>
+
+        <svg aria-hidden="true"
+             class="absolute inset-0 -z-10 h-full w-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]">
+        </svg>
+
+        <div class="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:px-8 lg:py-40 relative z-10 lg:pl-0">
+            <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-8 ">
+                <div class="mt-24 sm:mt-32 lg:mt-18">
+                    <h1 class="mt-10 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Nosaltres creem la web
+                        dels teus somnis </h1>
+                    <p class="mt-6 text-lg leading-8 text-gray-600">Podem crear la pàgina web que sempre has dessitjat
+                        per a la teva empresa amb molta rapidesa i per poc preu.<br>Confía amb nosaltres!</p>
+                    <div class="mt-10 flex items-center gap-x-6">
+                        <a class="rounded-md bg-lime-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                           href="#">Comença</a>
+                    </div>
+                </div>
             </div>
-          </div>
+            <!-- Imagen del héroe -->
+            <div class="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
+                <div class="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
+                    <div class="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4 relative z-10">
+                        <img alt="App screenshot" class="w-[76rem] rounded-md shadow-2xl ring-1 ring-gray-900/10"
+                             height="1442" src="Img/paginaexemple.png" width="2432">
+                    </div>
+                </div>
+            </div>
+            <!-- Máscara de difuminado en la parte inferior -->
+
         </div>
-        <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]" aria-hidden="true">
-          <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+    </div>
+    <!--  FEATURE-->
+    <div class="overflow-hidden bg-white py-24 sm:py-32 ">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8 lg:pl-0">
+            <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start">
+                <div class="lg:pr-4 lg:pt-4">
+                    <div class="lg:max-w-lg">
+                        <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Centenars d'empreses
+                            de tot el mon ja formen part de la nostra gran família </p>
+                        <div class="mt-8">
+                            <!--                        <a href="#" class="inline-flex rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">BOTO -> PRODUCTE</a>-->
+                        </div>
+                        <dl class="mt-16 grid max-w-xl grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 xl:mt-16">
+                            <div class="flex flex-col gap-y-3 border-l border-gray-900/10 pl-6">
+                                <dt class="text-sm leading-6 text-gray-600">Creators on the platform</dt>
+                                <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900">8,000+</dd>
+                            </div>
+                            <div class="flex flex-col gap-y-3 border-l border-gray-900/10 pl-6">
+                                <dt class="text-sm leading-6 text-gray-600">Flat platform fee</dt>
+                                <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900">3%</dd>
+                            </div>
+                            <div class="flex flex-col gap-y-3 border-l border-gray-900/10 pl-6">
+                                <dt class="text-sm leading-6 text-gray-600">Uptime guarantee</dt>
+                                <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900">99.9%</dd>
+                            </div>
+                            <div class="flex flex-col gap-y-3 border-l border-gray-900/10 pl-6">
+                                <dt class="text-sm leading-6 text-gray-600">Paid out to creators</dt>
+                                <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900">$70M</dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+                <img alt="Product screenshot"
+                     class="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:ml-0"
+                     height="1442"
+                     src="Img/mon.png" width="2432">
+            </div>
         </div>
-      </div>
+    </div>
+    <!-- CTA -->
+    <div class="bg-white relative overflow-hidden">
+<!--        &lt;!&ndash; Fondo verde difuminado &ndash;&gt;-->
+<!--        <div class="bg-gradient-to-t from-green-300 to-transparent  h-1/2 absolute top-0 left-0 right-0"></div>-->
+<!--        <div class="bg-gradient-to-b from-green-300  to-transparent h-1/2 absolute bottom-0 left-0 right-0"></div>-->
+
+        <!-- Contenido del CTA -->
+        <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:justify-between lg:px-8 lg:pl-0 relative z-10 ">
+            <!-- Texto y botón -->
+            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Preparat per a començar?<br>Consulta el nostre apartat de preus.</h2>
+            <div class="mt-10 flex gap-x-6 lg:mt-0 lg:flex-shrink-0 z-10">
+                <a class="rounded-md bg-green-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-800"
+                   href="Views/preus.html">Comença</a>
+            </div>
+        </div>
     </div>
 
-  </body>
+
+
+
+
+
+    <!--        <div class="bg-gradient-to-t from-green-300 to-transparent  h-1/2 absolute top-0 left-0 right-0"></div>-->
+
+<!-- FAQ -->
+    <div class="relative">
+        <!-- Fondo verde difuminado arriba -->
+        <div class="bg-gradient-to-t from-green-100 to-transparent h-1/2 absolute top-0 left-0 right-0 z-0"></div>
+        <div class="bg-gradient-to-b from-green-100 to-transparent h-1/2 absolute bottom-0 left-0 right-0 z-0"></div>
+
+        <!-- FAQ -->
+        <div class="bg-white" x-data="{ openTab: 0 }">
+            <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40 relative">
+                <div class="mx-auto max-w-4xl relative">
+                    <h2 class="text-2xl font-bold leading-10 tracking-tight text-gray-900">Preguntes freqüents</h2>
+                    <dl class="mt-10 space-y-6 divide-y divide-gray-900/10">
+                        <!-- En aquest array guardo preguntes i respostes... -->
+                        <template :key="index" x-for="(item, index) in [
+                        { pregunta: 'Quant costa el vostre servei?', resposta: 'El preu varia depenent del plà que agafis, pots consultar els preus ' },
+                        { pregunta: 'Podeu fer qualsevol tipus de web?', resposta: 'Si, podem fer qualsevol típus de web, a mida dels teus gustos!' },
+                        { pregunta: 'Quant de temps soleu tardar en fer-ne una?', resposta: 'El temps depén de quant contingut tingui la web i la dificultat.' }
+                    ]">
+                            <div class="pt-6">
+                                <dt>
+                                    <!-- Expand/collapse question button -->
+                                    <button :aria-controls="'faq-' + index"
+                                            :aria-expanded="openTab === index ? 'true' : 'false'"
+                                            @click="openTab = (openTab === index ? -1 : index)"
+                                            class="flex w-full items-start justify-between text-left text-gray-900"
+                                            type="button">
+                                        <span class="text-base font-semibold leading-7" x-text="item.pregunta"></span>
+                                        <span class="ml-6 flex h-7 items-center">
+                                        <!-- Icono cuando la pregunta está colapsada -->
+                                        <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor"
+                                             stroke-width="1.5" viewBox="0 0 24 24" x-show="openTab !== index">
+                                            <path d="M12 6v12m6-6H6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            <!-- Icono cuando la pregunta está expandida -->
+                                        <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor"
+                                             stroke-width="1.5" viewBox="0 0 24 24" x-show="openTab === index">
+                                            <path d="M18 12H6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </span>
+                                    </button>
+                                </dt>
+                                <dd :id="'faq-' + index" class="mt-2 pr-12" x-show="openTab === index">
+                                    <p class="text-base leading-7 text-gray-600">
+                                        <!-- L'enllaç de la primera resposta -->
+                                        <template x-if="index === 0">
+                                            <span x-html="item.resposta + ' <a class=\'text-green-600 underline hover:text-green-900\' href=\'Views/preus.html\' target=\'_blank\'>aquí</a>'"></span>
+                                        </template>
+                                        <!-- Les pregüntes restants, agafa l'array -->
+                                        <template x-if="index !== 0">
+                                            <span x-text="item.resposta"></span>
+                                        </template>
+                                    </p>
+                                </dd>
+                            </div>
+                        </template>
+                    </dl>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fondo verde difuminado abajo -->
+    </div>
+
+
+
+    <!--  FOOTER -->
+    <footer class="bg-white">
+        <div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
+
+            <div class="mt-10 flex justify-center space-x-10">
+                <a class="text-gray-400 hover:text-gray-500" href="https://facebook.com">
+                    <span class="sr-only">Facebook</span>
+                    <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path clip-rule="evenodd"
+                              d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                              fill-rule="evenodd"/>
+                    </svg>
+                </a>
+                <a class="text-gray-400 hover:text-gray-500" href="https://instagram.com">
+                    <span class="sr-only">Instagram</span>
+                    <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path clip-rule="evenodd"
+                              d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                              fill-rule="evenodd"/>
+                    </svg>
+                </a>
+                <a class="text-gray-400 hover:text-gray-500" href="https://twitter.com">
+                    <span class="sr-only">Twitter</span>
+                    <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M14.095479,10.316482L22.286354,1h-1.940718l-7.115352,8.087682L7.551414,1H1l8.589488,12.231093L1,23h1.940717  l7.509372-8.542861L16.448587,23H23L14.095479,10.316482z M11.436522,13.338465l-0.871624-1.218704l-6.924311-9.68815h2.981339  l5.58978,7.82155l0.867949,1.218704l7.26506,10.166271h-2.981339L11.436522,13.338465z"/>
+                    </svg>
+                </a>
+                <a class="text-gray-400 hover:text-gray-500"
+                   href="https://github.com/2DAM-202324-PROJECTE/ProjecteANJO">
+                    <span class="sr-only">GitHub</span>
+                    <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path clip-rule="evenodd"
+                              d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                              fill-rule="evenodd"/>
+                    </svg>
+                </a>
+                <a class="text-gray-400 hover:text-gray-500" href="https://youtube.com">
+                    <span class="sr-only">YouTube</span>
+                    <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path clip-rule="evenodd"
+                              d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z"
+                              fill-rule="evenodd"/>
+                    </svg>
+                </a>
+            </div>
+            <p class="mt-10 text-center text-xs leading-5 text-gray-500">&copy; 2024 Web Crafters, Inc. Tots els drets
+                reservats.</p>
+        </div>
+    </footer>
+    <!-- COOKIES -->
+    <div class="pointer-events-none fixed inset-x-0 bottom-0 px-6 pb-6" id="cookies-banner"
+         x-data="{ showCookiesBanner: true }" x-show="showCookiesBanner">
+        <div class="pointer-events-auto ml-auto max-w-xl rounded-xl bg-white p-6 shadow-lg ring-1 ring-gray-900/10">
+            <p class="text-sm leading-6 text-gray-900">Aquest lloc web utilitza galetes per complementar una dieta
+                equilibrada i proporcionar una recompensa molt merescuda als sentits després de consumir àpats suaus
+                però nutritius. Acceptar les nostres galetes és opcional però recomanable, ja que són delicioses. Veure
+                la nostra <a class="font-semibold text-green-600 underline hover:text-green-900" href="Views/cookies.html">política de galletes</a>.</p>
+            <div class="mt-4 flex items-center gap-x-5">
+                <button @click="showCookiesBanner = false"
+                        class="rounded-md bg-green-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+                        type="button">
+                    Accepta-ho
+                </button>
+                <button @click="showCookiesBanner = false" class="text-sm font-semibold leading-6 text-gray-900"
+                        type="button">
+                    Rebutja-ho
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
 </html>
