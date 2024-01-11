@@ -35,63 +35,63 @@
             </button>
         </div>
         <div class="hidden lg:flex lg:gap-x-12">
-            <!-- Desplegable -->
-            <div class="relative"
-                 x-data="{
-                            open: false,
-                            rotateIcon: true,
-                            toggle() {
-                                this.open = !this.open;
-                                if (!this.open) {
-                                    this.rotateIcon = true;
-                                }
-                            },
-                            close(focusAfter) {
-                                this.open = false;
-                                this.rotateIcon = true;
-                                focusAfter && focusAfter.focus();
-                            }
-                        }"
-                 x-id="['dropdown-button']"
-                 x-on:keydown.escape.prevent.stop="close($refs.button)">
-                <!-- Button -->
-                <button class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-green-700"
-                        type="button"
-                        x-on:click="toggle(); rotateIcon = !rotateIcon"
-                        x-ref="button">
-                    Serveis
-                    <div :class="{ 'rotate-90': rotateIcon }" class="inline-block transition-transform transform">
-                        <!-- Heroicon: chevron-down -->
-                        <svg aria-hidden="true" class="h-5 w-5 flex-none text-green-700" fill="currentColor"
-                             viewBox="0 0 20 20">
-                            <path clip-rule="evenodd"
-                                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                                  fill-rule="evenodd"/>
-                        </svg>
-                    </div>
-                </button>
+<!--            &lt;!&ndash; Desplegable &ndash;&gt;-->
+<!--            <div class="relative"-->
+<!--                 x-data="{-->
+<!--                            open: false,-->
+<!--                            rotateIcon: true,-->
+<!--                            toggle() {-->
+<!--                                this.open = !this.open;-->
+<!--                                if (!this.open) {-->
+<!--                                    this.rotateIcon = true;-->
+<!--                                }-->
+<!--                            },-->
+<!--                            close(focusAfter) {-->
+<!--                                this.open = false;-->
+<!--                                this.rotateIcon = true;-->
+<!--                                focusAfter && focusAfter.focus();-->
+<!--                            }-->
+<!--                        }"-->
+<!--                 x-id="['dropdown-button']"-->
+<!--                 x-on:keydown.escape.prevent.stop="close($refs.button)">-->
+<!--                &lt;!&ndash; Button &ndash;&gt;-->
+<!--                <button class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-green-700"-->
+<!--                        type="button"-->
+<!--                        x-on:click="toggle(); rotateIcon = !rotateIcon"-->
+<!--                        x-ref="button">-->
+<!--                    Serveis-->
+<!--                    <div :class="{ 'rotate-90': rotateIcon }" class="inline-block transition-transform transform">-->
+<!--                        &lt;!&ndash; Heroicon: chevron-down &ndash;&gt;-->
+<!--                        <svg aria-hidden="true" class="h-5 w-5 flex-none text-green-700" fill="currentColor"-->
+<!--                             viewBox="0 0 20 20">-->
+<!--                            <path clip-rule="evenodd"-->
+<!--                                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"-->
+<!--                                  fill-rule="evenodd"/>-->
+<!--                        </svg>-->
+<!--                    </div>-->
+<!--                </button>-->
 
-                <!-- Panel/Submenu -->
-                <div :id="$id('dropdown-button')"
-                     class="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5"
-                     style="display: none;"
-                     x-on:click.outside="close($refs.button)"
-                     x-ref="panel"
-                     x-show="open"
-                     x-transition.origin.top.left>
-                    <div>
-                        <a class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500"
-                           href="">
-                            Exemple
-                        </a>
-                    </div>
-                    <!-- ... Otros elementos del menú desplegable ... -->
-                </div>
-            </div>
+<!--                &lt;!&ndash; Panel/Submenu &ndash;&gt;-->
+<!--                <div :id="$id('dropdown-button')"-->
+<!--                     class="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5"-->
+<!--                     style="display: none;"-->
+<!--                     x-on:click.outside="close($refs.button)"-->
+<!--                     x-ref="panel"-->
+<!--                     x-show="open"-->
+<!--                     x-transition.origin.top.left>-->
+<!--                    <div>-->
+<!--                        <a class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500"-->
+<!--                           href="">-->
+<!--                            Exemple-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash; ... Otros elementos del menú desplegable ... &ndash;&gt;-->
+<!--                </div>-->
+<!--            </div>-->
 
             <a class="text-sm font-semibold leading-6 text-green-700" href="Views/preus.html">Preus</a>
             <a class="text-sm font-semibold leading-6 text-green-700" href="">Equip</a>
-            <a class="text-sm font-semibold leading-6 text-green-700" href="">Sobre</a>
+            <a class="text-sm font-semibold leading-6 text-green-700" href="Views/sobre.html">Sobre</a>
             <a class="text-sm font-semibold leading-6 text-green-700" href="">Contacte</a>
 
         </div>
@@ -112,11 +112,7 @@
         <div class="fixed inset-0 z-10"></div>
         <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div class="flex items-center justify-between">
-                <a class="-m-1.5 p-1.5" href="index.html">
-                    <span class="sr-only">UrbanKicks</span>
-                    <img alt="" class="h-8 w-auto"
-                         src="Img/logo.png">
-                </a>
+
                 <button @click="menuOpen = false" class="-m-2.5 rounded-md p-2.5 text-gray-700" type="button">
                     <span class="sr-only">Close menu</span>
                     <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5"
@@ -190,7 +186,7 @@
                         per a la teva empresa amb molta rapidesa i per poc preu.<br>Confía amb nosaltres!</p>
                     <div class="mt-10 flex items-center gap-x-6">
                         <a class="rounded-md bg-lime-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                           href="#">Comença</a>
+                           href="Views/preus.html">Comença</a>
                     </div>
                 </div>
             </div>
@@ -220,20 +216,20 @@
                         </div>
                         <dl class="mt-16 grid max-w-xl grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 xl:mt-16">
                             <div class="flex flex-col gap-y-3 border-l border-gray-900/10 pl-6">
-                                <dt class="text-sm leading-6 text-gray-600">Creators on the platform</dt>
-                                <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900">8,000+</dd>
+                                <dt class="text-sm leading-6 text-gray-600">Usuaris registrats</dt>
+                                <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900">80,000+</dd>
                             </div>
                             <div class="flex flex-col gap-y-3 border-l border-gray-900/10 pl-6">
-                                <dt class="text-sm leading-6 text-gray-600">Flat platform fee</dt>
-                                <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900">3%</dd>
+                                <dt class="text-sm leading-6 text-gray-600">Costos de registre</dt>
+                                <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900">0€ </dd>
                             </div>
                             <div class="flex flex-col gap-y-3 border-l border-gray-900/10 pl-6">
-                                <dt class="text-sm leading-6 text-gray-600">Uptime guarantee</dt>
+                                <dt class="text-sm leading-6 text-gray-600">De clients satisfets</dt>
                                 <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900">99.9%</dd>
                             </div>
                             <div class="flex flex-col gap-y-3 border-l border-gray-900/10 pl-6">
-                                <dt class="text-sm leading-6 text-gray-600">Paid out to creators</dt>
-                                <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900">$70M</dd>
+                                <dt class="text-sm leading-6 text-gray-600">Facturats aquest any</dt>
+                                <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900">€70M</dd>
                             </div>
                         </dl>
                     </div>
@@ -261,21 +257,62 @@
             </div>
         </div>
     </div>
+<br>
+    <div class="flex items-center mt-20">
+
+        <!-- Carrousel de fotos -->
+        <div x-data="carousel()" x-init="init" class="relative overflow-hidden max-w-4xl mx-auto">
+            <div x-ref="container" class="flex transition-transform duration-500 ease-in-out">
+                <!-- Agrega tus imágenes aquí -->
+                <img src="Img/empatica.png" class="w-full h-auto">
+                <img src="Img/paginaexemple.png" class="w-full h-auto">
+                <img src="Img/iesebre.png" class="w-full h-auto">
+            </div>
+        </div>
+
+        <script>
+            function carousel() {
+                return {
+                    init() {
+                        this.container = this.$refs.container;
+                        this.slides = this.container.children;
+                        this.totalSlides = this.slides.length;
+                        this.currentSlide = 0;
+                        this.slideWidth = this.slides[0].offsetWidth;
+
+                        this.startInterval();
+                    },
+                    startInterval() {
+                        setInterval(() => {
+                            this.slideLeft(); // Cambiado a slideLeft para mover hacia la izquierda
+                        }, 5000);
+                    },
+                    slideLeft() {
+                        // Calcula la próxima diapositiva hacia la izquierda
+                        const nextSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+
+                        // Mueve a la siguiente diapositiva
+                        this.container.style.transition = 'transform 0.5s ease-in-out';
+                        this.container.style.transform = `translateX(-${nextSlide * this.slideWidth}px)`;
+
+                        // Actualiza el índice actual después de la transición
+                        setTimeout(() => {
+                            this.container.style.transition = 'none';
+                            this.currentSlide = nextSlide;
+                        }, 500);
+                    },
+                };
+            }
+        </script>
+    </div>
 
 
-
-
-
-
-    <!--        <div class="bg-gradient-to-t from-green-300 to-transparent  h-1/2 absolute top-0 left-0 right-0"></div>-->
-
-<!-- FAQ -->
-    <div class="relative">
+        <!-- FAQ -->
+    <div class="relative mt-20">
         <!-- Fondo verde difuminado arriba -->
         <div class="bg-gradient-to-t from-green-100 to-transparent h-1/2 absolute top-0 left-0 right-0 z-0"></div>
         <div class="bg-gradient-to-b from-green-100 to-transparent h-1/2 absolute bottom-0 left-0 right-0 z-0"></div>
 
-        <!-- FAQ -->
         <div class="bg-white" x-data="{ openTab: 0 }">
             <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40 relative">
                 <div class="mx-auto max-w-4xl relative">
