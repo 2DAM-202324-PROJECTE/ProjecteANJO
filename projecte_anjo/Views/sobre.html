@@ -1,0 +1,439 @@
+<!doctype html>
+<html class="h-full" lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link href="../Img/logoSimple.png" rel="icon" type="image/svg+xml"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="../style.css" rel="stylesheet">
+    <title>Web Crafters</title>
+</head>
+
+<body class="h-full">
+
+<!-- SCRIPTS -->
+<script src="../main.js" type="module"></script>
+
+<!-- HEADER -->
+<header class="bg-white shadow-lg fixed w-full top-0 z-50 " x-data="{menuOpen: false}">
+    <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-3 lg:px-8">
+        <div class="flex lg:flex-1">
+            <a class="-m-1.5 p-1.5" href="../index.html">
+                <span class="sr-only">Web Crafters</span>
+                <img alt="" class="h-24 w-auto" height="82" src="../Img/logo.png" width="284">
+            </a>
+        </div>
+        <div class="flex lg:hidden">
+            <button @click="menuOpen = true"
+                    class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+                    type="button">
+                <span class="sr-only">Open main menu</span>
+                <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5"
+                     viewBox="0 0 24 24">
+                    <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round"
+                          stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+        <div class="hidden lg:flex lg:gap-x-12">
+            <!--            &lt;!&ndash; Desplegable &ndash;&gt;-->
+            <!--            <div class="relative"-->
+            <!--                 x-data="{-->
+            <!--                            open: false,-->
+            <!--                            rotateIcon: true,-->
+            <!--                            toggle() {-->
+            <!--                                this.open = !this.open;-->
+            <!--                                if (!this.open) {-->
+            <!--                                    this.rotateIcon = true;-->
+            <!--                                }-->
+            <!--                            },-->
+            <!--                            close(focusAfter) {-->
+            <!--                                this.open = false;-->
+            <!--                                this.rotateIcon = true;-->
+            <!--                                focusAfter && focusAfter.focus();-->
+            <!--                            }-->
+            <!--                        }"-->
+            <!--                 x-id="['dropdown-button']"-->
+            <!--                 x-on:keydown.escape.prevent.stop="close($refs.button)">-->
+            <!--                &lt;!&ndash; Button &ndash;&gt;-->
+            <!--                <button class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-green-700"-->
+            <!--                        type="button"-->
+            <!--                        x-on:click="toggle(); rotateIcon = !rotateIcon"-->
+            <!--                        x-ref="button">-->
+            <!--                    Serveis-->
+            <!--                    <div :class="{ 'rotate-90': rotateIcon }" class="inline-block transition-transform transform">-->
+            <!--                        &lt;!&ndash; Heroicon: chevron-down &ndash;&gt;-->
+            <!--                        <svg aria-hidden="true" class="h-5 w-5 flex-none text-green-700" fill="currentColor"-->
+            <!--                             viewBox="0 0 20 20">-->
+            <!--                            <path clip-rule="evenodd"-->
+            <!--                                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"-->
+            <!--                                  fill-rule="evenodd"/>-->
+            <!--                        </svg>-->
+            <!--                    </div>-->
+            <!--                </button>-->
+
+            <!--                &lt;!&ndash; Panel/Submenu &ndash;&gt;-->
+            <!--                <div :id="$id('dropdown-button')"-->
+            <!--                     class="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5"-->
+            <!--                     style="display: none;"-->
+            <!--                     x-on:click.outside="close($refs.button)"-->
+            <!--                     x-ref="panel"-->
+            <!--                     x-show="open"-->
+            <!--                     x-transition.origin.top.left>-->
+            <!--                    <div>-->
+            <!--                        <a class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500"-->
+            <!--                           href="">-->
+            <!--                            Exemple-->
+            <!--                        </a>-->
+            <!--                    </div>-->
+            <!--                    &lt;!&ndash; ... Otros elementos del menú desplegable ... &ndash;&gt;-->
+            <!--                </div>-->
+            <!--            </div>-->
+
+            <a class="text-sm font-semibold leading-6 text-green-700" href="preus.html">Preus</a>
+            <a class="text-sm font-semibold leading-6 text-green-700" href="">Equip</a>
+            <a class="text-sm font-semibold leading-6 text-green-700" href="sobre.html">Sobre</a>
+            <a class="text-sm font-semibold leading-6 text-green-700" href="">Contacte</a>
+
+        </div>
+        <div class="flex flex-1 items-center justify-end gap-x-6">
+            <a class="hidden lg:block lg:text-sm lg:font-semibold lg:leading-6 lg:text-green-700"
+               href="#">Iniciar Sessió</a>
+
+            <a class="hidden lg:block rounded-md bg-green-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-700"
+               href="#">
+                Registre
+            </a>
+
+        </div>
+    </nav>
+    <!-- Mobile menu, show/hide based on menu open state. -->
+    <div aria-modal="true" class="lg:hidden" role="dialog" x-show="menuOpen">
+        <!-- Background backdrop, show/hide based on slide-over state. -->
+        <div class="fixed inset-0 z-10"></div>
+        <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+            <div class="flex items-center justify-between">
+
+                <button @click="menuOpen = false" class="-m-2.5 rounded-md p-2.5 text-gray-700" type="button">
+                    <span class="sr-only">Close menu</span>
+                    <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5"
+                         viewBox="0 0 24 24">
+                        <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="mt-6 flow-root">
+                <div class="-my-6 divide-y divide-gray-500/10">
+                    <div class="space-y-2 py-6">
+                        <div class="-mx-3">
+                            <button aria-controls="disclosure-1"
+                                    aria-expanded="false"
+                                    class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                    type="button">
+                                Tienda
+                                <!--
+                                  Expand/collapse icon, toggle classes based on menu open state.
+
+                                  Open: "rotate-180", Closed: ""
+                                -->
+                                <span class="h-5 w-5 flex-none" id="icon">
+                        <svg aria-hidden="true" class="h-5 w-5 transform rotate-0 transition-transform duration-300"
+                             fill="currentColor" viewBox="0 0 20 20">
+                            <path clip-rule="evenodd"
+                                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </span>
+                            </button>
+                            <!-- 'Product' sub-menu, show/hide based on menu state. -->
+                            <div class="mt-2 space-y-2" id="disclosure-1">
+                                <a class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                   href="">Nike</a>
+
+                            </div>
+                        </div>
+                        <a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                           href="">Planes</a>
+                        <a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                           href="">Contacto</a>
+
+                    </div>
+                    <div class="py-6">
+                        <a class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                           href="">Log
+                            in</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- HERO SECTION -->
+<div class="relative isolate -z-10 overflow-hidden bg-gradient-to-b from-b/20 pt-16">
+    <div aria-hidden="true"
+         class="absolute inset-y-0 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-green-300 shadow-xl shadow-green-600/10 ring-1 ring-indigo-50 sm:-mr-80 lg:-mr-96"></div>
+
+    <div class="mx-auto max-w-7xl px-6 py-32 sm:py-40 lg:px-8">
+        <div class="mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-x-16 lg:gap-y-6 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
+            <h1 class="max-w-2xl text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl lg:col-span-2 xl:col-auto">
+               Som un grup de treballadors d'arreu del món construint el futur dels nostres clients.</h1>
+            <div class="mt-6 max-w-xl lg:mt-0 xl:col-end-1 xl:row-start-1">
+                <p class="text-lg leading-8 text-gray-600">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure
+                    qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua. Anim aute id magna
+                    aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.</p>
+            </div>
+            <img alt=""
+                 class="mt-10 aspect-[6/5] w-full max-w-lg rounded-2xl object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-36"
+                 src="https://images.unsplash.com/photo-1567532900872-f4e906cbf06a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1280&q=80">
+        </div>
+    </div>
+    <div class="absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-white sm:h-32"></div>
+</div>
+
+<!-- TIMELINE SECTION -->
+<div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto grid max-w-2xl grid-cols-1 gap-8 overflow-hidden lg:mx-0 lg:max-w-none lg:grid-cols-4">
+        <div>
+            <time class="flex items-center text-sm font-semibold leading-6 text-green-600" datetime="2021-08">
+                <svg aria-hidden="true" class="mr-4 h-1 w-1 flex-none" viewBox="0 0 4 4">
+                    <circle cx="2" cy="2" fill="currentColor" r="2"/>
+                </svg>
+                Nov 2023
+                <div aria-hidden="true"
+                     class="absolute -ml-2 h-px w-screen -translate-x-full bg-gray-900/10 sm:-ml-4 lg:static lg:-mr-6 lg:ml-8 lg:w-auto lg:flex-auto lg:translate-x-0"></div>
+            </time>
+            <p class="mt-6 text-lg font-semibold leading-8 tracking-tight text-gray-900">Fundem la companyia</p>
+            <p class="mt-1 text-base leading-7 text-gray-600">El 27 de novembre de 2023 vam fundar la companyia de la qual ens sentim tant orgullosos</p>
+        </div>
+        <div>
+            <time class="flex items-center text-sm font-semibold leading-6 text-green-600" datetime="2021-12">
+                <svg aria-hidden="true" class="mr-4 h-1 w-1 flex-none" viewBox="0 0 4 4">
+                    <circle cx="2" cy="2" fill="currentColor" r="2"/>
+                </svg>
+                Dec 2023
+                <div aria-hidden="true"
+                     class="absolute -ml-2 h-px w-screen -translate-x-full bg-gray-900/10 sm:-ml-4 lg:static lg:-mr-6 lg:ml-8 lg:w-auto lg:flex-auto lg:translate-x-0"></div>
+            </time>
+            <p class="mt-6 text-lg font-semibold leading-8 tracking-tight text-gray-900">650.000€ d'un inversor</p>
+            <p class="mt-1 text-base leading-7 text-gray-600">Un mes després un inversor va confiar en nosaltres, gràcies a ell som qui som!</p>
+        </div>
+        <div>
+            <time class="flex items-center text-sm font-semibold leading-6 text-green-600" datetime="2022-02">
+                <svg aria-hidden="true" class="mr-4 h-1 w-1 flex-none" viewBox="0 0 4 4">
+                    <circle cx="2" cy="2" fill="currentColor" r="2"/>
+                </svg>
+                Feb 2024
+                <div aria-hidden="true"
+                     class="absolute -ml-2 h-px w-screen -translate-x-full bg-gray-900/10 sm:-ml-4 lg:static lg:-mr-6 lg:ml-8 lg:w-auto lg:flex-auto lg:translate-x-0"></div>
+            </time>
+            <p class="mt-6 text-lg font-semibold leading-8 tracking-tight text-gray-900">Ens mostrem al mon</p>
+            <p class="mt-1 text-base leading-7 text-gray-600">Després de molt de treball, el febrer de 2024 vam publicar la nostra primera versió.</p>
+        </div>
+        <div>
+            <time class="flex items-center text-sm font-semibold leading-6 text-green-600" datetime="2022-12">
+                <svg aria-hidden="true" class="mr-4 h-1 w-1 flex-none" viewBox="0 0 4 4">
+                    <circle cx="2" cy="2" fill="currentColor" r="2"/>
+                </svg>
+                Dec 2024
+                <div aria-hidden="true"
+                     class="absolute -ml-2 h-px w-screen -translate-x-full bg-gray-900/10 sm:-ml-4 lg:static lg:-mr-6 lg:ml-8 lg:w-auto lg:flex-auto lg:translate-x-0"></div>
+            </time>
+            <p class="mt-6 text-lg font-semibold leading-8 tracking-tight text-gray-900">Ens fem mundialment grans</p>
+            <p class="mt-1 text-base leading-7 text-gray-600">I finalment el 28 de desembre de 2024 vam aconseguir el nostre proposit! I ens vam convertir en els millors en el nostre camp.</p>
+        </div>
+    </div>
+</div>
+
+<!-- LOGO CLOUD -->
+<div class="mx-auto mt-32 max-w-7xl sm:mt-40 sm:px-6 lg:px-8">
+    <div class="relative isolate overflow-hidden bg-green-500 px-6 py-24 text-center shadow-2xl sm:rounded-3xl sm:px-16">
+        <h2 class="mx-auto max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl">Els nostres consumidors ens adoren</h2>
+        <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-300">Moltes empreses confien en els nostres treballadors, aquestes són algunes de les més destacades.</p>
+        <div class="mx-auto mt-20 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:max-w-4xl lg:grid-cols-5">
+            <img alt="Transistor"
+                 class="col-span-2 max-h-12 w-full object-contain lg:col-span-1" height="48" src="https://tailwindui.com/img/logos/158x48/transistor-logo-white.svg"
+                 width="158">
+            <img alt="Reform"
+                 class="col-span-2 max-h-12 w-full object-contain lg:col-span-1" height="48" src="https://tailwindui.com/img/logos/158x48/reform-logo-white.svg"
+                 width="158">
+            <img alt="Tuple"
+                 class="col-span-2 max-h-12 w-full object-contain lg:col-span-1" height="48" src="https://tailwindui.com/img/logos/158x48/tuple-logo-white.svg" width="158">
+            <img alt="SavvyCal"
+                 class="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1" height="48" src="https://tailwindui.com/img/logos/158x48/savvycal-logo-white.svg"
+                 width="158">
+            <img alt="Statamic"
+                 class="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1" height="48" src="https://tailwindui.com/img/logos/158x48/statamic-logo-white.svg"
+                 width="158">
+        </div>
+        <div aria-hidden="true" class="absolute -top-24 right-0 -z-10 transform-gpu blur-3xl">
+            <div class="aspect-[1404/767] w-[87.75rem] bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-25"
+                 style="clip-path: polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)"></div>
+        </div>
+    </div>
+</div>
+
+<!-- CONTENT SECTION -->
+<div class="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
+    <div class="mx-auto flex max-w-2xl flex-col items-end justify-between gap-16 lg:mx-0 lg:max-w-none lg:flex-row">
+        <div class="w-full lg:max-w-lg lg:flex-auto">
+            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Estem bsucant a gent increible per a formar part del nostre equip</h2>
+            <p class="mt-6 text-xl leading-8 text-gray-600">Si t'interessaria treballar amb nosaltres no dubtis a enviar-nos un missatge. Aquí tens un poc d'informació sobre llocs de treball que tenim disponibles.</p>
+            <img alt=""
+                 class="mt-16 aspect-[6/5] w-full rounded-2xl bg-gray-50 object-cover lg:aspect-auto lg:h-[34.5rem]"
+                 src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1344&h=1104&q=80">
+        </div>
+        <div class="w-full lg:max-w-xl lg:flex-auto">
+            <h3 class="sr-only">Treballs</h3>
+            <ul class="-my-8 divide-y divide-gray-100">
+                <li class="py-8">
+                    <dl class="relative flex flex-wrap gap-x-3">
+                        <dt class="sr-only">Rols</dt>
+                        <dd class="w-full flex-none text-lg font-semibold tracking-tight text-gray-900">
+                            <a href="https://www.infojobs.net/">
+                                Dissenyador a temps complet
+                                <span aria-hidden="true" class="absolute inset-0"></span>
+                            </a>
+                        </dd>
+                        <dt class="sr-only">Description</dt>
+                        <dd class="mt-2 w-full flex-none text-base leading-7 text-gray-600">Oferim un lloc a la nostra empresa a un dissenyador a temps complet amb experiència laboral. Ha de ser capaç de treballar en equip i de forma individual, i té disponible el teletreball
+                        </dd>
+                        <dt class="sr-only">Salary</dt>
+                        <dd class="mt-4 text-base font-semibold leading-7 text-gray-900">105,000 €</dd>
+                        <dt class="sr-only">Location</dt>
+                        <dd class="mt-4 flex items-center gap-x-3 text-base leading-7 text-gray-500">
+                            <svg aria-hidden="true" class="h-0.5 w-0.5 flex-none fill-gray-300" viewBox="0 0 2 2">
+                                <circle cx="1" cy="1" r="1"/>
+                            </svg>
+                            Barcelona, ESP
+                        </dd>
+                    </dl>
+                </li>
+                <li class="py-8">
+                    <dl class="relative flex flex-wrap gap-x-3">
+                        <dt class="sr-only">Role</dt>
+                        <dd class="w-full flex-none text-lg font-semibold tracking-tight text-gray-900">
+                            <a href="https://www.infojobs.net/">
+                                Desenvolupador web
+                                <span aria-hidden="true" class="absolute inset-0"></span>
+                            </a>
+                        </dd>
+                        <dt class="sr-only">Description</dt>
+                        <dd class="mt-2 w-full flex-none text-base leading-7 text-gray-600">El candidat ha de ser uan persona competent i amb experiència, Haurà de treballar en equip, i tindrà disponible el teletreball.
+                        </dd>
+                        <dt class="sr-only">Salary</dt>
+                        <dd class="mt-4 text-base font-semibold leading-7 text-gray-900">125,000 €</dd>
+                        <dt class="sr-only">Location</dt>
+                        <dd class="mt-4 flex items-center gap-x-3 text-base leading-7 text-gray-500">
+                            <svg aria-hidden="true" class="h-0.5 w-0.5 flex-none fill-gray-300" viewBox="0 0 2 2">
+                                <circle cx="1" cy="1" r="1"/>
+                            </svg>
+                            Barcelona, ESP
+                        </dd>
+                    </dl>
+                </li>
+                <li class="py-8">
+                    <dl class="relative flex flex-wrap gap-x-3">
+                        <dt class="sr-only">Role</dt>
+                        <dd class="w-full flex-none text-lg font-semibold tracking-tight text-gray-900">
+                            <a href="https://www.infojobs.net/" class="">
+                                Desenvolupador de sistemes
+                                <span aria-hidden="true" class="absolute inset-0"></span>
+                            </a>
+                        </dd>
+                        <dt class="sr-only">Description</dt>
+                        <dd class="mt-2 w-full flex-none text-base leading-7 text-gray-600">El lloc de treball no requereix experiència, però no té disponible el teletreball i requereix una persona amb molta disponibilitat.
+                        </dd>
+                        <dt class="sr-only">Salary</dt>
+                        <dd class="mt-4 text-base font-semibold leading-7 text-gray-900">70,000 €</dd>
+                        <dt class="sr-only">Location</dt>
+                        <dd class="mt-4 flex items-center gap-x-3 text-base leading-7 text-gray-500">
+                            <svg aria-hidden="true" class="h-0.5 w-0.5 flex-none fill-gray-300" viewBox="0 0 2 2">
+                                <circle cx="1" cy="1" r="1"/>
+                            </svg>
+                            Madrid, ESP
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+            <div class="mt-8 flex border-t border-gray-100 pt-8">
+                <a class="text-sm font-semibold leading-6 text-green-700 hover:text-green-900" href="contacte.html">Demana un lloc<span aria-hidden="true">&rarr;</span></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--  FOOTER -->
+<footer class="bg-white">
+    <div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
+
+        <div class="mt-10 flex justify-center space-x-10">
+            <a class="text-gray-400 hover:text-gray-500" href="https://facebook.com">
+                <span class="sr-only">Facebook</span>
+                <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path clip-rule="evenodd"
+                          d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                          fill-rule="evenodd"/>
+                </svg>
+            </a>
+            <a class="text-gray-400 hover:text-gray-500" href="https://instagram.com">
+                <span class="sr-only">Instagram</span>
+                <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path clip-rule="evenodd"
+                          d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                          fill-rule="evenodd"/>
+                </svg>
+            </a>
+            <a class="text-gray-400 hover:text-gray-500" href="https://twitter.com">
+                <span class="sr-only">Twitter</span>
+                <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.095479,10.316482L22.286354,1h-1.940718l-7.115352,8.087682L7.551414,1H1l8.589488,12.231093L1,23h1.940717  l7.509372-8.542861L16.448587,23H23L14.095479,10.316482z M11.436522,13.338465l-0.871624-1.218704l-6.924311-9.68815h2.981339  l5.58978,7.82155l0.867949,1.218704l7.26506,10.166271h-2.981339L11.436522,13.338465z"/>
+                </svg>
+            </a>
+            <a class="text-gray-400 hover:text-gray-500"
+               href="https://github.com/2DAM-202324-PROJECTE/ProjecteANJO">
+                <span class="sr-only">GitHub</span>
+                <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path clip-rule="evenodd"
+                          d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                          fill-rule="evenodd"/>
+                </svg>
+            </a>
+            <a class="text-gray-400 hover:text-gray-500" href="https://youtube.com">
+                <span class="sr-only">YouTube</span>
+                <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path clip-rule="evenodd"
+                          d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z"
+                          fill-rule="evenodd"/>
+                </svg>
+            </a>
+        </div>
+        <p class="mt-10 text-center text-xs leading-5 text-gray-500">&copy; 2024 Web Crafters, Inc. Tots els drets
+            reservats.</p>
+    </div>
+</footer>
+<!-- COOKIES -->
+<div class="pointer-events-none fixed inset-x-0 bottom-0 px-6 pb-6" id="cookies-banner"
+     x-data="{ showCookiesBanner: true }" x-show="showCookiesBanner">
+    <div class="pointer-events-auto ml-auto max-w-xl rounded-xl bg-white p-6 shadow-lg ring-1 ring-gray-900/10">
+        <p class="text-sm leading-6 text-gray-900">Aquest lloc web utilitza galetes per complementar una dieta
+            equilibrada i proporcionar una recompensa molt merescuda als sentits després de consumir àpats suaus
+            però nutritius. Acceptar les nostres galetes és opcional però recomanable, ja que són delicioses. Veure
+            la nostra <a class="font-semibold text-green-600 underline hover:text-green-900" href="cookies.html">política
+                de galletes</a>.</p>
+        <div class="mt-4 flex items-center gap-x-5">
+            <button @click="showCookiesBanner = false"
+                    class="rounded-md bg-green-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+                    type="button">
+                Accepta-ho
+            </button>
+            <button @click="showCookiesBanner = false" class="text-sm font-semibold leading-6 text-gray-900"
+                    type="button">
+                Rebutja-ho
+            </button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
