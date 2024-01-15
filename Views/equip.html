@@ -13,152 +13,160 @@
   <!-- SCRIPTS -->
   <script src="../main.js" type="module"></script>
 
-  <!-- HEADER -->
-  <header class="bg-white shadow-lg fixed w-full top-0 z-50 " x-data="{menuOpen: false}">
-    <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-3 lg:px-8">
+<!-- HEADER -->
+<header class="bg-white shadow-lg fixed w-full top-0 z-50 " x-data="{menuOpen: false}">
+  <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-3 lg:px-8">
       <div class="flex lg:flex-1">
-        <a class="-m-1.5 p-1.5" href="../index.html">
-          <span class="sr-only">Web Crafters</span>
-          <img alt="" class="h-24 w-auto" height="82" src="../Img/logo.png" width="284">
-        </a>
+          <a class="-m-1.5 p-1.5" href="../index.html">
+              <span class="sr-only">Web Crafters</span>
+              <img alt="" class="h-24 w-auto" height="82" src="../Img/logo.png" width="284">
+          </a>
       </div>
       <div class="flex lg:hidden">
-        <button @click="menuOpen = true"
-          class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700" type="button">
-          <span class="sr-only">Open main menu</span>
-          <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5"
-            viewBox="0 0 24 24">
-            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </button>
+          <button @click="menuOpen = true"
+                  class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+                  type="button">
+              <span class="sr-only">Open main menu</span>
+              <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5"
+                   viewBox="0 0 24 24">
+                  <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round"
+                        stroke-linejoin="round"/>
+              </svg>
+          </button>
       </div>
       <div class="hidden lg:flex lg:gap-x-12">
-        <!-- Desplegable -->
-        <div class="relative" x-data="{
-                          open: false,
-                          rotateIcon: true,
-                          toggle() {
-                              this.open = !this.open;
-                              if (!this.open) {
-                                  this.rotateIcon = true;
-                              }
-                          },
-                          close(focusAfter) {
-                              this.open = false;
-                              this.rotateIcon = true;
-                              focusAfter && focusAfter.focus();
-                          }
-                      }" x-id="['dropdown-button']" x-on:keydown.escape.prevent.stop="close($refs.button)">
-          <!-- Button -->
-          <button class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-green-700" type="button"
-            x-on:click="toggle(); rotateIcon = !rotateIcon" x-ref="button">
-            Serveis
-            <div :class="{ 'rotate-90': rotateIcon }" class="inline-block transition-transform transform">
-              <!-- Heroicon: chevron-down -->
-              <svg aria-hidden="true" class="h-5 w-5 flex-none text-green-700" fill="currentColor" viewBox="0 0 20 20">
-                <path clip-rule="evenodd"
-                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                  fill-rule="evenodd" />
-              </svg>
-            </div>
-          </button>
+          <!--            &lt;!&ndash; Desplegable &ndash;&gt;-->
+          <!--            <div class="relative"-->
+          <!--                 x-data="{-->
+          <!--                            open: false,-->
+          <!--                            rotateIcon: true,-->
+          <!--                            toggle() {-->
+          <!--                                this.open = !this.open;-->
+          <!--                                if (!this.open) {-->
+          <!--                                    this.rotateIcon = true;-->
+          <!--                                }-->
+          <!--                            },-->
+          <!--                            close(focusAfter) {-->
+          <!--                                this.open = false;-->
+          <!--                                this.rotateIcon = true;-->
+          <!--                                focusAfter && focusAfter.focus();-->
+          <!--                            }-->
+          <!--                        }"-->
+          <!--                 x-id="['dropdown-button']"-->
+          <!--                 x-on:keydown.escape.prevent.stop="close($refs.button)">-->
+          <!--                &lt;!&ndash; Button &ndash;&gt;-->
+          <!--                <button class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-green-700"-->
+          <!--                        type="button"-->
+          <!--                        x-on:click="toggle(); rotateIcon = !rotateIcon"-->
+          <!--                        x-ref="button">-->
+          <!--                    Serveis-->
+          <!--                    <div :class="{ 'rotate-90': rotateIcon }" class="inline-block transition-transform transform">-->
+          <!--                        &lt;!&ndash; Heroicon: chevron-down &ndash;&gt;-->
+          <!--                        <svg aria-hidden="true" class="h-5 w-5 flex-none text-green-700" fill="currentColor"-->
+          <!--                             viewBox="0 0 20 20">-->
+          <!--                            <path clip-rule="evenodd"-->
+          <!--                                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"-->
+          <!--                                  fill-rule="evenodd"/>-->
+          <!--                        </svg>-->
+          <!--                    </div>-->
+          <!--                </button>-->
 
-          <!-- Panel/Submenu -->
-          <div :id="$id('dropdown-button')"
-            class="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5"
-            style="display: none;" x-on:click.outside="close($refs.button)" x-ref="panel" x-show="open"
-            x-transition.origin.top.left>
-            <div>
-              <a class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500"
-                href="">
-                Exemple
-              </a>
-            </div>
-            <!-- ... Otros elementos del menú desplegable ... -->
-          </div>
-        </div>
+          <!--                &lt;!&ndash; Panel/Submenu &ndash;&gt;-->
+          <!--                <div :id="$id('dropdown-button')"-->
+          <!--                     class="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5"-->
+          <!--                     style="display: none;"-->
+          <!--                     x-on:click.outside="close($refs.button)"-->
+          <!--                     x-ref="panel"-->
+          <!--                     x-show="open"-->
+          <!--                     x-transition.origin.top.left>-->
+          <!--                    <div>-->
+          <!--                        <a class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500"-->
+          <!--                           href="">-->
+          <!--                            Exemple-->
+          <!--                        </a>-->
+          <!--                    </div>-->
+          <!--                    &lt;!&ndash; ... Otros elementos del menú desplegable ... &ndash;&gt;-->
+          <!--                </div>-->
+          <!--            </div>-->
 
-        <a class="text-sm font-semibold leading-6 text-green-700" href="preus.html">Preus</a>
-        <a class="text-sm font-semibold leading-6 text-green-700" href="">Equip</a>
-        <a class="text-sm font-semibold leading-6 text-green-700" href="">Sobre</a>
-        <a class="text-sm font-semibold leading-6 text-green-700" href="">Contacte</a>
+          <a class="text-sm font-semibold leading-6 text-green-700" href="preus.html">Preus</a>
+          <a class="text-sm font-semibold leading-6 text-green-700" href="equip.html">Equip</a>
+          <a class="text-sm font-semibold leading-6 text-green-700" href="sobre.html">Sobre</a>
+          <a class="text-sm font-semibold leading-6 text-green-700" href="">Contacte</a>
 
       </div>
       <div class="flex flex-1 items-center justify-end gap-x-6">
-        <a class="hidden lg:block lg:text-sm lg:font-semibold lg:leading-6 lg:text-green-700" href="#">Iniciar
-          Sessió</a>
+          <a class="hidden lg:block lg:text-sm lg:font-semibold lg:leading-6 lg:text-green-700"
+             href="#">Iniciar Sessió</a>
 
-        <a class="hidden lg:block rounded-md bg-green-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-700"
-          href="#">
-          Registre
-        </a>
+          <a class="hidden lg:block rounded-md bg-green-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-700"
+             href="#">
+              Registre
+          </a>
 
       </div>
-    </nav>
-    <!-- Mobile menu, show/hide based on menu open state. -->
-    <div aria-modal="true" class="lg:hidden" role="dialog" x-show="menuOpen">
+  </nav>
+  <!-- Mobile menu, show/hide based on menu open state. -->
+  <div aria-modal="true" class="lg:hidden" role="dialog" x-show="menuOpen">
       <!-- Background backdrop, show/hide based on slide-over state. -->
       <div class="fixed inset-0 z-10"></div>
-      <div
-        class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-        <div class="flex items-center justify-between">
-          <a class="-m-1.5 p-1.5" href="index.html">
-            <span class="sr-only">UrbanKicks</span>
-            <img alt="" class="h-8 w-auto" src="Img/logo.png">
-          </a>
-          <button @click="menuOpen = false" class="-m-2.5 rounded-md p-2.5 text-gray-700" type="button">
-            <span class="sr-only">Close menu</span>
-            <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5"
-              viewBox="0 0 24 24">
-              <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </button>
-        </div>
-        <div class="mt-6 flow-root">
-          <div class="-my-6 divide-y divide-gray-500/10">
-            <div class="space-y-2 py-6">
-              <div class="-mx-3">
-                <button aria-controls="disclosure-1" aria-expanded="false"
-                  class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  type="button">
-                  Tienda
-                  <!--
+      <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <div class="flex items-center justify-between">
+
+              <button @click="menuOpen = false" class="-m-2.5 rounded-md p-2.5 text-gray-700" type="button">
+                  <span class="sr-only">Close menu</span>
+                  <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5"
+                       viewBox="0 0 24 24">
+                      <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+              </button>
+          </div>
+          <div class="mt-6 flow-root">
+              <div class="-my-6 divide-y divide-gray-500/10">
+                  <div class="space-y-2 py-6">
+                      <div class="-mx-3">
+                          <button aria-controls="disclosure-1"
+                                  aria-expanded="false"
+                                  class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                  type="button">
+                              Tienda
+                              <!--
                                 Expand/collapse icon, toggle classes based on menu open state.
 
                                 Open: "rotate-180", Closed: ""
                               -->
-                  <span class="h-5 w-5 flex-none" id="icon">
-                    <svg aria-hidden="true" class="h-5 w-5 transform rotate-0 transition-transform duration-300"
-                      fill="currentColor" viewBox="0 0 20 20">
-                      <path clip-rule="evenodd"
-                        d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                        fill-rule="evenodd" />
-                    </svg>
+                              <span class="h-5 w-5 flex-none" id="icon">
+                      <svg aria-hidden="true" class="h-5 w-5 transform rotate-0 transition-transform duration-300"
+                           fill="currentColor" viewBox="0 0 20 20">
+                          <path clip-rule="evenodd"
+                                d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                                fill-rule="evenodd"/>
+                      </svg>
                   </span>
-                </button>
-                <!-- 'Product' sub-menu, show/hide based on menu state. -->
-                <div class="mt-2 space-y-2" id="disclosure-1">
-                  <a class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    href="">Nike</a>
+                          </button>
+                          <!-- 'Product' sub-menu, show/hide based on menu state. -->
+                          <div class="mt-2 space-y-2" id="disclosure-1">
+                              <a class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                 href="">Nike</a>
 
-                </div>
+                          </div>
+                      </div>
+                      <a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                         href="">Planes</a>
+                      <a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                         href="">Contacto</a>
+
+                  </div>
+                  <div class="py-6">
+                      <a class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                         href="">Log
+                          in</a>
+                  </div>
               </div>
-              <a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                href="">Planes</a>
-              <a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                href="">Contacto</a>
-
-            </div>
-            <div class="py-6">
-              <a class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                href="">Log
-                in</a>
-            </div>
           </div>
-        </div>
       </div>
-    </div>
-  </header>
+  </div>
+</header>
 
   <!-- TEAM SECTION -->
 
