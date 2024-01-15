@@ -39,9 +39,10 @@ jobs:
         run: |
           cd projecte_anjo
           npm install
-
       - name: Build
-        run: npm run build
+        run: |
+          cd projecte_anjo
+          npm install
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
