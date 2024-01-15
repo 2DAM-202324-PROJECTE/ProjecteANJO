@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="h-full" lang="en" xmlns:x-on="http://www.w3.org/1999/xhtml">
+<html class="h-full" lang="en">
 <head>
     <meta charset="UTF-8"/>
     <link href="Img/logoSimple.png" rel="icon" type="image/svg+xml"/>
@@ -19,7 +19,7 @@
         <div class="flex lg:flex-1">
             <a class="-m-1.5 p-1.5" href="index.html">
                 <span class="sr-only">Web Crafters</span>
-                <img alt="" class="h-24 w-auto" height="82" src="Img/logo.png" width="284">
+                <img alt="" class="h-24 w-auto" height="205" src="Img/logo.png" width="561">
             </a>
         </div>
         <div class="flex lg:hidden">
@@ -35,59 +35,59 @@
             </button>
         </div>
         <div class="hidden lg:flex lg:gap-x-12">
-<!--            &lt;!&ndash; Desplegable &ndash;&gt;-->
-<!--            <div class="relative"-->
-<!--                 x-data="{-->
-<!--                            open: false,-->
-<!--                            rotateIcon: true,-->
-<!--                            toggle() {-->
-<!--                                this.open = !this.open;-->
-<!--                                if (!this.open) {-->
-<!--                                    this.rotateIcon = true;-->
-<!--                                }-->
-<!--                            },-->
-<!--                            close(focusAfter) {-->
-<!--                                this.open = false;-->
-<!--                                this.rotateIcon = true;-->
-<!--                                focusAfter && focusAfter.focus();-->
-<!--                            }-->
-<!--                        }"-->
-<!--                 x-id="['dropdown-button']"-->
-<!--                 x-on:keydown.escape.prevent.stop="close($refs.button)">-->
-<!--                &lt;!&ndash; Button &ndash;&gt;-->
-<!--                <button class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-green-700"-->
-<!--                        type="button"-->
-<!--                        x-on:click="toggle(); rotateIcon = !rotateIcon"-->
-<!--                        x-ref="button">-->
-<!--                    Serveis-->
-<!--                    <div :class="{ 'rotate-90': rotateIcon }" class="inline-block transition-transform transform">-->
-<!--                        &lt;!&ndash; Heroicon: chevron-down &ndash;&gt;-->
-<!--                        <svg aria-hidden="true" class="h-5 w-5 flex-none text-green-700" fill="currentColor"-->
-<!--                             viewBox="0 0 20 20">-->
-<!--                            <path clip-rule="evenodd"-->
-<!--                                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"-->
-<!--                                  fill-rule="evenodd"/>-->
-<!--                        </svg>-->
-<!--                    </div>-->
-<!--                </button>-->
+            <!--            &lt;!&ndash; Desplegable &ndash;&gt;-->
+            <!--            <div class="relative"-->
+            <!--                 x-data="{-->
+            <!--                            open: false,-->
+            <!--                            rotateIcon: true,-->
+            <!--                            toggle() {-->
+            <!--                                this.open = !this.open;-->
+            <!--                                if (!this.open) {-->
+            <!--                                    this.rotateIcon = true;-->
+            <!--                                }-->
+            <!--                            },-->
+            <!--                            close(focusAfter) {-->
+            <!--                                this.open = false;-->
+            <!--                                this.rotateIcon = true;-->
+            <!--                                focusAfter && focusAfter.focus();-->
+            <!--                            }-->
+            <!--                        }"-->
+            <!--                 x-id="['dropdown-button']"-->
+            <!--                 x-on:keydown.escape.prevent.stop="close($refs.button)">-->
+            <!--                &lt;!&ndash; Button &ndash;&gt;-->
+            <!--                <button class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-green-700"-->
+            <!--                        type="button"-->
+            <!--                        x-on:click="toggle(); rotateIcon = !rotateIcon"-->
+            <!--                        x-ref="button">-->
+            <!--                    Serveis-->
+            <!--                    <div :class="{ 'rotate-90': rotateIcon }" class="inline-block transition-transform transform">-->
+            <!--                        &lt;!&ndash; Heroicon: chevron-down &ndash;&gt;-->
+            <!--                        <svg aria-hidden="true" class="h-5 w-5 flex-none text-green-700" fill="currentColor"-->
+            <!--                             viewBox="0 0 20 20">-->
+            <!--                            <path clip-rule="evenodd"-->
+            <!--                                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"-->
+            <!--                                  fill-rule="evenodd"/>-->
+            <!--                        </svg>-->
+            <!--                    </div>-->
+            <!--                </button>-->
 
-<!--                &lt;!&ndash; Panel/Submenu &ndash;&gt;-->
-<!--                <div :id="$id('dropdown-button')"-->
-<!--                     class="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5"-->
-<!--                     style="display: none;"-->
-<!--                     x-on:click.outside="close($refs.button)"-->
-<!--                     x-ref="panel"-->
-<!--                     x-show="open"-->
-<!--                     x-transition.origin.top.left>-->
-<!--                    <div>-->
-<!--                        <a class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500"-->
-<!--                           href="">-->
-<!--                            Exemple-->
-<!--                        </a>-->
-<!--                    </div>-->
-<!--                    &lt;!&ndash; ... Otros elementos del menú desplegable ... &ndash;&gt;-->
-<!--                </div>-->
-<!--            </div>-->
+            <!--                &lt;!&ndash; Panel/Submenu &ndash;&gt;-->
+            <!--                <div :id="$id('dropdown-button')"-->
+            <!--                     class="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5"-->
+            <!--                     style="display: none;"-->
+            <!--                     x-on:click.outside="close($refs.button)"-->
+            <!--                     x-ref="panel"-->
+            <!--                     x-show="open"-->
+            <!--                     x-transition.origin.top.left>-->
+            <!--                    <div>-->
+            <!--                        <a class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500"-->
+            <!--                           href="">-->
+            <!--                            Exemple-->
+            <!--                        </a>-->
+            <!--                    </div>-->
+            <!--                    &lt;!&ndash; ... Otros elementos del menú desplegable ... &ndash;&gt;-->
+            <!--                </div>-->
+            <!--            </div>-->
 
             <a class="text-sm font-semibold leading-6 text-green-700" href="Views/preus.html">Preus</a>
             <a class="text-sm font-semibold leading-6 text-green-700" href="">Equip</a>
@@ -185,7 +185,7 @@
                     <p class="mt-6 text-lg leading-8 text-gray-600">Podem crear la pàgina web que sempre has dessitjat
                         per a la teva empresa amb molta rapidesa i per poc preu.<br>Confía amb nosaltres!</p>
                     <div class="mt-10 flex items-center gap-x-6">
-                        <a class="rounded-md bg-lime-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                        <a class="rounded-md bg-green-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                            href="Views/preus.html">Comença</a>
                     </div>
                 </div>
@@ -221,7 +221,7 @@
                             </div>
                             <div class="flex flex-col gap-y-3 border-l border-gray-900/10 pl-6">
                                 <dt class="text-sm leading-6 text-gray-600">Costos de registre</dt>
-                                <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900">0€ </dd>
+                                <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900">0€</dd>
                             </div>
                             <div class="flex flex-col gap-y-3 border-l border-gray-900/10 pl-6">
                                 <dt class="text-sm leading-6 text-gray-600">De clients satisfets</dt>
@@ -243,30 +243,31 @@
     </div>
     <!-- CTA -->
     <div class="bg-white relative overflow-hidden">
-<!--        &lt;!&ndash; Fondo verde difuminado &ndash;&gt;-->
-<!--        <div class="bg-gradient-to-t from-green-300 to-transparent  h-1/2 absolute top-0 left-0 right-0"></div>-->
-<!--        <div class="bg-gradient-to-b from-green-300  to-transparent h-1/2 absolute bottom-0 left-0 right-0"></div>-->
+        <!--        &lt;!&ndash; Fondo verde difuminado &ndash;&gt;-->
+        <!--        <div class="bg-gradient-to-t from-green-300 to-transparent  h-1/2 absolute top-0 left-0 right-0"></div>-->
+        <!--        <div class="bg-gradient-to-b from-green-300  to-transparent h-1/2 absolute bottom-0 left-0 right-0"></div>-->
 
         <!-- Contenido del CTA -->
         <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:justify-between lg:px-8 lg:pl-0 relative z-10 ">
             <!-- Texto y botón -->
-            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Preparat per a començar?<br>Consulta el nostre apartat de preus.</h2>
+            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Preparat per a començar?<br>Consulta
+                el nostre apartat de preus.</h2>
             <div class="mt-10 flex gap-x-6 lg:mt-0 lg:flex-shrink-0 z-10">
                 <a class="rounded-md bg-green-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-800"
                    href="Views/preus.html">Comença</a>
             </div>
         </div>
     </div>
-<br>
+    <br>
     <div class="flex items-center mt-20">
 
-        <!-- Carrousel de fotos -->
-        <div x-data="carousel()" x-init="init" class="relative overflow-hidden max-w-4xl mx-auto">
-            <div x-ref="container" class="flex transition-transform duration-500 ease-in-out">
+        <!-- Carrusel de fotos -->
+        <div class="relative overflow-hidden max-w-4xl mx-auto" x-data="carousel()" x-init="init">
+            <div class="flex transition-transform duration-1000 ease-in-out" x-ref="container">
                 <!-- Agrega tus imágenes aquí -->
-                <img src="Img/empatica.png" class="w-full h-auto">
-                <img src="Img/paginaexemple.png" class="w-full h-auto">
-                <img src="Img/iesebre.png" class="w-full h-auto">
+                <img class="w-full h-auto" src="Img/empatica.png">
+                <img class="w-full h-auto" src="Img/paginaexemple.png">
+                <img class="w-full h-auto" src="Img/iesebre.png">
             </div>
         </div>
 
@@ -289,17 +290,17 @@
                     },
                     slideLeft() {
                         // Calcula la próxima diapositiva hacia la izquierda
-                        const nextSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+                        const nextSlide = (this.currentSlide + 1) % this.totalSlides;
 
                         // Mueve a la siguiente diapositiva
-                        this.container.style.transition = 'transform 0.5s ease-in-out';
+                        this.container.style.transition = 'transform 1s ease-in-out';
                         this.container.style.transform = `translateX(-${nextSlide * this.slideWidth}px)`;
 
                         // Actualiza el índice actual después de la transición
                         setTimeout(() => {
                             this.container.style.transition = 'none';
                             this.currentSlide = nextSlide;
-                        }, 500);
+                        }, 1000);
                     },
                 };
             }
@@ -307,7 +308,7 @@
     </div>
 
 
-        <!-- FAQ -->
+    <!-- FAQ -->
     <div class="relative mt-20">
         <!-- Fondo verde difuminado arriba -->
         <div class="bg-gradient-to-t from-green-100 to-transparent h-1/2 absolute top-0 left-0 right-0 z-0"></div>
@@ -370,7 +371,6 @@
     </div>
 
 
-
     <!--  FOOTER -->
     <footer class="bg-white">
         <div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
@@ -427,7 +427,8 @@
             <p class="text-sm leading-6 text-gray-900">Aquest lloc web utilitza galetes per complementar una dieta
                 equilibrada i proporcionar una recompensa molt merescuda als sentits després de consumir àpats suaus
                 però nutritius. Acceptar les nostres galetes és opcional però recomanable, ja que són delicioses. Veure
-                la nostra <a class="font-semibold text-green-600 underline hover:text-green-900" href="Views/cookies.html">política de galletes</a>.</p>
+                la nostra <a class="font-semibold text-green-600 underline hover:text-green-900"
+                             href="Views/cookies.html">política de galletes</a>.</p>
             <div class="mt-4 flex items-center gap-x-5">
                 <button @click="showCookiesBanner = false"
                         class="rounded-md bg-green-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
