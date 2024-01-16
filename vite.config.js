@@ -14,6 +14,7 @@ export default defineConfig({
                 error: resolve(__dirname, 'Views/error.html'),
                 cookies: resolve(__dirname, 'Views/cookies.html'),
                 preus: resolve(__dirname, 'Views/preus.html'),
+                equip: resolve(__dirname, 'Views/equip.html'),
                 registre: resolve(__dirname, 'Views/registre.html'),
                 serveis: resolve(__dirname, 'Views/serveis.html'),
             },
