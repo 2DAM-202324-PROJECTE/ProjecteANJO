@@ -34,63 +34,63 @@
           </button>
       </div>
       <div class="hidden lg:flex lg:gap-x-12">
-          <!-- Desplegable -->
-          <div class="relative"
-               x-data="{
-                          open: false,
-                          rotateIcon: true,
-                          toggle() {
-                              this.open = !this.open;
-                              if (!this.open) {
-                                  this.rotateIcon = true;
-                              }
-                          },
-                          close(focusAfter) {
-                              this.open = false;
-                              this.rotateIcon = true;
-                              focusAfter && focusAfter.focus();
-                          }
-                      }"
-               x-id="['dropdown-button']"
-               x-on:keydown.escape.prevent.stop="close($refs.button)">
-              <!-- Button -->
-              <button class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-green-700"
-                      type="button"
-                      x-on:click="toggle(); rotateIcon = !rotateIcon"
-                      x-ref="button">
-                  Serveis
-                  <div :class="{ 'rotate-90': rotateIcon }" class="inline-block transition-transform transform">
-                      <!-- Heroicon: chevron-down -->
-                      <svg aria-hidden="true" class="h-5 w-5 flex-none text-green-700" fill="currentColor"
-                           viewBox="0 0 20 20">
-                          <path clip-rule="evenodd"
-                                d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                                fill-rule="evenodd"/>
-                      </svg>
-                  </div>
-              </button>
+          <!--            &lt;!&ndash; Desplegable &ndash;&gt;-->
+          <!--            <div class="relative"-->
+          <!--                 x-data="{-->
+          <!--                            open: false,-->
+          <!--                            rotateIcon: true,-->
+          <!--                            toggle() {-->
+          <!--                                this.open = !this.open;-->
+          <!--                                if (!this.open) {-->
+          <!--                                    this.rotateIcon = true;-->
+          <!--                                }-->
+          <!--                            },-->
+          <!--                            close(focusAfter) {-->
+          <!--                                this.open = false;-->
+          <!--                                this.rotateIcon = true;-->
+          <!--                                focusAfter && focusAfter.focus();-->
+          <!--                            }-->
+          <!--                        }"-->
+          <!--                 x-id="['dropdown-button']"-->
+          <!--                 x-on:keydown.escape.prevent.stop="close($refs.button)">-->
+          <!--                &lt;!&ndash; Button &ndash;&gt;-->
+          <!--                <button class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-green-700"-->
+          <!--                        type="button"-->
+          <!--                        x-on:click="toggle(); rotateIcon = !rotateIcon"-->
+          <!--                        x-ref="button">-->
+          <!--                    Serveis-->
+          <!--                    <div :class="{ 'rotate-90': rotateIcon }" class="inline-block transition-transform transform">-->
+          <!--                        &lt;!&ndash; Heroicon: chevron-down &ndash;&gt;-->
+          <!--                        <svg aria-hidden="true" class="h-5 w-5 flex-none text-green-700" fill="currentColor"-->
+          <!--                             viewBox="0 0 20 20">-->
+          <!--                            <path clip-rule="evenodd"-->
+          <!--                                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"-->
+          <!--                                  fill-rule="evenodd"/>-->
+          <!--                        </svg>-->
+          <!--                    </div>-->
+          <!--                </button>-->
 
-              <!-- Panel/Submenu -->
-              <div :id="$id('dropdown-button')"
-                   class="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5"
-                   style="display: none;"
-                   x-on:click.outside="close($refs.button)"
-                   x-ref="panel"
-                   x-show="open"
-                   x-transition.origin.top.left>
-                  <div>
-                      <a class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500"
-                         href="">
-                          Exemple
-                      </a>
-                  </div>
-                  <!-- ... Otros elementos del menú desplegable ... -->
-              </div>
-          </div>
+          <!--                &lt;!&ndash; Panel/Submenu &ndash;&gt;-->
+          <!--                <div :id="$id('dropdown-button')"-->
+          <!--                     class="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5"-->
+          <!--                     style="display: none;"-->
+          <!--                     x-on:click.outside="close($refs.button)"-->
+          <!--                     x-ref="panel"-->
+          <!--                     x-show="open"-->
+          <!--                     x-transition.origin.top.left>-->
+          <!--                    <div>-->
+          <!--                        <a class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500"-->
+          <!--                           href="">-->
+          <!--                            Exemple-->
+          <!--                        </a>-->
+          <!--                    </div>-->
+          <!--                    &lt;!&ndash; ... Otros elementos del menú desplegable ... &ndash;&gt;-->
+          <!--                </div>-->
+          <!--            </div>-->
 
-          <a class="text-sm font-semibold leading-6 text-green-700" href="">Preus</a>
+          <a class="text-sm font-semibold leading-6 text-green-700" href="preus.html">Preus</a>
           <a class="text-sm font-semibold leading-6 text-green-700" href="equip.html">Equip</a>
-          <a class="text-sm font-semibold leading-6 text-green-700" href="">Sobre</a>
+          <a class="text-sm font-semibold leading-6 text-green-700" href="sobre.html">Sobre</a>
           <a class="text-sm font-semibold leading-6 text-green-700" href="">Contacte</a>
 
       </div>
@@ -111,11 +111,7 @@
       <div class="fixed inset-0 z-10"></div>
       <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div class="flex items-center justify-between">
-              <a class="-m-1.5 p-1.5" href="index.html">
-                  <span class="sr-only">UrbanKicks</span>
-                  <img alt="" class="h-8 w-auto"
-                       src="Img/logo.png">
-              </a>
+
               <button @click="menuOpen = false" class="-m-2.5 rounded-md p-2.5 text-gray-700" type="button">
                   <span class="sr-only">Close menu</span>
                   <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5"
@@ -353,7 +349,9 @@
   <div class="relative bg-white lg:pt-14 mt-16"></div>
 
   <div class="relative bg-white bg-gradient-to-t from-green-50 to-transparent h-1/2 absolute top-0 left-0 right-0 z-0">
+    <div class="relative bg-white bg-gradient-to-b from-green-50 to-transparent h-1/2 absolute bottom-0 left-0 right-0 z-0">
 
+   
    
     <div class="mx-auto max-w-4xl text-center">
       <p class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Comparar tots els plans</p>
