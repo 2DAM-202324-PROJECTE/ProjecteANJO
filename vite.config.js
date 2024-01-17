@@ -16,7 +16,7 @@ export default defineConfig({
                 preus: resolve(__dirname, 'Views/preus.html'),
                 equip: resolve(__dirname, 'Views/equip.html'),
                 registre: resolve(__dirname, 'Views/registre.html'),
-                serveis: resolve(__dirname, 'Views/serveis.html'),
+                login: resolve(__dirname, 'Views/login.html'),
             },
         },
     },
