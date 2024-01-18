@@ -18,6 +18,7 @@ export default defineConfig({
                 registre: resolve(__dirname, 'Views/registre.html'),
                 login: resolve(__dirname, 'Views/login.html'),
                 password: resolve(__dirname, 'Views/password.html'),
+                condicions: resolve(__dirname, 'Views/condicions.html'),
             },
         },
     },
