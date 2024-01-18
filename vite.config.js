@@ -17,6 +17,7 @@ export default defineConfig({
                 equip: resolve(__dirname, 'Views/equip.html'),
                 registre: resolve(__dirname, 'Views/registre.html'),
                 login: resolve(__dirname, 'Views/login.html'),
+                password: resolve(__dirname, 'Views/password.html'),
             },
         },
     },
