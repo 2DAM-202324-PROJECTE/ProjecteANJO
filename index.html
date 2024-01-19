@@ -20,7 +20,7 @@
         <div class="flex lg:flex-1">
             <a class="-m-1.5 p-1.5" href="index.html">
                 <span class="sr-only">Web Crafters</span>
-                <img alt="" class="h-24 w-auto" height="205" src="Img/logo.png" width="561">
+                <img alt="Imagte del logo" class="h-24 w-auto" height="205" src="Img/logo.png" width="561">
             </a>
         </div>
         <div class="flex lg:hidden">
@@ -196,9 +196,9 @@
         <div class="relative overflow-hidden max-w-4xl mx-auto" x-data="carousel()" x-init="init">
             <div class="flex transition-transform duration-1000 ease-in-out" x-ref="container">
                 <!-- Agrega tus imágenes aquí -->
-                <img class="w-full h-auto" src="Img/empatica.png">
-                <img class="w-full h-auto" src="Img/paginaexemple.png">
-                <img class="w-full h-auto" src="Img/iesebre.png">
+                <img class="w-full h-auto" src="Img/empatica.png" alt="Imatge empatica">
+                <img class="w-full h-auto" src="Img/paginaexemple.png" alt="Imatge pàgina exemple">
+                <img class="w-full h-auto" src="Img/iesebre.png" alt="Imatge iesebre">
             </div>
         </div>
 
@@ -238,7 +238,6 @@
         </script>
     </div>
 
-
     <!-- FAQ -->
     <div class="relative mt-20">
         <!-- Fondo verde difuminado arriba -->
@@ -259,7 +258,7 @@
                             <div class="pt-6">
                                 <dt>
                                     <!-- Expand/collapse question button -->
-                                    <button :aria-controls2="'faq-' + index"
+                                    <button :tab-interface="'faq-' + index"
                                             :aria-expanded="openTab === index ? 'true' : 'false'"
                                             @click="openTab = (openTab === index ? -1 : index)"
                                             class="flex w-full items-start justify-between text-left text-gray-900"
@@ -299,23 +298,6 @@
         </div>
     </div>
 
-
-    <!--
-  This example requires some changes to your config:
-
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
--->
-
-
     <!-- NEWSLETTER-->
     <div class="bg-white py-16 sm:py-24">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8" id="mc_embed_shell">
@@ -323,18 +305,10 @@
                  id="mc_embed_signup">
                 <h2 class="mx-auto max-w-2xl text-center text-3xl font-bold tracking-tight text-white sm:text-4xl">
                     Estiguis al cas de totes les nostres ofertes.</h2>
-                <!--            <p class="mx-auto mt-2 max-w-xl text-center text-lg leading-8 text-gray-300">Reprehenderit ad esse et non officia in nulla. Id proident tempor incididunt nostrud nulla et culpa.</p>-->
-
                 <form action="https://github.us21.list-manage.com/subscribe/post?u=9c787297e8547a1c443e64d63&amp;id=7bec268e8e&amp;f_id=00b0f2e6f0"
                       class="validate mx-auto mt-10 flex max-w-md gap-x-4" id="mc-embedded-subscribe-form" method="post"
                       name="mc-embedded-subscribe-form"
                       onsubmit="return handleFormSubmit();" target="_blank">
-
-
-                    <!--            <form action="https://github.us21.list-manage.com/subscribe/post?u=9c787297e8547a1c443e64d63&amp;id=7bec268e8e&amp;f_id=00b0f2e6f0"-->
-                    <!--                  method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"-->
-                    <!--                  class="validate " target="_blank"-->
-                    <!--            >-->
 
                     <label class="sr-only" for="mce-EMAIL">Adreça electrònica <span
                             class="asterisk">*</span></label>
@@ -353,7 +327,7 @@
 
                 </form>
 
-                <dl class="grid grid-cols-1 mt-14 ml-60 mr-60 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
+                <div class="grid grid-cols-1 mt-14 ml-60 mr-60 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
                     <div class="flex flex-col items-center">
                         <div class="rounded-md bg-green-500 p-2 ring-1 ring-white/10">
                             <svg aria-hidden="true" class="h-6 w-6 text-gray-100" fill="none" stroke="currentColor"
@@ -378,7 +352,7 @@
                         <dt class="mt-4 font-semibold text-white">No spam</dt>
                         <!--                    <dd class="mt-2 leading-7 text-gray-400">Officia excepteur ullamco ut sint duis proident non adipisicing. Voluptate incididunt anim.</dd>-->
                     </div>
-                </dl>
+                </div>
 
                 <div aria-hidden="true" class="absolute -top-24 right-0 -z-10 transform-gpu blur-3xl">
                     <div class="aspect-[1404/767] w-[87.75rem] bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-25"
