@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="h-full">
+<html class="h-full" lang="ca">
 <head>
     <title>Web Crafters</title>
     <link href="Img/logoSimple.webp" rel="icon" type="image/svg+xml"/>
@@ -12,6 +12,7 @@
     <meta name="language" content="ca">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta property="og:site_name" content="WebCrafters - Creació de Pàgines Web">
+    <meta name="theme-color" content="green">
 </head>
 
 <body class="h-full">
@@ -253,7 +254,7 @@
                     <dl class="mt-10 space-y-6 divide-y divide-gray-900/10">
                         <!-- En aquest array guardo preguntes i respostes... -->
                         <template :key="index" x-for="(item, index) in [
-                        { pregunta: 'Quant costa el vostre servei?', resposta: 'El preu varia depenent del plà que agafis, pots consultar els preus ' },
+                        { pregunta: 'Quant costa el vostre servei?', resposta: 'El preu varia depenent del plà que agafis, pots consultar els nostres plans a la secció de ' },
                         { pregunta: 'Podeu fer qualsevol tipus de web?', resposta: 'No, solament fem botigues en línea, però estarà sempre adaptada als teus gustos!' },
                         { pregunta: 'Quant de temps soleu tardar en fer-ne una?', resposta: 'El temps depén de quant contingut tingui la botiga i la dificultat.' }
                     ]">
@@ -284,7 +285,7 @@
                                     <p class="text-base leading-7 text-gray-600">
                                         <!-- L'enllaç de la primera resposta -->
                                         <template x-if="index === 0">
-                                            <span x-html="item.resposta + ' <a class=\'text-green-600 underline hover:text-green-900\' href=\'Views/preus.html\' target=\'_blank\'>aquí</a>'"></span>
+                                            <span x-html="item.resposta + ' <a class=\'text-green-600 underline hover:text-green-900\' href=\'Views/preus.html\' target=\'_blank\'>preus</a>'"></span>
                                         </template>
                                         <!-- Les pregüntes restants, agafa l'array -->
                                         <template x-if="index !== 0">
