@@ -11,7 +11,7 @@ export default defineConfig({
                 main: resolve(__dirname, 'index.html'),
                 about: resolve(__dirname, 'Views/sobre.html'),
                 contacte: resolve(__dirname, 'Views/contacte.html'),
-                error: resolve(__dirname, 'Views/error.html'),
+                error: resolve(__dirname, 'Views/404.html'),
                 cookies: resolve(__dirname, 'Views/cookies.html'),
                 preus: resolve(__dirname, 'Views/preus.html'),
                 equip: resolve(__dirname, 'Views/equip.html'),
