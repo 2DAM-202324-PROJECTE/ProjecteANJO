@@ -1,12 +1,18 @@
 <!doctype html>
-<html class="h-full" lang="en">
+<html class="h-full" lang="ca">
 <head>
-    <meta charset="UTF-8"/>
-    <link href="Img/logoSimple.png" rel="icon" type="image/svg+xml"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <link href="style.css" rel="stylesheet">
     <title>Web Crafters</title>
-
+    <link href="Img/logoSimple.webp" rel="icon" type="image/svg+xml"/>
+    <link href="style.css" rel="stylesheet">
+    <link rel=»canonical» href=»https://2dam-202324-projecte.github.io/ProjecteANJO/» />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>   
+    <meta name="description" content="Dissenyem pàgines web a mida per al teu negoci. Oferim solucions de disseny web creatives i efectives per impulsar la teva presència en línia. Contacta'ns avui mateix!">
+    <meta name="keywords" content="creació de pàgines web, disseny web, desenvolupament web, disseny de llocs web, disseny web personalitzat">
+    <meta name="author" content="WebCrafters">
+    <meta name="language" content="ca">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta property="og:site_name" content="WebCrafters - Creació de Pàgines Web">
+    <meta name="theme-color" content="green">
 </head>
 
 <body class="h-full">
@@ -20,7 +26,7 @@
         <div class="flex lg:flex-1">
             <a class="-m-1.5 p-1.5" href="index.html">
                 <span class="sr-only">Web Crafters</span>
-                <img alt="" class="h-24 w-auto" height="205" src="Img/logo.png" width="561">
+                <img alt="Imagte del logo" class="h-24 w-auto" height="205" src="Img/logo.webp" width="561">
             </a>
         </div>
         <div class="flex lg:hidden">
@@ -127,7 +133,7 @@
                 <div class="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
                     <div class="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4 relative z-10">
                         <img alt="App screenshot" class="w-[76rem] rounded-md shadow-2xl ring-1 ring-gray-900/10"
-                             height="1442" src="Img/paginaexemple.png" width="2432">
+                             height="1442" src="Img/paginaexemple.webp" width="2432">
                     </div>
                 </div>
             </div>
@@ -168,16 +174,13 @@
                 <img alt="Product screenshot"
                      class="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:ml-0"
                      height="1442"
-                     src="Img/mon.png" width="2432">
+                     src="Img/mon.webp" width="2432">
             </div>
         </div>
     </div>
+
     <!-- CTA -->
     <div class="bg-white relative overflow-hidden">
-        <!--        &lt;!&ndash; Fondo verde difuminado &ndash;&gt;-->
-        <!--        <div class="bg-gradient-to-t from-green-300 to-transparent  h-1/2 absolute top-0 left-0 right-0"></div>-->
-        <!--        <div class="bg-gradient-to-b from-green-300  to-transparent h-1/2 absolute bottom-0 left-0 right-0"></div>-->
-
         <!-- Contenido del CTA -->
         <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:justify-between lg:px-8 lg:pl-0 relative z-10 ">
             <!-- Texto y botón -->
@@ -196,9 +199,9 @@
         <div class="relative overflow-hidden max-w-4xl mx-auto" x-data="carousel()" x-init="init">
             <div class="flex transition-transform duration-1000 ease-in-out" x-ref="container">
                 <!-- Agrega tus imágenes aquí -->
-                <img class="w-full h-auto" src="Img/empatica.png">
-                <img class="w-full h-auto" src="Img/paginaexemple.png">
-                <img class="w-full h-auto" src="Img/iesebre.png">
+                <img class="w-full h-auto" src="Img/empatica.webp" alt="Imatge empatica">
+                <img class="w-full h-auto" src="Img/paginaexemple.webp" alt="Imatge pàgina exemple">
+                <img class="w-full h-auto" src="Img/iesebre.webp" alt="Imatge iesebre">
             </div>
         </div>
 
@@ -238,7 +241,6 @@
         </script>
     </div>
 
-
     <!-- FAQ -->
     <div class="relative mt-20">
         <!-- Fondo verde difuminado arriba -->
@@ -252,14 +254,14 @@
                     <dl class="mt-10 space-y-6 divide-y divide-gray-900/10">
                         <!-- En aquest array guardo preguntes i respostes... -->
                         <template :key="index" x-for="(item, index) in [
-                        { pregunta: 'Quant costa el vostre servei?', resposta: 'El preu varia depenent del plà que agafis, pots consultar els preus ' },
+                        { pregunta: 'Quant costa el vostre servei?', resposta: 'El preu varia depenent del plà que agafis, pots consultar els nostres plans a la secció de ' },
                         { pregunta: 'Podeu fer qualsevol tipus de web?', resposta: 'No, solament fem botigues en línea, però estarà sempre adaptada als teus gustos!' },
                         { pregunta: 'Quant de temps soleu tardar en fer-ne una?', resposta: 'El temps depén de quant contingut tingui la botiga i la dificultat.' }
                     ]">
                             <div class="pt-6">
                                 <dt>
                                     <!-- Expand/collapse question button -->
-                                    <button :aria-controls2="'faq-' + index"
+                                    <button :tab-interface="'faq-' + index"
                                             :aria-expanded="openTab === index ? 'true' : 'false'"
                                             @click="openTab = (openTab === index ? -1 : index)"
                                             class="flex w-full items-start justify-between text-left text-gray-900"
@@ -283,7 +285,7 @@
                                     <p class="text-base leading-7 text-gray-600">
                                         <!-- L'enllaç de la primera resposta -->
                                         <template x-if="index === 0">
-                                            <span x-html="item.resposta + ' <a class=\'text-green-600 underline hover:text-green-900\' href=\'Views/preus.html\' target=\'_blank\'>aquí</a>'"></span>
+                                            <span x-html="item.resposta + ' <a class=\'text-green-600 underline hover:text-green-900\' href=\'Views/preus.html\' target=\'_blank\'>preus</a>'"></span>
                                         </template>
                                         <!-- Les pregüntes restants, agafa l'array -->
                                         <template x-if="index !== 0">
@@ -299,23 +301,6 @@
         </div>
     </div>
 
-
-    <!--
-  This example requires some changes to your config:
-
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
--->
-
-
     <!-- NEWSLETTER-->
     <div class="bg-white py-16 sm:py-24">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8" id="mc_embed_shell">
@@ -323,18 +308,10 @@
                  id="mc_embed_signup">
                 <h2 class="mx-auto max-w-2xl text-center text-3xl font-bold tracking-tight text-white sm:text-4xl">
                     Estiguis al cas de totes les nostres ofertes.</h2>
-                <!--            <p class="mx-auto mt-2 max-w-xl text-center text-lg leading-8 text-gray-300">Reprehenderit ad esse et non officia in nulla. Id proident tempor incididunt nostrud nulla et culpa.</p>-->
-
                 <form action="https://github.us21.list-manage.com/subscribe/post?u=9c787297e8547a1c443e64d63&amp;id=7bec268e8e&amp;f_id=00b0f2e6f0"
                       class="validate mx-auto mt-10 flex max-w-md gap-x-4" id="mc-embedded-subscribe-form" method="post"
                       name="mc-embedded-subscribe-form"
                       onsubmit="return handleFormSubmit();" target="_blank">
-
-
-                    <!--            <form action="https://github.us21.list-manage.com/subscribe/post?u=9c787297e8547a1c443e64d63&amp;id=7bec268e8e&amp;f_id=00b0f2e6f0"-->
-                    <!--                  method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"-->
-                    <!--                  class="validate " target="_blank"-->
-                    <!--            >-->
 
                     <label class="sr-only" for="mce-EMAIL">Adreça electrònica <span
                             class="asterisk">*</span></label>
@@ -353,7 +330,7 @@
 
                 </form>
 
-                <dl class="grid grid-cols-1 mt-14 ml-60 mr-60 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
+                <div class="grid grid-cols-1 mt-14 ml-60 mr-60 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
                     <div class="flex flex-col items-center">
                         <div class="rounded-md bg-green-500 p-2 ring-1 ring-white/10">
                             <svg aria-hidden="true" class="h-6 w-6 text-gray-100" fill="none" stroke="currentColor"
@@ -363,8 +340,7 @@
                                       stroke-linejoin="round"/>
                             </svg>
                         </div>
-                        <dt class="mt-4 font-semibold text-white">Ofertes setmanals</dt>
-                        <!--                    <dd class="mt-2 leading-7 text-gray-400">Non laboris consequat cupidatat laborum magna. Eiusmod non irure cupidatat duis commodo amet.</dd>-->
+                        <div class="mt-4 font-semibold text-white">Ofertes setmanals</div>
                     </div>
                     <div class="flex flex-col items-center">
                         <div class="rounded-md bg-green-500 p-2 ring-1 ring-white/10">
@@ -375,10 +351,9 @@
                                       stroke-linejoin="round"/>
                             </svg>
                         </div>
-                        <dt class="mt-4 font-semibold text-white">No spam</dt>
-                        <!--                    <dd class="mt-2 leading-7 text-gray-400">Officia excepteur ullamco ut sint duis proident non adipisicing. Voluptate incididunt anim.</dd>-->
+                        <div class="mt-4 font-semibold text-white">No spam</div>
                     </div>
-                </dl>
+                </div>
 
                 <div aria-hidden="true" class="absolute -top-24 right-0 -z-10 transform-gpu blur-3xl">
                     <div class="aspect-[1404/767] w-[87.75rem] bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-25"
@@ -421,13 +396,12 @@
         </div>
     </div>
 
-
     <!--  FOOTER -->
     <footer class="bg-white">
         <div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
 
             <div class="mt-10 flex justify-center space-x-10">
-                <a class="text-gray-400 hover:text-gray-500" href="https://facebook.com">
+                <a class="text-gray-400 hover:text-gray-500" href="https://www.facebook.com/profile.php?id=61555725272426">
                     <span class="sr-only">Facebook</span>
                     <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
                         <path clip-rule="evenodd"
@@ -435,7 +409,7 @@
                               fill-rule="evenodd"/>
                     </svg>
                 </a>
-                <a class="text-gray-400 hover:text-gray-500" href="https://instagram.com">
+                <a class="text-gray-400 hover:text-gray-500" href="https://www.instagram.com/webcraftersebre">
                     <span class="sr-only">Instagram</span>
                     <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
                         <path clip-rule="evenodd"
@@ -443,11 +417,11 @@
                               fill-rule="evenodd"/>
                     </svg>
                 </a>
-                <a class="text-gray-400 hover:text-gray-500" href="https://twitter.com">
+                <a class="text-gray-400 hover:text-gray-500" href="https://twitter.com/WebCrafterEBRE">
                     <span class="sr-only">Twitter</span>
-                    <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M14.095479,10.316482L22.286354,1h-1.940718l-7.115352,8.087682L7.551414,1H1l8.589488,12.231093L1,23h1.940717  l7.509372-8.542861L16.448587,23H23L14.095479,10.316482z M11.436522,13.338465l-0.871624-1.218704l-6.924311-9.68815h2.981339  l5.58978,7.82155l0.867949,1.218704l7.26506,10.166271h-2.981339L11.436522,13.338465z"/>
-                    </svg>
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M13.6823 10.6218L20.2391 3H18.6854L12.9921 9.61788L8.44486 3H3.2002L10.0765 13.0074L3.2002 21H4.75404L10.7663 14.0113L15.5685 21H20.8131L13.6819 10.6218H13.6823ZM11.5541 13.0956L10.8574 12.0991L5.31391 4.16971H7.70053L12.1742 10.5689L12.8709 11.5655L18.6861 19.8835H16.2995L11.5541 13.096V13.0956Z" />
+                      </svg>
                 </a>
                 <a class="text-gray-400 hover:text-gray-500"
                    href="https://github.com/2DAM-202324-PROJECTE/ProjecteANJO">
@@ -458,7 +432,7 @@
                               fill-rule="evenodd"/>
                     </svg>
                 </a>
-                <a class="text-gray-400 hover:text-gray-500" href="https://youtube.com">
+                <a class="text-gray-400 hover:text-gray-500" href="https://www.youtube.com/@WebCraftersEBRE">
                     <span class="sr-only">YouTube</span>
                     <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
                         <path clip-rule="evenodd"
@@ -536,9 +510,6 @@
         }
     </script>
 
-
 </div>
-
-
 </body>
 </html>

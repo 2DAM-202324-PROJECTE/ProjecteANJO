@@ -1,0 +1,106 @@
+<!doctype html>
+<html class="h-full bg-gradient-to-r from-green-200/30 via-green-200 to-green-200/30" id="container" lang="ca">
+<head>
+    <title>Error 404 | WebCrafters</title>
+    <link href="Img/logoSimple.webp" rel="icon" type="image/svg+xml"/>
+    <link href="style.css" rel="stylesheet">
+    <link rel=»canonical» href=»https://2dam-202324-projecte.github.io/ProjecteANJO/» />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>   
+    <meta name="description" content="Dissenyem pàgines web a mida per al teu negoci. Oferim solucions de disseny web creatives i efectives per impulsar la teva presència en línia. Contacta'ns avui mateix!">
+    <meta name="keywords" content="creació de pàgines web, disseny web, desenvolupament web, disseny de llocs web, disseny web personalitzat">
+    <meta name="author" content="WebCrafters">
+    <meta name="language" content="ca">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta property="og:site_name" content="WebCrafters - Creació de Pàgines Web">
+</head>
+
+<body class="h-full flex items-center p-16">
+
+    <!-- SCRIPTS -->
+    <script src="main.js" type="module"></script>
+
+<!-- component -->
+<!-- This is an example component -->
+<div class="h-screen w-screen flex items-center">
+    <div class="container flex flex-col md:flex-row items-center justify-between px-5 text-gray-700">
+            <div class="w-full lg:w-1/2 mx-8">
+                <div class="text-7xl text-green-500 font-dark font-extrabold mb-8"> 404</div>
+            <p class="text-2xl md:text-3xl font-light leading-normal mb-8">
+                No hem pogut trobar la pàgina que esteu cercant.
+            </p>
+            
+            <a href="index.html" class="px-5 inline py-3 text-sm font-medium leading-5 shadow-2xl text-white transition-all duration-400 border border-transparent rounded-lg focus:outline-none bg-green-600 active:bg-green-600 hover:bg-green-900">Torna a la pàgina d'inici</a>
+    </div>
+        <div class="w-full lg:flex lg:justify-end lg:w-1/2 mx-5 my-12">
+        <img src="https://user-images.githubusercontent.com/43953425/166269493-acd08ccb-4df3-4474-95c7-ad1034d3c070.svg" class="" alt="Page not found">
+        </div>
+    
+    </div>
+</div>
+
+<!-- COOKIES -->
+<div class="pointer-events-none fixed inset-x-0 bottom-0 px-6 pb-6" id="cookies-banner"
+     x-data="{ showCookiesBanner: true }" x-show="showCookiesBanner">
+    <div class="pointer-events-auto ml-auto max-w-xl rounded-xl bg-white p-6 shadow-lg ring-1 ring-gray-900/10">
+        <p class="text-sm leading-6 text-gray-900">Aquest lloc web utilitza galetes per complementar una dieta
+            equilibrada i proporcionar una recompensa molt merescuda als sentits després de consumir àpats suaus
+            però nutritius. Acceptar les nostres galetes és opcional però recomanable, ja que són delicioses. Veure
+            la nostra <a class="font-semibold text-green-600 underline hover:text-green-900"
+                         href="cookies.html">política de galetes</a>.</p>
+        <div class="mt-4 flex items-center gap-x-5">
+            <button @click="acceptCookies" class="rounded-md bg-green-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+                    type="button">
+                Accepta-ho
+            </button>
+            <button @click="rejectCookies"
+                    class="text-sm font-semibold leading-6 transition-colors hover:text-green-600  transition-colors hover:text-green-600 relative after:block after:content-[''] after:absolute after:h-[3px] after:bg-green-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
+                    type="button">
+                Rebutja-ho
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function setCookie(name, value, days) {
+        const expires = new Date();
+        expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+        document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
+    }
+
+    function getCookie(name) {
+        const cookies = document.cookie.split('; ');
+        for (const cookie of cookies) {
+            const [cookieName, cookieValue] = cookie.split('=');
+            if (cookieName === name) {
+                return cookieValue;
+            }
+        }
+        return null;
+    }
+
+    function acceptCookies() {
+        setCookie('cookieNombre', 'valor', 30);  // Cambia 'cookieNombre' y 'valor' según tus necesidades
+        setCookie('cookieAceptada', 'true', 365);  // Añade una cookie para rastrear el consentimiento
+        document.getElementById('cookies-banner').style.display = 'none';
+    }
+
+    // Verificar si la cookie de aceptación ya existe
+    window.onload = function () {
+        const cookieAceptada = getCookie('cookieAceptada');
+        if (cookieAceptada === 'true') {
+            document.getElementById('cookies-banner').style.display = 'none';
+        }
+    };
+
+    // Adicionalmente, puedes agregar lógica para manejar el rechazo de cookies
+    let cookieRejected = false;
+
+    function rejectCookies() {
+        cookieRejected = true;
+        document.getElementById('cookies-banner').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
