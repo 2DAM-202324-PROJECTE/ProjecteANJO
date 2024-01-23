@@ -1725,69 +1725,28 @@
       </div>
   </footer>
 
-<!-- COOKIES -->
-<div class="pointer-events-none fixed inset-x-0 bottom-0 px-6 pb-6" id="cookies-banner"
-     x-data="{ showCookiesBanner: true }" x-show="showCookiesBanner">
-  <div class="pointer-events-auto ml-auto max-w-xl rounded-xl bg-white p-6 shadow-lg ring-1 ring-gray-900/10">
-    <p class="text-sm leading-6 text-gray-900">Aquest lloc web utilitza galetes per complementar una dieta
-      equilibrada i proporcionar una recompensa molt merescuda als sentits després de consumir àpats suaus
-      però nutritius. Acceptar les nostres galetes és opcional però recomanable, ja que són delicioses. Veure
-      la nostra <a class="font-semibold text-green-600 underline hover:text-green-900"
-                   href="cookies.html">política de galetes</a>.</p>
-    <div class="mt-4 flex items-center gap-x-5">
-      <button @click="acceptCookies" class="rounded-md bg-green-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
-              type="button">
-        Accepta-ho
-      </button>
-      <button @click="rejectCookies"
-              class="text-sm font-semibold leading-6 transition-colors hover:text-green-600  transition-colors hover:text-green-600 relative after:block after:content-[''] after:absolute after:h-[3px] after:bg-green-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
-              type="button">
-        Rebutja-ho
-      </button>
-    </div>
+    <!-- COOKIES -->
+    <div class="pointer-events-none fixed inset-x-0 bottom-0 px-6 pb-6" id="cookies-banner" style="display: none;">
+      <div class="pointer-events-auto ml-auto max-w-xl rounded-xl bg-white p-6 shadow-lg ring-1 ring-gray-900/10">
+          <p class="text-sm leading-6 text-gray-900">Aquest lloc web utilitza galetes per complementar una dieta
+              equilibrada y proporcionar una recompensa molt merescuda als sentits després de consumir àpats suaus
+              però nutritius. Acceptar les nostres galetes és opcional però recomanable, ja que són delicioses. Veure
+              la nostra <a class="font-semibold text-green-600 underline hover:text-green-900"
+                           href="Views/cookies.html">política de galetes</a>.</p>
+          <div class="mt-4 flex items-center gap-x-5">
+              <button onclick="acceptCookies()"
+                      class="rounded-md bg-green-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+                      type="button">
+                  Accepta-ho
+              </button>
+              <button onclick="rejectCookies()"
+                      class="text-sm font-semibold leading-6 transition-colors hover:text-green-600  transition-colors hover:text-green-600 relative after:block after:content-[''] after:absolute after:h-[3px] after:bg-green-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
+                      type="button">
+                  Rebutja-ho
+              </button>
+          </div>
+      </div>
   </div>
-</div>
-
-<script>
-  function setCookie(name, value, days) {
-    const expires = new Date();
-    expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
-    document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
-  }
-
-  function getCookie(name) {
-    const cookies = document.cookie.split('; ');
-    for (const cookie of cookies) {
-      const [cookieName, cookieValue] = cookie.split('=');
-      if (cookieName === name) {
-        return cookieValue;
-      }
-    }
-    return null;
-  }
-
-  function acceptCookies() {
-    setCookie('cookieNombre', 'valor', 30);  // Cambia 'cookieNombre' y 'valor' según tus necesidades
-    setCookie('cookieAceptada', 'true', 365);  // Añade una cookie para rastrear el consentimiento
-    document.getElementById('cookies-banner').style.display = 'none';
-  }
-
-  // Verificar si la cookie de aceptación ya existe
-  window.onload = function () {
-    const cookieAceptada = getCookie('cookieAceptada');
-    if (cookieAceptada === 'true') {
-      document.getElementById('cookies-banner').style.display = 'none';
-    }
-  };
-
-  // Adicionalmente, puedes agregar lógica para manejar el rechazo de cookies
-  let cookieRejected = false;
-
-  function rejectCookies() {
-    cookieRejected = true;
-    document.getElementById('cookies-banner').style.display = 'none';
-  }
-</script>
 
 </body>
 </html>
