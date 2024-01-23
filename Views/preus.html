@@ -136,182 +136,115 @@
   <div class="absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-white sm:h-32"></div>
 </div>
 
-<!-- PREUS -->
+<!-- SECCIÓ DE PREUS -->
 
-<div class="bg-white py-24 sm:py-32">
-  <div class="mx-auto max-w-7xl px-6 lg:px-8">
-    <div class="mx-auto max-w-4xl mt-16 text-center">
-      <p class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Plans de Preus Flexibles</p>
-    </div>
-   
-    <!-- Boto Mensual/Anual -->
-
-    <div class="mt-16 flex justify-center">
-      <fieldset class="grid grid-cols-2 gap-x-1 rounded-full p-2 text-center text-sm font-semibold leading-5 ring-2 ring-inset ring-black">
-        <legend class="sr-only">Payment frequency</legend>
-        <!-- Checked: "bg-green-600 text-white", Not Checked: "text-gray-500" -->
-        <label class="cursor-pointer rounded-full px-4 py-2 bg-green-600 text-white">
-          <input type="radio" name="frequency" value="mensual" class="sr-only" checked>
-          <span>Mensual</span>
-        </label>
-        <!-- Checked: "bg-green-600 text-white", Not Checked: "text-gray-500" -->
-        <label class="cursor-pointer rounded-full px-4 py-2 text-black">
-          <input type="radio" name="frequency" value="anual" class="sr-only">
-          <span>Anual</span>
-        </label>
-      </fieldset>
-    </div>  
-
-    <div class="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-      <div class="rounded-3xl p-8 xl:p-10 ring-2 ring-black">
-        <div class="flex items-center justify-between gap-x-4">
-          <h1 id="tier-basic" class="text-lg font-semibold leading-8 text-gray-900">Pla Bàsic</h1>
-        </div>
-        <p class="mt-4 text-sm leading-6 text-gray-600">Inici ràpid amb disseny estàndard, pagaments bàsics, suport per email.</p>
-        <p class="mt-6 flex items-baseline gap-x-1">
-          <!-- Price, update based on frequency toggle state -->
-          <span class="text-4xl font-bold tracking-tight text-gray-900 price" data-monthly="15€" data-annual="30€">15€</span>
-          <!-- Payment frequency, update based on frequency toggle state -->
-          <span class="text-sm font-semibold leading-6 text-gray-600">/mes</span>
-        </p>
-        <a href="#" aria-describedby="tier-basic" class="mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 text-green-600 ring-2 ring-inset ring-green-200 hover:ring-green-300">Comprar pla</a>
-        <ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-gray-600 xl:mt-10">
-          <li class="flex gap-x-3">
-            <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-            </svg>
-            Disseny amb plantilles estàndard
-          </li>
-          <li class="flex gap-x-3">
-            <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-            </svg>
-            Integració bàsica de mètodes de pagament
-          </li>
-          <li class="flex gap-x-3">
-            <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-            </svg>
-            Suport tècnic per correu electrònic
-          </li>
-          <li class="flex gap-x-3">
-            <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-            </svg>
-            Gestió d'inventari bàsic
-          </li>
-        </ul>
+<div x-data="{ paymentFrequency: 'monthly', plans: [
+    {
+      name: 'Pla Bàsic',
+      description: 'Inici ràpid amb disseny estàndard, pagaments bàsics, suport per email.',
+      features: ['Disseny amb plantilles estàndard', 'Integració bàsica de mètodes de pagament', 'Suport tècnic per correu electrònic', 'Gestió d\'inventari bàsic'],
+      monthlyPrice: '15€',
+      annualPrice: '30€',
+      isPopular: false
+    },
+    {
+      name: 'Pla Avançat',
+      description: 'Més opcions, pagaments avançats, suport telefònic, SEO bàsic.',
+      features: ['Disseny personalitzat amb més opcions de plantilles', 'Integració avançada de mètodes de pagament i enviaments', 'Suport tècnic telefònic', 'Funcions bàsiques de SEO i anàlisi de trànsit'],
+      monthlyPrice: '30€',
+      annualPrice: '60€',
+      isPopular: true
+    },
+    {
+      name: 'Pla Elit',
+      description: 'Personalització màxima, integracions totals, estratègies màrqueting avançades.',
+      features: ['Solucions de disseny web a mida amb funcionalitats úniques', 'Integració total amb sistemes de pagament, logística, CRM i gestió d\'inventari', 'Consultoria personalitzada i suport tècnic dedicat', 'Estratègies avançades de màrqueting digital i anàlisi de dades completa'],
+      monthlyPrice: '60€',
+      annualPrice: '120€',
+      isPopular: false
+    }
+  ]}">
+  <div class="bg-white py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-4xl mt-16 text-center">
+        <p class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Plans de Preus Flexibles</p>
       </div>
-      <div class="rounded-3xl p-8 xl:p-10 ring-2 ring-green-600">
-        <div class="flex items-center justify-between gap-x-4">
-          <h1 id="tier-advanced" class="text-lg font-semibold leading-8 text-green-600">Pla Avançat</h1>
-          <p class="rounded-full bg-green-600/10 px-2.5 py-1 text-xs font-semibold leading-5 text-green-600">Més popular</p>
-        </div>
-        <p class="mt-4 text-sm leading-6 text-gray-600">Més opcions, pagaments avançats, suport telefònic, SEO bàsic.</p>
-        <p class="mt-6 flex items-baseline gap-x-1">
-          <!-- Price, update based on frequency toggle state -->
-          <span class="text-4xl font-bold tracking-tight text-gray-900 price" data-monthly="30€" data-annual="60€">30€</span>
-          <!-- Payment frequency, update based on frequency toggle state -->
-          <span class="text-sm font-semibold leading-6 text-gray-600">/mes</span>
-        </p>
-        <a href="#" aria-describedby="tier-advanced" class="mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 bg-green-600 text-white shadow-sm hover:bg-green-500">Comprar pla</a>
-        <ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-gray-600 xl:mt-10">
-          <li class="flex gap-x-3">
-            <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-            </svg>
-            Disseny personalitzat amb més opcions de plantilles
-          </li>
-          <li class="flex gap-x-3">
-            <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-            </svg>
-            Integració avançada de mètodes de pagament i enviaments
-          </li>
-          <li class="flex gap-x-3">
-            <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-            </svg>
-            Suport tècnic telefònic
-          </li>
-          <li class="flex gap-x-3">
-            <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-            </svg>
-            Funcions bàsiques de SEO i anàlisi de trànsit
-          </li>
-        </ul>
+
+      <!-- Boto Mensual/Anual -->
+      <div class="mt-16 flex justify-center">
+        <fieldset class="grid grid-cols-2 gap-x-1 rounded-full p-2 text-center text-sm font-semibold leading-5 ring-2 ring-inset ring-black">
+          <legend class="sr-only">Payment frequency</legend>
+          <label class="cursor-pointer rounded-full px-4 py-2" :class="paymentFrequency === 'monthly' ? 'bg-green-600 text-white' : 'text-black'">
+            <input type="radio" name="frequency" value="mensual" class="sr-only" @click="paymentFrequency = 'monthly'">
+            <span>Mensual</span>
+          </label>
+          <label class="cursor-pointer rounded-full px-4 py-2" :class="paymentFrequency === 'annual' ? 'bg-green-600 text-white' : 'text-black'">
+            <input type="radio" name="frequency" value="anual" class="sr-only" @click="paymentFrequency = 'annual'">
+            <span>Anual</span>
+          </label>
+        </fieldset>
       </div>
-      <div class="rounded-3xl p-8 xl:p-10 ring-2 ring-black">
-        <div class="flex items-center justify-between gap-x-4">
-          <h1 id="tier-elit" class="text-lg font-semibold leading-8 text-gray-900">Pla Elit</h1>
-        </div>
-        <p class="mt-4 text-sm leading-6 text-gray-600">Personalització màxima, integracions totals, estratègies màrqueting avançades.</p>
-        <p class="mt-6 flex items-baseline gap-x-1">
-          <!-- Price, update based on frequency toggle state -->
-          <span class="text-4xl font-bold tracking-tight text-gray-900 price" data-monthly="60€" data-annual="120€">60€</span>
-          <!-- Payment frequency, update based on frequency toggle state -->
-          <span class="text-sm font-semibold leading-6 text-gray-600">/mes</span>
-        </p>
-        <a href="#" aria-describedby="tier-elit" class="mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 text-green-600 ring-2 ring-inset ring-green-200 hover:ring-green-300">Comprar pla</a>
-        <ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-gray-600 xl:mt-10">
-          <li class="flex gap-x-3">
-            <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-            </svg>
-            Solucions de disseny web a mida amb funcionalitats úniques
-          </li>
-          <li class="flex gap-x-3">
-            <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-            </svg>
-            Integració total amb sistemes de pagament, logística, CRM i gestió d'inventari
-          </li>
-          <li class="flex gap-x-3">
-            <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-            </svg>
-            Consultoria personalitzada i suport tècnic dedicat
-          </li>
-          <li class="flex gap-x-3">
-            <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-            </svg>
-            Estratègies avançades de màrqueting digital i anàlisi de dades completa
-          </li>
-        </ul>
+
+      <div class="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+        <template x-for="plan in plans" :key="plan.name">
+          <div :class="{'ring-2 ring-green-600': plan.isPopular, 'ring-2 ring-black': !plan.isPopular}" class="rounded-3xl p-8 xl:p-10">
+            <div class="flex items-center justify-between gap-x-4">
+              <h1 x-text="plan.name" class="text-lg font-semibold leading-8" :class="{'text-green-600': plan.isPopular, 'text-gray-900': !plan.isPopular}"></h1>
+              <template x-if="plan.isPopular">
+                <p class="rounded-full bg-green-600/10 px-2.5 py-1 text-xs font-semibold leading-5 text-green-600">Més popular</p>
+              </template>
+            </div>
+            <p x-text="plan.description" class="mt-4 text-sm leading-6 text-gray-600"></p>
+            <p class="mt-6 flex items-baseline gap-x-1">
+              <span class="text-4xl font-bold tracking-tight text-gray-900" x-text="paymentFrequency === 'monthly' ? plan.monthlyPrice : plan.annualPrice"></span>
+              <span class="text-sm font-semibold leading-6 text-gray-600" x-text="paymentFrequency === 'monthly' ? '/mes' : '/any'"></span>
+            </p>
+            <a href="#" aria-describedby="tier-basic" class="mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 text-green-600 ring-2 ring-inset ring-green-200 hover:ring-green-300">Comprar pla</a>
+            <ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-gray-600 xl:mt-10">
+              <template x-for="feature in plan.features" :key="feature">
+                <li class="flex gap-x-3">
+                  <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                  </svg>
+                  <span x-text="feature"></span>
+                </li>
+              </template>
+            </ul>
+          </div>
+        </template>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Botó comparació plans -->
+<div x-data="{ isOpen: false }" class="flex justify-center items-center flex-col">
+  
+  <!-- Botó comparació plans -->
+  <div class="w-full text-center">
+    <button @click="isOpen = !isOpen" class="grid grid-cols-1 gap-x-1 rounded-full p-2 text-center text-sm font-semibold leading-5 ring-2 ring-inset ring-black cursor-pointer mx-auto">
+      
+      <!-- Estat "Comparar plans" -->
+      <span x-show="!isOpen" class="flex justify-center items-center rounded-full px-4 py-2 bg-green-600 text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+        </svg>
+        Comparar plans
+      </span>
 
-<div class="flex justify-center">
-  <button id="toggleButton" class="grid grid-cols-1 gap-x-1 rounded-full p-2 text-center text-sm font-semibold leading-5 ring-2 ring-inset ring-black cursor-pointer">
-    
-    <!-- Estat "Comparar plans" -->
-    <span id="comparePlans" class="flex justify-center rounded-full px-4 py-2 bg-green-600 text-white">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-      </svg>
-      Comparar plans
-    </span>
+      <!-- Estat "Tancar comparacio" -->
+      <span x-show="isOpen" class="flex justify-center items-center rounded-full px-4 py-2 bg-black text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
+        </svg>
+        Tancar comparació
+      </span>
 
-    <!-- Estat "Tancar comparacio" -->
-    <span id="closeComparison" class="flex justify-center rounded-full px-4 py-2 bg-black text-white hidden">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
-      </svg>
-      Tancar comparació
-    </span>
+    </button>
+  </div>
 
-  </button>
-</div>
-
-
-<!-- PRICE COMPARITION SECTION -->
-<div id="contentToToggle" class="max-h-0 overflow-hidden opacity-0 transition-all duration-500">
+  <!-- PRICE COMPARITION SECTION -->
+  <div x-ref="contentToToggle" :class="{ 'max-h-0 overflow-hidden opacity-0': !isOpen, 'max-h-full opacity-100': isOpen }" class="transition-all duration-500 w-full">
+    <!-- Contenido de la sección de comparación -->
 
   <div class="relative bg-white lg:pt-14 mt-16"></div>
     <div class="mx-auto max-w-4xl text-center">
@@ -1340,320 +1273,72 @@
 
 <!-- FAQS SECTION -->
 
-<div class="bg-white">
+<div x-data="{ preguntaOberta: null, faqs: [
+  {
+    pregunta: 'Puc canviar de pla en qualsevol moment?',
+    resposta: 'Sí, pots canviar de pla en qualsevol moment. Si necessites més funcionalitats o menys, adaptem el teu servei per ajustar-se al creixement del teu negoci.'
+  },
+  {
+    pregunta: 'Com funciona el suport tècnic?',
+    resposta: 'Oferim suport tècnic via correu electrònic per al Pla Bàsic, suport telefònic per al Pla Avançat, i suport prioritari 24/7 per al Pla Elite. El nostre equip està sempre a punt per ajudar-te.'
+  },
+  {
+    pregunta: 'Quines opcions de pagament s\'ofereixen?',
+    resposta: 'Els plans inclouen des de integracions bàsiques fins a avançades de mètodes de pagament, segons el pla escollit. Això inclou les principals targetes de crèdit, PayPal i altres sistemes.'
+  },
+  {
+    pregunta: 'Com es gestiona la seguretat de la botiga en línia?',
+    resposta: 'Totes les botigues en línia inclouen certificats SSL per garantir la seguretat. A més, oferim funcions avançades de seguretat i backup automàtic en els plans superiors.'
+  },
+  {
+    pregunta: 'Hi ha límits en el nombre de productes o vendes?',
+    resposta: 'Els nostres plans no tenen límits en el nombre de productes o vendes. Volem que el teu negoci cresqui sense restriccions.'
+  },
+  {
+    pregunta: 'Com puc començar a crear la meva botiga en línia?',
+    resposta: 'Per començar, selecciona el pla que més s\'ajusta a les teves necessitats i contacta\'ns. T\'ajudarem a posar en marxa la teva botiga en línia de manera ràpida i eficient.'
+  },
+  {
+    pregunta: 'Puc afegir funcions addicionals als plans estàndard?',
+    resposta: 'Sí, oferim l\'opció d\'afegir funcions addicionals als nostres plans estàndard per una tarifa extra. Això et permet personalitzar encara més la teva botiga en línia.'
+  },
+  {
+    pregunta: 'Quin temps de configuració necessito per la meva botiga en línia?',
+    resposta: 'El temps de configuració varia segons el pla i les personalitzacions requerides. El Pla Bàsic pot estar en marxa en pocs dies, mentre que els plans més personalitzats poden requerir unes setmanes.'
+  },
+  {
+    pregunta: 'Els plans inclouen hosting i nom de domini?',
+    resposta: 'Sí, tots els nostres plans inclouen hosting fiable i la possibilitat d\'utilitzar o registrar un nou nom de domini per a la teva botiga en línia.'
+  },
+  {
+    pregunta: 'Hi ha algun compromís de permanència?',
+    resposta: 'No exigim compromisos de permanència a llarg termini. Pots cancel·lar el teu pla en qualsevol moment sense penalitzacions.'}
+  
+]}">
   <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
-    <div class="mx-auto max-w-4xl divide-y divide-gray-900/10">
+    <div class="mx-auto max-w-4xl">
       <h2 class="text-2xl font-bold leading-10 tracking-tight text-black">Preguntes freqüents</h2>
       <dl class="mt-10 space-y-6 divide-y divide-gray-900/10">
-        <div class="pt-6">
-          <dt>
-            <!-- Expand/collapse question button -->
-            <button type="button" class="flex w-full items-start justify-between text-left text-black" aria-controls="faq-0" aria-expanded="false">
-              <span class="text-base font-semibold leading-7">Puc canviar de pla en qualsevol moment?</span>
-              <span class="ml-6 flex h-7 items-center">
-                <!--
-                  Icon when question is collapsed.
-
-                  Item expanded: "hidden", Item collapsed: ""
-                -->
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
-                </svg>
-                <!--
-                  Icon when question is expanded.
-
-                  Item expanded: "", Item collapsed: "hidden"
-                -->
-                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
-                </svg>
-              </span>
-            </button>
-          </dt>
-          <dd class="mt-2 pr-12" id="faq-0">
-            <p class="text-base leading-7 text-gray-600">Sí, pots canviar de pla en qualsevol moment. Si necessites més funcionalitats o menys, adaptem el teu servei per ajustar-se al creixement del teu negoci.</p>
-          </dd>
-        </div>
-
-        <!-- More questions... -->
-
-        <div class="pt-6">
-          <dt>
-            <!-- Expand/collapse question button -->
-            <button type="button" class="flex w-full items-start justify-between text-left text-black" aria-controls="faq-1" aria-expanded="false">
-              <span class="text-base font-semibold leading-7">Com funciona el suport tècnic?</span>
-              <span class="ml-6 flex h-7 items-center">
-                <!--
-                  Icon when question is collapsed.
-
-                  Item expanded: "hidden", Item collapsed: ""
-                -->
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
-                </svg>
-                <!--
-                  Icon when question is expanded.
-
-                  Item expanded: "", Item collapsed: "hidden"
-                -->
-                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
-                </svg>
-              </span>
-            </button>
-          </dt>
-          <dd class="mt-2 pr-12" id="faq-1">
-            <p class="text-base leading-7 text-gray-600">Oferim suport tècnic via correu electrònic per al Pla Bàsic, suport telefònic per al Pla Avançat, i suport prioritari 24/7 per al Pla Elite. El nostre equip està sempre a punt per ajudar-te.</p>
-          </dd>
-        </div>
-
-
-        <div class="pt-6">
-          <dt>
-            <!-- Expand/collapse question button -->
-            <button type="button" class="flex w-full items-start justify-between text-left text-black" aria-controls="faq-2" aria-expanded="false">
-              <span class="text-base font-semibold leading-7">Quines opcions de pagament s'ofereixen?</span>
-              <span class="ml-6 flex h-7 items-center">
-                <!--
-                  Icon when question is collapsed.
-
-                  Item expanded: "hidden", Item collapsed: ""
-                -->
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
-                </svg>
-                <!--
-                  Icon when question is expanded.
-
-                  Item expanded: "", Item collapsed: "hidden"
-                -->
-                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
-                </svg>
-              </span>
-            </button>
-          </dt>
-          <dd class="mt-2 pr-12" id="faq-2">
-            <p class="text-base leading-7 text-gray-600">Els plans inclouen des de integracions bàsiques fins a avançades de mètodes de pagament, segons el pla escollit. Això inclou les principals targetes de crèdit, PayPal i altres sistemes.</p>
-          </dd>
-        </div>
-
-
-        <div class="pt-6">
-          <dt>
-            <!-- Expand/collapse question button -->
-            <button type="button" class="flex w-full items-start justify-between text-left text-black" aria-controls="faq-3" aria-expanded="false">
-              <span class="text-base font-semibold leading-7">Com es gestiona la seguretat de la botiga en línia?</span>
-              <span class="ml-6 flex h-7 items-center">
-                <!--
-                  Icon when question is collapsed.
-
-                  Item expanded: "hidden", Item collapsed: ""
-                -->
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
-                </svg>
-                <!--
-                  Icon when question is expanded.
-
-                  Item expanded: "", Item collapsed: "hidden"
-                -->
-                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
-                </svg>
-              </span>
-            </button>
-          </dt>
-          <dd class="mt-2 pr-12" id="faq-3">
-            <p class="text-base leading-7 text-gray-600">Totes les botigues en línia inclouen certificats SSL per garantir la seguretat. A més, oferim funcions avançades de seguretat i backup automàtic en els plans superiors.</p>
-          </dd>
-        </div>
-
-
-        <div class="pt-6">
-          <dt>
-            <!-- Expand/collapse question button -->
-            <button type="button" class="flex w-full items-start justify-between text-left text-black" aria-controls="faq-4" aria-expanded="false">
-              <span class="text-base font-semibold leading-7">Hi ha límits en el nombre de productes o vendes?</span>
-              <span class="ml-6 flex h-7 items-center">
-                <!--
-                  Icon when question is collapsed.
-
-                  Item expanded: "hidden", Item collapsed: ""
-                -->
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
-                </svg>
-                <!--
-                  Icon when question is expanded.
-
-                  Item expanded: "", Item collapsed: "hidden"
-                -->
-                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
-                </svg>
-              </span>
-            </button>
-          </dt>
-          <dd class="mt-2 pr-12" id="faq-4">
-            <p class="text-base leading-7 text-gray-600">Els nostres plans no tenen límits en el nombre de productes o vendes. Volem que el teu negoci cresqui sense restriccions.</p>
-          </dd>
-        </div>
-
-
-        <div class="pt-6">
-          <dt>
-            <!-- Expand/collapse question button -->
-            <button type="button" class="flex w-full items-start justify-between text-left text-black" aria-controls="faq-5" aria-expanded="false">
-              <span class="text-base font-semibold leading-7">Com puc començar a crear la meva botiga en línia?</span>
-              <span class="ml-6 flex h-7 items-center">
-                <!--
-                  Icon when question is collapsed.
-
-                  Item expanded: "hidden", Item collapsed: ""
-                -->
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
-                </svg>
-                <!--
-                  Icon when question is expanded.
-
-                  Item expanded: "", Item collapsed: "hidden"
-                -->
-                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
-                </svg>
-              </span>
-            </button>
-          </dt>
-          <dd class="mt-2 pr-12" id="faq-5">
-            <p class="text-base leading-7 text-gray-600">Per començar, selecciona el pla que més s'ajusta a les teves necessitats i contacta'ns. T'ajudarem a posar en marxa la teva botiga en línia de manera ràpida i eficient.</p>
-          </dd>
-        </div>
-
-
-        <div class="pt-6">
-          <dt>
-            <!-- Expand/collapse question button -->
-            <button type="button" class="flex w-full items-start justify-between text-left text-black" aria-controls="faq-6" aria-expanded="false">
-              <span class="text-base font-semibold leading-7">Puc afegir funcions addicionals als plans estàndard?</span>
-              <span class="ml-6 flex h-7 items-center">
-                <!--
-                  Icon when question is collapsed.
-
-                  Item expanded: "hidden", Item collapsed: ""
-                -->
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
-                </svg>
-                <!--
-                  Icon when question is expanded.
-
-                  Item expanded: "", Item collapsed: "hidden"
-                -->
-                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
-                </svg>
-              </span>
-            </button>
-          </dt>
-          <dd class="mt-2 pr-12" id="faq-6">
-            <p class="text-base leading-7 text-gray-600">Sí, oferim l'opció d'afegir funcions addicionals als nostres plans estàndard per una tarifa extra. Això et permet personalitzar encara més la teva botiga en línia.</p>
-          </dd>
-        </div>
-
-
-        <div class="pt-6">
-          <dt>
-            <!-- Expand/collapse question button -->
-            <button type="button" class="flex w-full items-start justify-between text-left text-black" aria-controls="faq-7" aria-expanded="false">
-              <span class="text-base font-semibold leading-7">Quin temps de configuració necessito per la meva botiga en línia?</span>
-              <span class="ml-6 flex h-7 items-center">
-                <!--
-                  Icon when question is collapsed.
-
-                  Item expanded: "hidden", Item collapsed: ""
-                -->
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
-                </svg>
-                <!--
-                  Icon when question is expanded.
-
-                  Item expanded: "", Item collapsed: "hidden"
-                -->
-                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
-                </svg>
-              </span>
-            </button>
-          </dt>
-          <dd class="mt-2 pr-12" id="faq-7">
-            <p class="text-base leading-7 text-gray-600">El temps de configuració varia segons el pla i les personalitzacions requerides. El Pla Bàsic pot estar en marxa en pocs dies, mentre que els plans més personalitzats poden requerir unes setmanes.</p>
-          </dd>
-        </div>
-
-
-        <div class="pt-6">
-          <dt>
-            <!-- Expand/collapse question button -->
-            <button type="button" class="flex w-full items-start justify-between text-left text-black" aria-controls="faq-8" aria-expanded="false">
-              <span class="text-base font-semibold leading-7">Els plans inclouen hosting i nom de domini?</span>
-              <span class="ml-6 flex h-7 items-center">
-                <!--
-                  Icon when question is collapsed.
-
-                  Item expanded: "hidden", Item collapsed: ""
-                -->
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
-                </svg>
-                <!--
-                  Icon when question is expanded.
-
-                  Item expanded: "", Item collapsed: "hidden"
-                -->
-                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
-                </svg>
-              </span>
-            </button>
-          </dt>
-          <dd class="mt-2 pr-12" id="faq-8">
-            <p class="text-base leading-7 text-gray-600">Sí, tots els nostres plans inclouen hosting fiable i la possibilitat d'utilitzar o registrar un nou nom de domini per a la teva botiga en línia.</p>
-          </dd>
-        </div>
-
-        <div class="pt-6">
-          <dt>
-            <!-- Expand/collapse question button -->
-            <button type="button" class="flex w-full items-start justify-between text-left text-black" aria-controls="faq-9" aria-expanded="false">
-              <span class="text-base font-semibold leading-7">Hi ha algun compromís de permanència?</span>
-              <span class="ml-6 flex h-7 items-center">
-                <!--
-                  Icon when question is collapsed.
-
-                  Item expanded: "hidden", Item collapsed: ""
-                -->
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
-                </svg>
-                <!--
-                  Icon when question is expanded.
-
-                  Item expanded: "", Item collapsed: "hidden"
-                -->
-                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
-                </svg>
-              </span>
-            </button>
-          </dt>
-          <dd class="mt-2 pr-12" id="faq-9">
-            <p class="text-base leading-7 text-gray-600">No exigim compromisos de permanència a llarg termini. Pots cancel·lar el teu pla en qualsevol moment sense penalitzacions.</p>
-          </dd>
-        </div>
-
+        <template x-for="(faq, index) in faqs" :key="index">
+          <div class="pt-6">
+            <dt>
+              <button @click="preguntaOberta = preguntaOberta === index ? null : index" class="flex w-full items-start justify-between text-left text-black" :aria-controls="'faq-' + index" :aria-expanded="preguntaOberta === index">
+                <span class="text-base font-semibold leading-7" x-text="faq.pregunta"></span>
+                <span class="ml-6 flex h-7 items-center">
+                  <svg :class="{'hidden': preguntaOberta === index}" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
+                  </svg>
+                  <svg :class="{'hidden': preguntaOberta !== index}" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
+                  </svg>
+                </span>
+              </button>
+            </dt>
+            <dd :class="{'hidden': preguntaOberta !== index}" class="mt-2 pr-12" :id="'faq-' + index">
+              <p class="text-base leading-7 text-gray-600" x-text="faq.resposta"></p>
+            </dd>
+          </div>
+        </template>
       </dl>
     </div>
   </div>
@@ -1725,28 +1410,28 @@
       </div>
   </footer>
 
-    <!-- COOKIES -->
-    <div class="pointer-events-none fixed inset-x-0 bottom-0 px-6 pb-6" id="cookies-banner" style="display: none;">
-      <div class="pointer-events-auto ml-auto max-w-xl rounded-xl bg-white p-6 shadow-lg ring-1 ring-gray-900/10">
-          <p class="text-sm leading-6 text-gray-900">Aquest lloc web utilitza galetes per complementar una dieta
-              equilibrada y proporcionar una recompensa molt merescuda als sentits després de consumir àpats suaus
-              però nutritius. Acceptar les nostres galetes és opcional però recomanable, ja que són delicioses. Veure
-              la nostra <a class="font-semibold text-green-600 underline hover:text-green-900"
-                           href="Views/cookies.html">política de galetes</a>.</p>
-          <div class="mt-4 flex items-center gap-x-5">
-              <button onclick="acceptCookies()"
-                      class="rounded-md bg-green-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
-                      type="button">
-                  Accepta-ho
-              </button>
-              <button onclick="rejectCookies()"
-                      class="text-sm font-semibold leading-6 transition-colors hover:text-green-600  transition-colors hover:text-green-600 relative after:block after:content-[''] after:absolute after:h-[3px] after:bg-green-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
-                      type="button">
-                  Rebutja-ho
-              </button>
-          </div>
+<!-- COOKIES -->
+<div class="pointer-events-none fixed inset-x-0 bottom-0 px-6 pb-6" id="cookies-banner" style="display: none;">
+  <div class="pointer-events-auto ml-auto max-w-xl rounded-xl bg-white p-6 shadow-lg ring-1 ring-gray-900/10">
+      <p class="text-sm leading-6 text-gray-900">Aquest lloc web utilitza galetes per complementar una dieta
+          equilibrada y proporcionar una recompensa molt merescuda als sentits després de consumir àpats suaus
+          però nutritius. Acceptar les nostres galetes és opcional però recomanable, ja que són delicioses. Veure
+          la nostra <a class="font-semibold text-green-600 underline hover:text-green-900"
+                       href="Views/cookies.html">política de galetes</a>.</p>
+      <div class="mt-4 flex items-center gap-x-5">
+          <button onclick="acceptCookies()"
+                  class="rounded-md bg-green-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+                  type="button">
+              Accepta-ho
+          </button>
+          <button onclick="rejectCookies()"
+                  class="text-sm font-semibold leading-6 transition-colors hover:text-green-600  transition-colors hover:text-green-600 relative after:block after:content-[''] after:absolute after:h-[3px] after:bg-green-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
+                  type="button">
+              Rebutja-ho
+          </button>
       </div>
   </div>
+</div>
 
 </body>
 </html>
