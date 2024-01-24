@@ -20,101 +20,69 @@
 <script src="../main.js" type="module"></script>
 
 <!-- HEADER -->
-<!-- HEADER -->
-<header class="bg-white shadow-lg fixed w-full top-0 z-50 " x-data="{menuOpen: false}">
-    <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-3 lg:px-8">
+<header class="bg-white shadow-lg fixed w-full top-0 z-50" x-data="{menuOpen: false}">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between lg:px-8" aria-label="Global">
         <div class="flex lg:flex-1">
-            <a class="-m-1.5 p-1.5" href="../index.html">
-                <span class="sr-only">Web Crafters</span>
-                <img alt="" class="h-24 w-auto" height="82" src="../Img/logo.webp" width="284">
+            <a href="index.html" class="-m-1.5 p-1.5">
+                <span class="sr-only">WebCrafters</span>
+                <img alt="Imatge del logo" class="h-24 w-auto" height="82" src="../Img/logo.webp" width="284">
             </a>
         </div>
-        <div class="flex lg:hidden">
-            <button @click="menuOpen = true"
-                    class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-                    type="button">
-                <span class="sr-only">Open main menu</span>
-                <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5"
-                     viewBox="0 0 24 24">
-                    <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round"
-                          stroke-linejoin="round"/>
-                </svg>
-            </button>
-        </div>
         <div class="hidden lg:flex lg:gap-x-12">
-
             <a class="text-sm font-semibold leading-6 text-green-700 transition-colors hover:text-green-600 relative after:block after:content-[''] after:absolute after:h-[3px] after:bg-green-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left" href="preus.html">Preus</a>
             <a class="text-sm font-semibold leading-6 text-green-700 transition-colors hover:text-green-600 relative after:block after:content-[''] after:absolute after:h-[3px] after:bg-green-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left" href="equip.html">Equip</a>
             <a class="text-sm font-semibold leading-6 text-green-700 relative after:block after:content-[''] after:absolute after:h-[3px] after:bg-green-600 after:w-full after:scale-x-100 after:transition after:duration-300 after:origin-center" href="sobre.html">Sobre</a>
             <a class="text-sm font-semibold leading-6 text-green-700 transition-colors hover:text-green-600 relative after:block after:content-[''] after:absolute after:h-[3px] after:bg-green-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left" href="contacte.html">Contacte</a>
-
         </div>
         <div class="flex flex-1 items-center justify-end gap-x-6">
             <a class="hidden lg:block lg:text-sm lg:font-semibold lg:leading-6 lg:text-green-700 bg-white p-1.5 rounded-md hover:bg-green-700 hover:text-white"
-               href="login.html">Iniciar Sessió</a>
-
+                href="login.html">Iniciar Sessió</a>
             <a class="hidden lg:block rounded-md bg-green-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-700"
-               href="registre.html">
+                href="registre.html">
                 Registre
             </a>
+        </div>
 
+        <!-- Botó del menú mòvil -->
+        <div class="flex lg:hidden mr-6">
+            <button @click="menuOpen = true" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+                <span class="sr-only">Open main menu</span>
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
         </div>
     </nav>
-    <!-- Mobile menu, show/hide based on menu open state. -->
-    <div aria-modal="true" class="lg:hidden" role="dialog" x-show="menuOpen">
-        <!-- Background backdrop, show/hide based on slide-over state. -->
-        <div class="fixed inset-0 z-10"></div>
+
+    <!-- Menú mòvil, es mostra/oculta en funció de l'estat de menuOpen -->
+    <div x-show="menuOpen" class="lg:hidden" role="dialog" aria-modal="true" x-cloak>
+        <div x-show="menuOpen" class="fixed inset-0 z-10" x-transition.opacity></div>
+        
         <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div class="flex items-center justify-between">
-
-                <button @click="menuOpen = false" class="-m-2.5 rounded-md p-2.5 text-gray-700" type="button">
+                <a href="#" class="-m-1.5 p-1.5">
+                    <span class="sr-only">WebCrafters</span>
+                    <img alt="Imatge del logo al menu mòvil" class="h-16 w-auto" height="82" src="../Img/logoMbl.webp" width="284">
+                </a>
+                <!-- Botó per tancar el menú mòvil -->
+                <button @click="menuOpen = false" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
                     <span class="sr-only">Close menu</span>
-                    <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5"
-                         viewBox="0 0 24 24">
-                        <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"/>
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
             </div>
             <div class="mt-6 flow-root">
                 <div class="-my-6 divide-y divide-gray-500/10">
                     <div class="space-y-2 py-6">
-                        <div class="-mx-3">
-                            <button aria-controls="disclosure-1"
-                                    aria-expanded="false"
-                                    class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                    type="button">
-                                Tienda
-                                <!--
-                                  Expand/collapse icon, toggle classes based on menu open state.
-
-                                  Open: "rotate-180", Closed: ""
-                                -->
-                                <span class="h-5 w-5 flex-none" id="icon">
-                        <svg aria-hidden="true" class="h-5 w-5 transform rotate-0 transition-transform duration-300"
-                             fill="currentColor" viewBox="0 0 20 20">
-                            <path clip-rule="evenodd"
-                                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                                  fill-rule="evenodd"/>
-                        </svg>
-                    </span>
-                            </button>
-                            <!-- 'Product' sub-menu, show/hide based on menu state. -->
-                            <div class="mt-2 space-y-2" id="disclosure-1">
-                                <a class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                   href="">Nike</a>
-
-                            </div>
-                        </div>
-                        <a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                           href="">Planes</a>
-                        <a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                           href="">Contacto</a>
-
+                        <a href="preus.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-green-700 hover:text-green-600">Preus</a>
+                        <a href="equip.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-green-700 hover:text-green-600">Equip</a>
+                        <a href="sobre.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-green-700 hover:text-green-600">Sobre</a>
+                        <a href="contacte.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-green-700 hover:text-green-600">Contacte</a>
                     </div>
                     <div class="py-6">
-                        <a class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                           href="">Log
-                            in</a>
+                        <a href="login.html" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-green-700 hover:text-green-600">Accedeix</a>
+                        <a href="registre.html" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-green-700 hover:text-green-600">Registre</a>
                     </div>
                 </div>
             </div>
