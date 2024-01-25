@@ -1,7 +1,7 @@
 import Alpine from 'alpinejs'
 import './cookies.js';
 import './carousel.js';
-import './newsletter.js';   
+import './newsletter.js';
 
 window.Alpine = Alpine
 

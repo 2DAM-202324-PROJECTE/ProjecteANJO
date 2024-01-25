@@ -14,5 +14,6 @@
     fnames[5] = 'BIRTHDAY';
     ftypes[5] = 'birthday';
 
-    window.$mcj = $.noConflict(true);
 })(jQuery);
+
+var $mcj = jQuery.noConflict(true);
