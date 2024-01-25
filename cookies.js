@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+(function initCookies() {
     function setCookie(name, value, days) {
         const expires = new Date();
         expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
@@ -24,19 +24,19 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     window.acceptCookies = function() {
-        setCookie('cookieNombre', 'valor', 30);  // Cambia 'cookieNombre' y 'valor' según tus necesidades
-        setCookie('cookieAceptada', 'true', 365);  // Añade una cookie para rastrear el consentimiento
+        setCookie('cookieNombre', 'valor', 30); 
+        setCookie('cookieAceptada', 'true', 365); 
         showCookiesBanner(false);
     }
 
     window.rejectCookies = function() {
-        // Si necesitas establecer alguna cookie para el rechazo o realizar alguna acción, hazlo aquí
+        
         showCookiesBanner(false);
     }
 
-    // Verificar si la cookie de aceptación ya existe
     const cookieAceptada = getCookie('cookieAceptada');
     if (cookieAceptada !== 'true') {
         showCookiesBanner(true);
     }
-});
+})();
+

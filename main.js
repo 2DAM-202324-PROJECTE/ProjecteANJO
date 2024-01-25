@@ -1,11 +1,11 @@
 import Alpine from 'alpinejs'
+import './cookies.js';
 
 window.Alpine = Alpine
 
 Alpine.start()
 
 /// FUNCIONS GENERALS ///
-
 
 function handleFormSubmit(event) {
     event.preventDefault(); // Evita el comportament predeterminat del formulari
