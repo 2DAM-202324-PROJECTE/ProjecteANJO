@@ -188,41 +188,6 @@
                 <img class="w-full h-auto" src="Img/iesebre.webp" alt="Imatge iesebre">
             </div>
         </div>
-
-        <script>
-            function carousel() {
-                return {
-                    init() {
-                        this.container = this.$refs.container;
-                        this.slides = this.container.children;
-                        this.totalSlides = this.slides.length;
-                        this.currentSlide = 0;
-                        this.slideWidth = this.slides[0].offsetWidth;
-
-                        this.startInterval();
-                    },
-                    startInterval() {
-                        setInterval(() => {
-                            this.slideLeft(); // Cambiado a slideLeft para mover hacia la izquierda
-                        }, 5000);
-                    },
-                    slideLeft() {
-                        // Calcula la próxima diapositiva hacia la izquierda
-                        const nextSlide = (this.currentSlide + 1) % this.totalSlides;
-
-                        // Mueve a la siguiente diapositiva
-                        this.container.style.transition = 'transform 1s ease-in-out';
-                        this.container.style.transform = `translateX(-${nextSlide * this.slideWidth}px)`;
-
-                        // Actualiza el índice actual después de la transición
-                        setTimeout(() => {
-                            this.container.style.transition = 'none';
-                            this.currentSlide = nextSlide;
-                        }, 1000);
-                    },
-                };
-            }
-        </script>
     </div>
 
     <!-- FAQ -->
@@ -293,7 +258,7 @@
                  id="mc_embed_signup">
                 <h2 class="mx-auto max-w-2xl text-center text-3xl font-bold tracking-tight text-white sm:text-4xl">
                     Estiguis al cas de totes les nostres ofertes.</h2>
-                <script src="main.js"></script>
+                
                 <form action="https://github.us21.list-manage.com/subscribe/post?u=9c787297e8547a1c443e64d63&amp;id=7bec268e8e&amp;f_id=00b0f2e6f0"
                       class="validate mx-auto mt-10 flex max-w-md gap-x-4" id="mc-embedded-subscribe-form" method="post"
                       name="mc-embedded-subscribe-form"

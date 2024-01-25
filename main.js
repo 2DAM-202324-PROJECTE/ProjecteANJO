@@ -1,5 +1,6 @@
 import Alpine from 'alpinejs'
 import './cookies.js';
+import './carousel.js';
 
 window.Alpine = Alpine
 
@@ -10,8 +11,8 @@ Alpine.start()
 function handleFormSubmit(event) {
     event.preventDefault(); // Evita el comportament predeterminat del formulari
 
-    // Redirigir l'usuari a benvinguda.html
-    // window.location.href = '/ProjecteANJO/Views/benvinguda.html';
+   //  Redirigir l'usuari a benvinguda.html
+     window.location.href = '/ProjecteANJO/Views/benvinguda.html';
 
     return false;
 }
