@@ -7,8 +7,6 @@ window.Alpine = Alpine
 
 Alpine.start()
 
-//import './newsletter.js';
-
 /// FUNCIONS GENERALS ///
 
 // function handleFormSubmit(event) {
