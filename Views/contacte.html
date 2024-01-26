@@ -12,14 +12,14 @@
         <meta name="language" content="ca">
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
         <meta property="og:site_name" content="WebCrafters - Creació de Pàgines Web">
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+        <script src="../main.js" type="module"></script>
     </head>
 
 <body class="h-full">
 
-<!-- SCRIPTS -->
-<script src="../main.js" type="module"></script>
-
 <!-- HEADER -->
+
 <header class="bg-white shadow-lg fixed w-full top-0 z-50" x-data="{menuOpen: false}">
     <nav class="mx-auto flex max-w-7xl items-center justify-between lg:px-8" aria-label="Global">
         <div class="flex lg:flex-1">
@@ -42,7 +42,6 @@
                 Registre
             </a>
         </div>
-  
         <!-- Botó del menú mòvil -->
         <div class="flex lg:hidden mr-6">
             <button @click="menuOpen = true" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
@@ -53,11 +52,9 @@
             </button>
         </div>
     </nav>
-  
     <!-- Menú mòvil, es mostra/oculta en funció de l'estat de menuOpen -->
     <div x-show="menuOpen" class="lg:hidden" role="dialog" aria-modal="true" x-cloak>
         <div x-show="menuOpen" class="fixed inset-0 z-10" x-transition.opacity></div>
-        
         <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div class="flex items-center justify-between">
                 <a href="#" class="-m-1.5 p-1.5">
@@ -91,18 +88,13 @@
   </header>
 
 <!-- FORMULARI -->
+
 <div class="mt-14 relative isolate bg-white">
     <!-- Capa de gradiente -->
     <div class="absolute inset-0 bg-gradient-to-b from-green-400 to-transparent pointer-events-none"></div>
-
     <div class="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
-
         <div class="relative px-6 pb-20 pt-24 sm:pt-32 lg:static lg:px-8 lg:py-48">
-
-
-
             <div class="relative mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
-
                 <h2 class="text-3xl font-bold tracking-tight text-gray-900">Contacta amb nosaltres</h2>
                 <p class="mt-6 text-lg leading-8 text-gray-600">Pots contactar amb nosaltres per a demanar un lloc de treball, saber més informació sobre la nostra empresa, qualsevol mena de pregunta.</p>
                 <dl class="mt-10 space-y-4 text-base leading-7 text-gray-600">
@@ -175,11 +167,10 @@
                 </div>
             </div>
         </form>
-
     </div>
 </div>
 
-<!-- CTA -->
+<!-- CTA SECTION -->
 
 <div class="bg-white">
     <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:justify-between lg:px-8">
@@ -190,8 +181,8 @@
     </div>
 </div>
 
-
     <!--  FOOTER -->
+
     <footer class="bg-white">
         <div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
 
@@ -242,6 +233,7 @@
     </footer>
 
     <!-- COOKIES -->
+
     <div class="pointer-events-none fixed inset-x-0 bottom-0 px-6 pb-6" id="cookies-banner" style="display: none;">
         <div class="pointer-events-auto ml-auto max-w-xl rounded-xl bg-white p-6 shadow-lg ring-1 ring-gray-900/10">
             <p class="text-sm leading-6 text-gray-900">Aquest lloc web utilitza galetes per complementar una dieta
@@ -263,6 +255,5 @@
             </div>
         </div>
     </div>
-
 </body>
 </html>
