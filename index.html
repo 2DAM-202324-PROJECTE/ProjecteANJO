@@ -13,14 +13,12 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta property="og:site_name" content="WebCrafters - Creació de Pàgines Web">
     <meta name="theme-color" content="green">
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    <script defer src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js" type="text/javascript"></script>
+    <script src="main.js" type="module"></script>
 </head>
 
-<body class="h-full">
-
-<!-- SCRIPTS -->
-<script src="main.js" type="module"></script>
-<script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js" type="text/javascript" defer></script>
-
+<body class="h-full">    
 <!-- HEADER -->
 <header class="bg-white shadow-lg fixed w-full top-0 z-50" x-data="{menuOpen: false}">
     <nav class="mx-auto flex max-w-7xl items-center justify-between lg:px-8" aria-label="Global">
@@ -62,9 +60,9 @@
         
         <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div class="flex items-center justify-between">
-                <a href="#" class="-m-1.5 p-1.5">
+                <a href="index.html" class="-m-1.5 p-1.5">
                     <span class="sr-only">WebCrafters</span>
-                    <img alt="Imatge del logo al menu mòvil" class="h-16 w-auto" height="82" src="Img/logoMbl.webp" width="284">
+                    <img alt="Imatge del logo al menu mòvil" class="w-auto" src="Img/logoMbl.webp">
                 </a>
                 <!-- Botó per tancar el menú mòvil -->
                 <button @click="menuOpen = false" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
@@ -117,14 +115,11 @@
             </div>
             <!-- Imatge del heroe -->
             <div class="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
-                <div class="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
-                    <div class="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4 relative z-10">
-                        <img alt="App screenshot" class="w-[76rem] rounded-md shadow-2xl ring-1 ring-gray-900/10"
-                             height="1258" src="Img/paginaexemple.webp" width="2560">
-                    </div>
+                <div class="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4 relative z-10">
+                    <img alt="App screenshot" class="w-[76rem] rounded-md shadow-2xl ring-1 ring-gray-900/10"
+                         height="946" src="Img/paginaexemple.webp" width="1920">
                 </div>
             </div>
-
         </div>
     </div>
     <!--  FEATURE-->
