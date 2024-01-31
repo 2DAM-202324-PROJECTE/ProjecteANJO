@@ -1,399 +1,502 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="h-full" lang="ca">
+
 <head>
     <title>Web Crafters</title>
-    <link href="Img/logoSimple.webp" rel="icon" type="image/svg+xml"/>
-    <link href="style.css" rel="stylesheet">
+    <link href="Img/logoSimple.webp" rel="icon" type="image/svg+xml" />
+    <link href="style.css" rel="stylesheet" />
     <link rel=»canonical» href=»https://2dam-202324-projecte.github.io/ProjecteANJO/» />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>   
-    <meta name="description" content="Dissenyem pàgines web a mida per al teu negoci. Oferim solucions de disseny web creatives i efectives per impulsar la teva presència en línia. Contacta'ns avui mateix!">
-    <meta name="keywords" content="creació de pàgines web, disseny web, desenvolupament web, disseny de llocs web, disseny web personalitzat">
-    <meta name="author" content="WebCrafters">
-    <meta name="language" content="ca">
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta property="og:site_name" content="WebCrafters - Creació de Pàgines Web">
-    <meta name="theme-color" content="green">
-    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description"
+        content="Dissenyem pàgines web a mida per al teu negoci. Oferim solucions de disseny web creatives i efectives per impulsar la teva presència en línia. Contacta'ns avui mateix!" />
+    <meta name="keywords"
+        content="creació de pàgines web, disseny web, desenvolupament web, disseny de llocs web, disseny web personalitzat" />
+    <meta name="author" content="WebCrafters" />
+    <meta name="language" content="ca" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta property="og:site_name" content="WebCrafters - Creació de Pàgines Web" />
+    <meta name="theme-color" content="green" />
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+        integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
     <script defer src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js" type="text/javascript"></script>
     <script src="main.js" type="module"></script>
 </head>
 
-<body class="h-full">    
-<!-- HEADER -->
-<header class="bg-white shadow-lg fixed w-full top-0 z-50" x-data="{menuOpen: false}">
-    <nav class="mx-auto flex max-w-7xl items-center justify-between lg:px-8" aria-label="Global">
-        <div class="flex lg:flex-1">
-            <a href="index.html" class="-m-1.5 p-1.5">
-                <span class="sr-only">WebCrafters</span>
-                <img alt="Imatge del logo" class="h-24 w-auto" height="82" src="Img/logo.webp" width="284">
-            </a>
-        </div>
-        <div class="hidden lg:flex lg:gap-x-12">
-            <a class="text-sm font-semibold leading-6 text-green-700 transition-colors hover:text-green-600 relative after:block after:content-[''] after:absolute after:h-[3px] after:bg-green-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left" href="Views/preus.html">Preus</a>
-            <a class="text-sm font-semibold leading-6 text-green-700 transition-colors hover:text-green-600 relative after:block after:content-[''] after:absolute after:h-[3px] after:bg-green-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left" href="Views/equip.html">Equip</a>
-            <a class="text-sm font-semibold leading-6 text-green-700 transition-colors hover:text-green-600 relative after:block after:content-[''] after:absolute after:h-[3px] after:bg-green-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left" href="Views/sobre.html">Sobre</a>
-            <a class="text-sm font-semibold leading-6 text-green-700 transition-colors hover:text-green-600 relative after:block after:content-[''] after:absolute after:h-[3px] after:bg-green-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left" href="Views/contacte.html">Contacte</a>
-        </div>
-        <div class="flex flex-1 items-center justify-end gap-x-6">
-            <a class="hidden lg:block lg:text-sm lg:font-semibold lg:leading-6 lg:text-green-700 bg-white p-1.5 rounded-md hover:bg-green-700 hover:text-white"
-                href="Views/login.html">Iniciar Sessió</a>
-            <a class="hidden lg:block rounded-md bg-green-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-700"
-                href="Views/registre.html">
-                Registre
-            </a>
-        </div>
-
-        <!-- Botó del menú mòvil -->
-        <div class="flex lg:hidden mr-6">
-            <button @click="menuOpen = true" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
-                <span class="sr-only">Open main menu</span>
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                </svg>
-            </button>
-        </div>
-    </nav>
-
-    <!-- Menú mòvil, es mostra/oculta en funció de l'estat de menuOpen -->
-    <div x-show="menuOpen" class="lg:hidden" role="dialog" aria-modal="true" x-cloak>
-        <div x-show="menuOpen" class="fixed inset-0 z-10" x-transition.opacity></div>
-        
-        <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-            <div class="flex items-center justify-between">
+<body class="h-full">
+    <!-- HEADER -->
+    <header class="bg-white shadow-lg fixed w-full top-0 z-50" x-data="{menuOpen: false}">
+        <nav class="mx-auto flex max-w-7xl items-center justify-between lg:px-8" aria-label="Global">
+            <div class="flex lg:flex-1">
                 <a href="index.html" class="-m-1.5 p-1.5">
                     <span class="sr-only">WebCrafters</span>
-                    <img alt="Imatge del logo al menu mòvil" class="w-auto" src="Img/logoMbl.webp">
+                    <img alt="Imatge del logo" class="h-24 w-auto" height="82" src="Img/logo.webp" width="284" />
                 </a>
-                <!-- Botó per tancar el menú mòvil -->
-                <button @click="menuOpen = false" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
-                    <span class="sr-only">Close menu</span>
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </div>
+            <div class="hidden lg:flex lg:gap-x-12">
+                <a class="text-sm font-semibold leading-6 text-green-700 transition-colors hover:text-green-600 relative after:block after:content-[''] after:absolute after:h-[3px] after:bg-green-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
+                    href="Views/preus.html">Preus</a>
+                <a class="text-sm font-semibold leading-6 text-green-700 transition-colors hover:text-green-600 relative after:block after:content-[''] after:absolute after:h-[3px] after:bg-green-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
+                    href="Views/equip.html">Equip</a>
+                <a class="text-sm font-semibold leading-6 text-green-700 transition-colors hover:text-green-600 relative after:block after:content-[''] after:absolute after:h-[3px] after:bg-green-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
+                    href="Views/sobre.html">Sobre</a>
+                <a class="text-sm font-semibold leading-6 text-green-700 transition-colors hover:text-green-600 relative after:block after:content-[''] after:absolute after:h-[3px] after:bg-green-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
+                    href="Views/contacte.html">Contacte</a>
+            </div>
+            <div class="flex flex-1 items-center justify-end gap-x-6">
+                <a class="hidden lg:block lg:text-sm lg:font-semibold lg:leading-6 lg:text-green-700 bg-white p-1.5 rounded-md hover:bg-green-700 hover:text-white"
+                    href="Views/login.html">Iniciar Sessió</a>
+                <a class="hidden lg:block rounded-md bg-green-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-700"
+                    href="Views/registre.html">
+                    Registre
+                </a>
+            </div>
+
+            <!-- Botó del menú mòvil -->
+            <div class="flex lg:hidden mr-6">
+                <button @click="menuOpen = true" type="button"
+                    class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                        aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg>
                 </button>
             </div>
-            <div class="mt-6 flow-root">
-                <div class="-my-6 divide-y divide-gray-500/10">
-                    <div class="space-y-2 py-6">
-                        <a href="Views/preus.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-green-700 hover:text-green-600">Preus</a>
-                        <a href="Views/equip.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-green-700 hover:text-green-600">Equip</a>
-                        <a href="Views/sobre.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-green-700 hover:text-green-600">Sobre</a>
-                        <a href="Views/contacte.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-green-700 hover:text-green-600">Contacte</a>
-                    </div>
-                    <div class="py-6">
-                        <a href="Views/login.html" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-green-700 hover:text-green-600">Accedeix</a>
-                        <a href="Views/registre.html" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-green-700 hover:text-green-600">Registre</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
+        </nav>
 
-<div class="mt-20">
-    <!-- HERO SECTION -->
-    <div class="relative isolate overflow-hidden bg-white">
-        <div class="absolute inset-0 bg-gradient-to-b from-green-500 to-transparent pointer-events-none"></div>
+        <!-- Menú mòvil, es mostra/oculta en funció de l'estat de menuOpen -->
+        <div x-show="menuOpen" class="lg:hidden" role="dialog" aria-modal="true" x-cloak>
+            <div x-show="menuOpen" class="fixed inset-0 z-10" x-transition.opacity></div>
 
-        <svg aria-hidden="true"
-             class="absolute inset-0 -z-10 h-full w-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]">
-        </svg>
-
-        <div class="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:px-8 lg:py-40 relative z-10 lg:pl-0">
-            <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-8 ">
-                <div class="mt-24 sm:mt-32 lg:mt-18">
-                    <h1 class="mt-10 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Nosaltres creem la web
-                        dels teus somnis </h1>
-                    <p class="mt-6 text-lg leading-8 text-gray-600">Podem crear la botiga en línia que sempre has
-                        desitjat
-                        per a la teva empresa amb molta rapidesa i per poc preu.<br>Confia amb nosaltres!</p>
-                    <div class="mt-10 flex items-center gap-x-6">
-                        <a class="rounded-md bg-green-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                           href="Views/preus.html">Comença</a>
-                    </div>
+            <div
+                class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                <div class="flex items-center justify-between">
+                    <a href="index.html" class="-m-1.5 p-1.5">
+                        <span class="sr-only">WebCrafters</span>
+                        <img alt="Imatge del logo al menu mòvil" class="w-auto" src="Img/logoMbl.webp" />
+                    </a>
+                    <!-- Botó per tancar el menú mòvil -->
+                    <button @click="menuOpen = false" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                        <span class="sr-only">Close menu</span>
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                            aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
                 </div>
-            </div>
-            <!-- Imatge del heroe -->
-            <div class="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
-                <div class="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4 relative z-10">
-                    <img alt="App screenshot" class="w-[76rem] rounded-md shadow-2xl ring-1 ring-gray-900/10"
-                         height="946" src="Img/paginaexemple.webp" width="1920">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--  FEATURE-->
-    <div class="overflow-hidden bg-white py-24 sm:py-32 ">
-        <div class="mx-auto max-w-7xl px-6 lg:px-8 lg:pl-0">
-            <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start">
-                <div class="lg:pr-4 lg:pt-4">
-                    <div class="lg:max-w-lg">
-                        <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Centenars d'empreses
-                            de tot el món ja formen part de la nostra gran família </p>
-                        <div class="mt-8">
+                <div class="mt-6 flow-root">
+                    <div class="-my-6 divide-y divide-gray-500/10">
+                        <div class="space-y-2 py-6">
+                            <a href="Views/preus.html"
+                                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-green-700 hover:text-green-600">Preus</a>
+                            <a href="Views/equip.html"
+                                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-green-700 hover:text-green-600">Equip</a>
+                            <a href="Views/sobre.html"
+                                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-green-700 hover:text-green-600">Sobre</a>
+                            <a href="Views/contacte.html"
+                                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-green-700 hover:text-green-600">Contacte</a>
                         </div>
-                        <dl class="mt-16 grid max-w-xl grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 xl:mt-16">
-                            <div class="flex flex-col gap-y-3 border-l border-gray-900/10 pl-6">
-                                <dt class="text-sm leading-6 text-gray-600">Usuaris registrats</dt>
-                                <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900">80,000+</dd>
-                            </div>
-                            <div class="flex flex-col gap-y-3 border-l border-gray-900/10 pl-6">
-                                <dt class="text-sm leading-6 text-gray-600">Costos de registre</dt>
-                                <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900">0€</dd>
-                            </div>
-                            <div class="flex flex-col gap-y-3 border-l border-gray-900/10 pl-6">
-                                <dt class="text-sm leading-6 text-gray-600">De clients satisfets</dt>
-                                <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900">99.9%</dd>
-                            </div>
-                            <div class="flex flex-col gap-y-3 border-l border-gray-900/10 pl-6">
-                                <dt class="text-sm leading-6 text-gray-600">Facturats aquest any</dt>
-                                <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900">€70M</dd>
-                            </div>
-                        </dl>
+                        <div class="py-6">
+                            <a href="Views/login.html"
+                                class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-green-700 hover:text-green-600">Accedeix</a>
+                            <a href="Views/registre.html"
+                                class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-green-700 hover:text-green-600">Registre</a>
+                        </div>
                     </div>
                 </div>
-                <img alt="Product screenshot"
-                     class="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:ml-0"
-                     height="1442"
-                     src="Img/mon.webp" width="2432">
             </div>
         </div>
-    </div>
+    </header>
 
-    <!-- CTA -->
-    <div class="bg-white relative overflow-hidden">
-        <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:justify-between lg:px-8 lg:pl-0 relative z-10 ">
-            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Preparat per a començar?<br>Consulta
-                el nostre apartat de preus.</h2>
-            <div class="mt-10 flex gap-x-6 lg:mt-0 lg:flex-shrink-0 z-10">
-                <a class="rounded-md bg-green-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-800"
-                   href="Views/preus.html">Comença</a>
+    <div class="mt-20">
+        <!-- HERO SECTION -->
+        <div class="relative isolate overflow-hidden bg-white">
+            <div class="absolute inset-0 bg-gradient-to-b from-green-500 to-transparent pointer-events-none"></div>
+
+            <svg aria-hidden="true"
+                class="absolute inset-0 -z-10 h-full w-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"></svg>
+
+            <div class="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:px-8 lg:py-40 relative z-10 lg:pl-0">
+                <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-8">
+                    <div class="mt-24 sm:mt-32 lg:mt-18">
+                        <h1 class="mt-10 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                            Nosaltres creem la web dels teus somnis
+                        </h1>
+                        <p class="mt-6 text-lg leading-8 text-gray-600">
+                            Podem crear la botiga en línia que sempre has desitjat per a la
+                            teva empresa amb molta rapidesa i per poc preu.<br />Confia amb
+                            nosaltres!
+                        </p>
+                        <div class="mt-10 flex items-center gap-x-6">
+                            <a class="rounded-md bg-green-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                                href="Views/preus.html">Comença</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Imatge del heroe -->
+                <div
+                    class="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
+                    <div
+                        class="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4 relative z-10">
+                        <img alt="App screenshot" class="w-[76rem] rounded-md shadow-2xl ring-1 ring-gray-900/10"
+                            height="946" src="Img/paginaexemple.webp" width="1920" />
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <br>
-    <div class="flex items-center mt-20">
-
-        <!-- Carrusel de fotos -->
-        <div class="relative overflow-hidden max-w-4xl mx-auto" x-data="carousel()" x-init="init">
-            <div class="flex transition-transform duration-1000 ease-in-out" x-ref="container">
-                <!-- Les imatges del carrusel -->
-                <img class="w-full h-auto" src="Img/empatica.webp" alt="Imatge empatica">
-                <img class="w-full h-auto" src="Img/paginaexemple.webp" alt="Imatge pàgina exemple">
-                <img class="w-full h-auto" src="Img/iesebre.webp" alt="Imatge iesebre">
+        <!--  FEATURE-->
+        <div class="overflow-hidden bg-white py-24 sm:py-32">
+            <div class="mx-auto max-w-7xl px-6 lg:px-8 lg:pl-0">
+                <div
+                    class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start">
+                    <div class="lg:pr-4 lg:pt-4">
+                        <div class="lg:max-w-lg">
+                            <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                                Centenars d'empreses de tot el món ja formen part de la nostra
+                                gran família
+                            </p>
+                            <div class="mt-8"></div>
+                            <dl class="mt-16 grid max-w-xl grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 xl:mt-16">
+                                <div class="flex flex-col gap-y-3 border-l border-gray-900/10 pl-6">
+                                    <dt class="text-sm leading-6 text-gray-600">
+                                        Usuaris registrats
+                                    </dt>
+                                    <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900">
+                                        80,000+
+                                    </dd>
+                                </div>
+                                <div class="flex flex-col gap-y-3 border-l border-gray-900/10 pl-6">
+                                    <dt class="text-sm leading-6 text-gray-600">
+                                        Costos de registre
+                                    </dt>
+                                    <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900">
+                                        0€
+                                    </dd>
+                                </div>
+                                <div class="flex flex-col gap-y-3 border-l border-gray-900/10 pl-6">
+                                    <dt class="text-sm leading-6 text-gray-600">
+                                        De clients satisfets
+                                    </dt>
+                                    <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900">
+                                        99.9%
+                                    </dd>
+                                </div>
+                                <div class="flex flex-col gap-y-3 border-l border-gray-900/10 pl-6">
+                                    <dt class="text-sm leading-6 text-gray-600">
+                                        Facturats aquest any
+                                    </dt>
+                                    <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900">
+                                        €70M
+                                    </dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </div>
+                    <img alt="Product screenshot"
+                        class="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:ml-0"
+                        height="1442" src="Img/mon.webp" width="2432" />
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- FAQ -->
-    <div class="relative mt-20">
-        <!-- Fons verd difuminat cap amunt-->
-        <div class="bg-gradient-to-t from-green-100 to-transparent h-1/2 absolute top-0 left-0 right-0 z-0"></div>
-        <!-- Fons verd difuminat cap avall-->
-        <div class="bg-gradient-to-b from-green-100 to-transparent h-1/2 absolute bottom-0 left-0 right-0 z-0"></div>
+        <!-- CTA -->
+        <div class="bg-white relative overflow-hidden">
+            <div
+                class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:justify-between lg:px-8 lg:pl-0 relative z-10">
+                <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                    Preparat per a començar?<br />Consulta el nostre apartat de preus.
+                </h2>
+                <div class="mt-10 flex gap-x-6 lg:mt-0 lg:flex-shrink-0 z-10">
+                    <a class="rounded-md bg-green-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-800"
+                        href="Views/preus.html">Comença</a>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="flex items-center mt-20">
+            <!-- Carrusel de fotos -->
+            <div class="relative overflow-hidden max-w-4xl mx-auto" x-data="carousel()" x-init="init">
+                <div class="flex transition-transform duration-1000 ease-in-out" x-ref="container">
+                    <!-- Les imatges del carrusel -->
+                    <img class="w-full h-auto" src="Img/empatica.webp" alt="Imatge empatica" />
+                    <img class="w-full h-auto" src="Img/paginaexemple.webp" alt="Imatge pàgina exemple" />
+                    <img class="w-full h-auto" src="Img/iesebre.webp" alt="Imatge iesebre" />
+                </div>
+            </div>
+        </div>
 
-        <div class="bg-white" x-data="{ openTab: -1 }">
-            <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40 relative">
-                <div class="mx-auto max-w-4xl relative">
-                    <h2 class="text-2xl font-bold leading-10 tracking-tight text-gray-900">Preguntes freqüents</h2>
-                    <dl class="mt-10 space-y-6 divide-y divide-gray-900/10">
-                        <!-- En aquest array guardo preguntes i respostes... -->
-                        <template :key="index" x-for="(item, index) in [
+        <!-- FAQ -->
+        <div class="relative mt-20">
+            <!-- Fons verd difuminat cap amunt-->
+            <div class="bg-gradient-to-t from-green-100 to-transparent h-1/2 absolute top-0 left-0 right-0 z-0"></div>
+            <!-- Fons verd difuminat cap avall-->
+            <div class="bg-gradient-to-b from-green-100 to-transparent h-1/2 absolute bottom-0 left-0 right-0 z-0">
+            </div>
+
+            <div class="bg-white" x-data="{ openTab: -1 }">
+                <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40 relative">
+                    <div class="mx-auto max-w-4xl relative">
+                        <h2 class="text-2xl font-bold leading-10 tracking-tight text-gray-900">
+                            Preguntes freqüents
+                        </h2>
+                        <dl class="mt-10 space-y-6 divide-y divide-gray-900/10">
+                            <!-- En aquest array guardo preguntes i respostes... -->
+                            <template :key="index" x-for="(item, index) in [
                         { pregunta: 'Quant costa el vostre servei?', resposta: 'El preu varia depenent del pla que agafis, pots consultar els nostres plans a la secció de ' },
                         { pregunta: 'Podeu fer qualsevol mena de web?', resposta: 'No, solament fem botigues en línea, però estarà sempre adaptada als teus gustos!' },
                         { pregunta: 'Quant de temps soleu tardar a fer-ne una?', resposta: 'El temps depén de quant contingut tingui la botiga i la dificultat.' }
                     ]">
-                            <div class="pt-6">
-                                <dt>
-                                    <!-- Expand/collapse botó de preguntes -->
-                                    <button :tab-interface="'faq-' + index"
+                                <div class="pt-6">
+                                    <dt>
+                                        <!-- Expand/collapse botó de preguntes -->
+                                        <button :tab-interface="'faq-' + index"
                                             :aria-expanded="openTab === index ? 'true' : 'false'"
                                             @click="openTab = (openTab === index ? -1 : index)"
                                             class="flex w-full items-start justify-between text-left text-gray-900"
                                             type="button">
-                                        <span class="text-base font-semibold leading-7" x-text="item.pregunta"></span>
-                                        <span class="ml-6 flex h-7 items-center">
-                                        <!-- Icona quan la pregunta està col·lapsada -->
-                                        <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor"
-                                             stroke-width="1.5" viewBox="0 0 24 24" x-show="openTab !== index">
-                                            <path d="M12 6v12m6-6H6" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                            <!-- Icona quan la pregunta està oberta -->
-                                        <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor"
-                                             stroke-width="1.5" viewBox="0 0 24 24" x-show="openTab === index">
-                                            <path d="M18 12H6" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </span>
-                                    </button>
-                                </dt>
-                                <dd :id="'faq-' + index" class="mt-2 pr-12" x-show="openTab === index">
-                                    <p class="text-base leading-7 text-gray-600">
-                                        <!-- L'enllaç de la primera resposta -->
-                                        <template x-if="index === 0">
-                                            <span x-html="item.resposta + ' <a class=\'text-green-600 underline hover:text-green-900\' href=\'Views/preus.html\' target=\'_blank\'>preus.</a>'"></span>
-                                        </template>
-                                        <!-- Les pregüntes restants, agafa l'array -->
-                                        <template x-if="index !== 0">
-                                            <span x-text="item.resposta"></span>
-                                        </template>
-                                    </p>
-                                </dd>
+                                            <span class="text-base font-semibold leading-7"
+                                                x-text="item.pregunta"></span>
+                                            <span class="ml-6 flex h-7 items-center">
+                                                <!-- Icona quan la pregunta està col·lapsada -->
+                                                <svg aria-hidden="true" class="h-6 w-6" fill="none"
+                                                    stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
+                                                    x-show="openTab !== index">
+                                                    <path d="M12 6v12m6-6H6" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </svg>
+                                                <!-- Icona quan la pregunta està oberta -->
+                                                <svg aria-hidden="true" class="h-6 w-6" fill="none"
+                                                    stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
+                                                    x-show="openTab === index">
+                                                    <path d="M18 12H6" stroke-linecap="round" stroke-linejoin="round" />
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </dt>
+                                    <dd :id="'faq-' + index" class="mt-2 pr-12" x-show="openTab === index">
+                                        <p class="text-base leading-7 text-gray-600">
+                                            <!-- L'enllaç de la primera resposta -->
+                                            <template x-if="index === 0">
+                                                <span
+                                                    x-html="item.resposta + ' <a class=\'text-green-600 underline hover:text-green-900\' href=\'Views/preus.html\' target=\'_blank\'>preus.</a>'"></span>
+                                            </template>
+                                            <!-- Les pregüntes restants, agafa l'array -->
+                                            <template x-if="index !== 0">
+                                                <span x-text="item.resposta"></span>
+                                            </template>
+                                        </p>
+                                    </dd>
+                                </div>
+                            </template>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NEWSLETTER-->
+        <div class="bg-white py-16 sm:py-24">
+            <div class="mx-auto max-w-7xl sm:px-6 lg:px-8" id="mc_embed_shell">
+                <div class="relative isolate overflow-hidden bg-green-500 px-6 py-24 text-center shadow-2xl sm:rounded-3xl sm:px-16"
+                    id="mc_embed_signup">
+                    <h2 class="mx-auto max-w-2xl text-center text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                        Estiguis al cas de totes les nostres ofertes.
+                    </h2>
+                    <script src="newsletter.js"></script>
+
+                    <form
+                        action="https://github.us21.list-manage.com/subscribe/post?u=9c787297e8547a1c443e64d63&amp;id=7bec268e8e&amp;f_id=00b0f2e6f0"
+                        class="validate mx-auto mt-10 flex max-w-md gap-x-4" id="mc-embedded-subscribe-form"
+                        method="post" name="mc-embedded-subscribe-form" onsubmit="return redirectToWelcomePage();"
+                        target="_blank">
+                        <label class="sr-only" for="mce-EMAIL">Adreça electrònica <span
+                                class="asterisk">*</span></label>
+                        <input
+                            class="min-w-0 flex-auto rounded-md border-0 bg-green-100 px-3.5 py-2 text-gray-700 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6 placeholder-green"
+                            id="mce-EMAIL" name="EMAIL" placeholder="Introdueix el teu mail" required="" type="email"
+                            value="" />
+                        <input
+                            class="flex-none rounded-md bg-green-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                            id="mc-embedded-subscribe" name="subscribe" type="submit" value="Subscriu-te" />
+
+                        <span class="helper_text" id="mce-EMAIL-HELPERTEXT"></span>
+                    </form>
+
+                    <div
+                        class="mx-auto mt-20 max-w-lg grid grid-cols-4 gap-x-2 gap-y-4 sm:max-w-xl sm:grid-cols-4 sm:gap-x-3 sm:gap-y-6 lg:max-w-4xl lg:grid-cols-4">
+                        <div class="flex flex-col items-center col-span-2 lg:col-span-1">
+                            <div class="rounded-md bg-green-500 p-2 ring-1 ring-white/10">
+                                <svg aria-hidden="true" class="h-6 w-6 text-gray-100" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" viewBox="0 0 24 24">
+                                    <path
+                                        d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
                             </div>
-                        </template>
-                    </dl>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- NEWSLETTER-->
-    <div class="bg-white py-16 sm:py-24">
-        <div class="mx-auto max-w-7xl sm:px-6 lg:px-8" id="mc_embed_shell">
-            <div class="relative isolate overflow-hidden bg-green-500 px-6 py-24 text-center shadow-2xl sm:rounded-3xl sm:px-16"
-                 id="mc_embed_signup">
-                <h2 class="mx-auto max-w-2xl text-center text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                    Estiguis al cas de totes les nostres ofertes.</h2>
-                <script src="newsletter.js"></script>
-
-
-                <form action="https://github.us21.list-manage.com/subscribe/post?u=9c787297e8547a1c443e64d63&amp;id=7bec268e8e&amp;f_id=00b0f2e6f0"
-                      class="validate mx-auto mt-10 flex max-w-md gap-x-4"
-                      id="mc-embedded-subscribe-form"
-                      method="post"
-                      name="mc-embedded-subscribe-form"
-                      onsubmit="return redirectToWelcomePage();"
-                      target="_blank">
-
-                    <label class="sr-only" for="mce-EMAIL">Adreça electrònica <span class="asterisk">*</span></label>
-                    <input class="min-w-0 flex-auto rounded-md border-0 bg-green-100 px-3.5 py-2 text-gray-700 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6 placeholder-green"
-                           id="mce-EMAIL"
-                           name="EMAIL"
-                           placeholder="Introdueix el teu mail" required="" type="email"
-                           value="">
-                    <input class="flex-none rounded-md bg-green-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-                           id="mc-embedded-subscribe" name="subscribe"
-                           type="submit"
-                           value="Subscriu-te">
-
-                    <span class="helper_text" id="mce-EMAIL-HELPERTEXT"></span>
-                </form>
-
-                <div class="grid grid-cols-1 mt-14 ml-60 mr-60 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
-                    <div class="flex flex-col items-center">
-                        <div class="rounded-md bg-green-500 p-2 ring-1 ring-white/10">
-                            <svg aria-hidden="true" class="h-6 w-6 text-gray-100" fill="none" stroke="currentColor"
-                                 stroke-width="1.5" viewBox="0 0 24 24">
-                                <path d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"/>
-                            </svg>
+                            <div class="mt-4 font-semibold text-white">
+                                Ofertes setmanals
+                            </div>
                         </div>
-                        <div class="mt-4 font-semibold text-white">Ofertes setmanals</div>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <div class="rounded-md bg-green-500 p-2 ring-1 ring-white/10">
-                            <svg aria-hidden="true" class="h-6 w-6 text-gray-100" fill="none" stroke="currentColor"
-                                 stroke-width="1.5" viewBox="0 0 24 24">
-                                <path d="M10.05 4.575a1.575 1.575 0 10-3.15 0v3m3.15-3v-1.5a1.575 1.575 0 013.15 0v1.5m-3.15 0l.075 5.925m3.075.75V4.575m0 0a1.575 1.575 0 013.15 0V15M6.9 7.575a1.575 1.575 0 10-3.15 0v8.175a6.75 6.75 0 006.75 6.75h2.018a5.25 5.25 0 003.712-1.538l1.732-1.732a5.25 5.25 0 001.538-3.712l.003-2.024a.668.668 0 01.198-.471 1.575 1.575 0 10-2.228-2.228 3.818 3.818 0 00-1.12 2.687M6.9 7.575V12m6.27 4.318A4.49 4.49 0 0116.35 15m.002 0h-.002"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"/>
-                            </svg>
+                        <div class="flex flex-col items-center col-span-2 lg:col-span-1">
+                            <div class="rounded-md bg-green-500 p-2 ring-1 ring-white/10">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-gray-100">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                                </svg>
+                            </div>
+                            <div class="mt-4 font-semibold text-white">
+                                Destacats del Mes
+                            </div>
                         </div>
-                        <div class="mt-4 font-semibold text-white">No spam</div>
+                        <div class="flex flex-col items-center col-span-2 lg:col-span-1">
+                            <div class="rounded-md bg-green-500 p-2 ring-1 ring-white/10">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-gray-100">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
+                                </svg>
+                            </div>
+                            <div class="mt-4 font-semibold text-white">
+                                Consells pràctics
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center col-span-2 lg:col-span-1">
+                            <div class="rounded-md bg-green-500 p-2 ring-1 ring-white/10">
+                                <svg aria-hidden="true" class="h-6 w-6 text-gray-100" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" viewBox="0 0 24 24">
+                                    <path
+                                        d="M10.05 4.575a1.575 1.575 0 10-3.15 0v3m3.15-3v-1.5a1.575 1.575 0 013.15 0v1.5m-3.15 0l.075 5.925m3.075.75V4.575m0 0a1.575 1.575 0 013.15 0V15M6.9 7.575a1.575 1.575 0 10-3.15 0v8.175a6.75 6.75 0 006.75 6.75h2.018a5.25 5.25 0 003.712-1.538l1.732-1.732a5.25 5.25 0 001.538-3.712l.003-2.024a.668.668 0 01.198-.471 1.575 1.575 0 10-2.228-2.228 3.818 3.818 0 00-1.12 2.687M6.9 7.575V12m6.27 4.318A4.49 4.49 0 0116.35 15m.002 0h-.002"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="mt-4 font-semibold text-white">No spam</div>
+                        </div>
+                    </div>
+                    <div aria-hidden="true" class="absolute -top-24 right-0 -z-10 transform-gpu blur-3xl">
+                        <div class="aspect-[1404/767] w-[87.75rem] bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-25"
+                            style="
+                  clip-path: polygon(
+                    73.6% 51.7%,
+                    91.7% 11.8%,
+                    100% 46.4%,
+                    97.4% 82.2%,
+                    92.5% 84.9%,
+                    75.7% 64%,
+                    55.3% 47.5%,
+                    46.5% 49.4%,
+                    45% 62.9%,
+                    50.3% 87.2%,
+                    21.3% 64.1%,
+                    0.1% 100%,
+                    5.4% 51.1%,
+                    21.4% 63.9%,
+                    58.9% 0.2%,
+                    73.6% 51.7%
+                  );
+                "></div>
                     </div>
                 </div>
+            </div>
+        </div>
 
-                <div aria-hidden="true" class="absolute -top-24 right-0 -z-10 transform-gpu blur-3xl">
-                    <div class="aspect-[1404/767] w-[87.75rem] bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-25"
-                         style="clip-path: polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)"></div>
+        <!--  FOOTER -->
+
+        <footer class="bg-white">
+            <div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
+                <div class="text-center">
+                    <a class="text-gray-400 hover:text-green-700 px-4" href="./Views/condicions.html">Termes i
+                        Condicions</a>
+                    <a class="text-gray-400 hover:text-green-700 px-4" href="./Views/avislegal.html">Avís Legal</a>
+                    <a class="text-gray-400 hover:text-green-700 px-4" href="./Views/politica.html">Política de
+                        Privacitat</a>
+                    <a class="text-gray-400 hover:text-green-700 px-4" href="./Views/cookies.html">Política de
+                        Cookies</a>
                 </div>
 
+                <div class="mt-10 flex justify-center space-x-10">
+                    <a class="text-gray-400 hover:text-green-700"
+                        href="https://www.facebook.com/profile.php?id=61555725272426" target="_blank">
+                        <span class="sr-only">Facebook</span>
+                        <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path clip-rule="evenodd"
+                                d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                                fill-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a class="text-gray-400 hover:text-green-700" href="https://www.instagram.com/webcraftersebre"
+                        target="_blank">
+                        <span class="sr-only">Instagram</span>
+                        <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path clip-rule="evenodd"
+                                d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                                fill-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a class="text-gray-400 hover:text-green-700" href="https://twitter.com/WebCrafterEBRE"
+                        target="_blank">
+                        <span class="sr-only">Twitter</span>
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path
+                                d="M13.6823 10.6218L20.2391 3H18.6854L12.9921 9.61788L8.44486 3H3.2002L10.0765 13.0074L3.2002 21H4.75404L10.7663 14.0113L15.5685 21H20.8131L13.6819 10.6218H13.6823ZM11.5541 13.0956L10.8574 12.0991L5.31391 4.16971H7.70053L12.1742 10.5689L12.8709 11.5655L18.6861 19.8835H16.2995L11.5541 13.096V13.0956Z" />
+                        </svg>
+                    </a>
+                    <a class="text-gray-400 hover:text-green-700"
+                        href="https://github.com/2DAM-202324-PROJECTE/ProjecteANJO" target="_blank">
+                        <span class="sr-only">GitHub</span>
+                        <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path clip-rule="evenodd"
+                                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                fill-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a class="text-gray-400 hover:text-green-700" href="https://www.youtube.com/@WebCraftersEBRE"
+                        target="_blank">
+                        <span class="sr-only">YouTube</span>
+                        <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path clip-rule="evenodd"
+                                d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z"
+                                fill-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+
+                <p class="mt-10 text-center text-xs leading-5 text-gray-500">
+                    &copy; 2024 Web Crafters, Inc. Tots els drets reservats.
+                </p>
             </div>
-        </div>
-    </div>
+        </footer>
 
-    <!--  FOOTER -->
+        <div id="mensaje"></div>
 
-    <footer class="bg-white">
-        <div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
-
-            <div class="text-center">
-                <a class="text-gray-400 hover:text-green-700 px-4" href="./Views/condicions.html">Termes i Condicions</a>
-                <a class="text-gray-400 hover:text-green-700 px-4" href="./Views/avislegal.html">Avís Legal</a>
-                <a class="text-gray-400 hover:text-green-700 px-4" href="./Views/politica.html">Política de Privacitat</a>
-                <a class="text-gray-400 hover:text-green-700 px-4" href="./Views/cookies.html">Política de Cookies</a>
-            </div>
-
-            <div class="mt-10 flex justify-center space-x-10">
-                <a class="text-gray-400 hover:text-green-700" href="https://www.facebook.com/profile.php?id=61555725272426" target="_blank">
-                    <span class="sr-only">Facebook</span>
-                    <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path clip-rule="evenodd"
-                          d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-                          fill-rule="evenodd"/>
-                    </svg>
-                </a>
-                <a class="text-gray-400 hover:text-green-700" href="https://www.instagram.com/webcraftersebre" target="_blank">
-                    <span class="sr-only">Instagram</span>
-                    <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path clip-rule="evenodd"
-                          d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
-                          fill-rule="evenodd"/>
-                    </svg>
-                </a>
-                <a class="text-gray-400 hover:text-green-700" href="https://twitter.com/WebCrafterEBRE" target="_blank">
-                    <span class="sr-only">Twitter</span>
-                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M13.6823 10.6218L20.2391 3H18.6854L12.9921 9.61788L8.44486 3H3.2002L10.0765 13.0074L3.2002 21H4.75404L10.7663 14.0113L15.5685 21H20.8131L13.6819 10.6218H13.6823ZM11.5541 13.0956L10.8574 12.0991L5.31391 4.16971H7.70053L12.1742 10.5689L12.8709 11.5655L18.6861 19.8835H16.2995L11.5541 13.096V13.0956Z" />
-                    </svg>
-                </a>
-                <a class="text-gray-400 hover:text-green-700"
-               href="https://github.com/2DAM-202324-PROJECTE/ProjecteANJO" target="_blank">
-                    <span class="sr-only">GitHub</span>
-                    <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path clip-rule="evenodd"
-                          d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                          fill-rule="evenodd"/>
-                    </svg>
-                </a>
-                <a class="text-gray-400 hover:text-green-700" href="https://www.youtube.com/@WebCraftersEBRE" target="_blank">
-                    <span class="sr-only">YouTube</span>
-                    <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path clip-rule="evenodd"
-                          d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z"
-                          fill-rule="evenodd"/>
-                    </svg>
-                </a>
-            </div>
-
-            <p class="mt-10 text-center text-xs leading-5 text-gray-500">&copy; 2024 Web Crafters, Inc. Tots els drets reservats.</p>
-        </div>
-    </footer>
-
-    <div id="mensaje"></div>
-
-    <!-- COOKIES -->
-    <div class="pointer-events-none fixed inset-x-0 bottom-0 px-6 pb-6" id="cookies-banner" style="display: none;">
-        <div class="pointer-events-auto ml-auto max-w-xl rounded-xl bg-white p-6 shadow-lg ring-1 ring-gray-900/10">
-            <p class="text-sm leading-6 text-gray-900">Aquest lloc web utilitza galetes per complementar una dieta
-                equilibrada y proporcionar una recompensa molt merescuda als sentits després de consumir àpats suaus
-                però nutritius. Acceptar les nostres galetes és opcional però recomanable, ja que són delicioses. Veure
-                la nostra <a class="font-semibold text-green-600 underline hover:text-green-900"
-                             href="Views/cookies.html">política de galetes</a>.</p>
-            <div class="mt-4 flex items-center gap-x-5">
-                <button onclick="acceptCookies()"
+        <!-- COOKIES -->
+        <div class="pointer-events-none fixed inset-x-0 bottom-0 px-6 pb-6" id="cookies-banner" style="display: none">
+            <div class="pointer-events-auto ml-auto max-w-xl rounded-xl bg-white p-6 shadow-lg ring-1 ring-gray-900/10">
+                <p class="text-sm leading-6 text-gray-900">
+                    Aquest lloc web utilitza galetes per complementar una dieta
+                    equilibrada y proporcionar una recompensa molt merescuda als sentits
+                    després de consumir àpats suaus però nutritius. Acceptar les nostres
+                    galetes és opcional però recomanable, ja que són delicioses. Veure
+                    la nostra
+                    <a class="font-semibold text-green-600 underline hover:text-green-900"
+                        href="Views/cookies.html">política de galetes</a>.
+                </p>
+                <div class="mt-4 flex items-center gap-x-5">
+                    <button onclick="acceptCookies()"
                         class="rounded-md bg-green-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
                         type="button">
-                    Accepta-ho
-                </button>
-                <button onclick="rejectCookies()"
-                        class="text-sm font-semibold leading-6 transition-colors hover:text-green-600  transition-colors hover:text-green-600 relative after:block after:content-[''] after:absolute after:h-[3px] after:bg-green-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
+                        Accepta-ho
+                    </button>
+                    <button onclick="rejectCookies()"
+                        class="text-sm font-semibold leading-6 transition-colors hover:text-green-600 transition-colors hover:text-green-600 relative after:block after:content-[''] after:absolute after:h-[3px] after:bg-green-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
                         type="button">
-                    Rebutja-ho
-                </button>
+                        Rebutja-ho
+                    </button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 </body>
+
 </html>
