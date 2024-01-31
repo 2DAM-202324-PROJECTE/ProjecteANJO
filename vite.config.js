@@ -21,6 +21,8 @@ export default defineConfig({
                 cookies: resolve(__dirname, 'Views/cookies.html'),
                 avislegal: resolve(__dirname, 'Views/avislegal.html'),
                 politicaprivacitat: resolve(__dirname, 'Views/politica.html'),
+                newsletter: resolve(__dirname, 'Js/newsletter.js'), // ruta al archivo newsletter.js
+
 
             },
         },
