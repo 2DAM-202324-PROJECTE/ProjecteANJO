@@ -296,33 +296,36 @@
         </div>
 
         <!-- NEWSLETTER-->
-        <div class="bg-white py-16 sm:py-24">
+
+        <div x-data="{ subscribed: false }" class="bg-white py-16 sm:py-24">
             <div class="mx-auto max-w-7xl sm:px-6 lg:px-8" id="mc_embed_shell">
                 <div class="relative isolate overflow-hidden bg-green-500 px-6 py-24 text-center shadow-2xl sm:rounded-3xl sm:px-16"
-                    id="mc_embed_signup">
+                     id="mc_embed_signup">
                     <h2 class="mx-auto max-w-2xl text-center text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                        Estiguis al cas de totes les nostres ofertes.
-                    </h2>
-                    <script src="newsletter.js"></script>
-
-                    <form
-                        action="https://github.us21.list-manage.com/subscribe/post?u=9c787297e8547a1c443e64d63&amp;id=7bec268e8e&amp;f_id=00b0f2e6f0"
-                        class="validate mx-auto mt-10 flex max-w-md gap-x-4" id="mc-embedded-subscribe-form"
-                        method="post" name="mc-embedded-subscribe-form" onsubmit="return redirectToWelcomePage();"
-                        target="_blank">
-                        <label class="sr-only" for="mce-EMAIL">Adreça electrònica <span
-                                class="asterisk">*</span></label>
-                        <input
-                            class="min-w-0 flex-auto rounded-md border-0 bg-green-100 px-3.5 py-2 text-gray-700 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6 placeholder-green"
-                            id="mce-EMAIL" name="EMAIL" placeholder="Introdueix el teu mail" required="" type="email"
-                            value="" />
-                        <input
-                            class="flex-none rounded-md bg-green-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-                            id="mc-embedded-subscribe" name="subscribe" type="submit" value="Subscriu-te" />
-
-                        <span class="helper_text" id="mce-EMAIL-HELPERTEXT"></span>
-                    </form>
-
+                        Estiguis al cas de totes les nostres ofertes.</h2>
+        
+                    <div class="mx-auto mt-10 max-w-md">
+                        <form x-show="!subscribed"
+                              action="https://github.us21.list-manage.com/subscribe/post?u=9c787297e8547a1c443e64d63&amp;id=7bec268e8e&amp;f_id=00b0f2e6f0"
+                              class="validate flex gap-x-4" id="mc-embedded-subscribe-form" method="post"
+                              name="mc-embedded-subscribe-form"
+                              @submit.prevent="subscribed = true" target="_blank">
+        
+                            <label class="sr-only" for="mce-EMAIL">Adreça electrònica <span class="asterisk">*</span></label>
+                            <input class="min-w-0 flex-auto rounded-md border-0 bg-green-100 px-3.5 py-2 text-gray-700 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6 placeholder-green"
+                                   id="mce-EMAIL"
+                                   name="EMAIL"
+                                   placeholder="Introdueix el teu mail" required="" type="email"
+                                   value="">
+                            <input class="flex-none rounded-md bg-green-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                                   id="mc-embedded-subscribe" name="subscribe"
+                                   type="submit"
+                                   value="Subscriu-te">
+                        </form>
+                    </div>
+                        <div x-show="subscribed" class="p-4 bg-green-200 text-green-800 rounded">
+                            ¡T'has registrat correctament al nostre canal de notícies! 🎉 Estem encantats de tenir-te a bord. Estigues atent a la teva safata d'entrada, on rebràs les últimes notícies i actualitzacions exclusives. Gràcies per unir-te a la nostra comunitat!
+                        </div>
                     <div
                         class="mx-auto mt-20 max-w-lg grid grid-cols-4 gap-x-2 gap-y-4 sm:max-w-xl sm:grid-cols-4 sm:gap-x-3 sm:gap-y-6 lg:max-w-4xl lg:grid-cols-4">
                         <div class="flex flex-col items-center col-span-2 lg:col-span-1">
@@ -398,9 +401,10 @@
                 "></div>
                     </div>
                 </div>
+                </div>
             </div>
         </div>
-
+        
         <!--  FOOTER -->
 
         <footer class="bg-white">
